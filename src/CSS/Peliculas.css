@@ -1,0 +1,310 @@
+.container-fluid {
+  margin: 2%;
+}
+
+.cartel {
+  
+ 
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  font-family: 'Cabin', sans-serif;
+ 
+}
+
+
+li.cardTvBlock {
+  display: flex;
+  flex-flow: row-reverse;
+  border: 1px solid #cbd5e6;
+  border-radius: 15px;
+  position: relative;
+  background-image: linear-gradient(to top, #151a23 0%, #4b5e80 100%);
+  vertical-align: middle;
+  height: 345px;
+  width: 260px;
+  align-items: center;
+  box-shadow: 0px 0px 5px #dadce0;
+  overflow: hidden;
+  z-index: 0;
+  margin: 2%;
+}
+li.cardTvBlock a:hover > .BlockBar {
+  transform: translateY(225px);
+  transition: .3s;
+}
+li.cardTvBlock a {
+  width: 100%;
+  height: 100%;
+}
+
+.cardTvBlock a:hover > .season {
+  background: white;
+  display: inline-block;
+  width: 40px;height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 5px;
+  margin-left: 15px;
+  text-align: center;
+  color: #080808;
+  float: left;
+  transform: translateY(-70px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+
+.cardTvBlock .season em{
+  font-size: 6px;
+  font-weight: 200;
+  line-height: 1.8;
+  display: block;
+}
+.cardTvBlock a:hover > .episodes{background: #ffffff;display: inline-block;width: 40px;height: 40px;margin-left: 10px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;float: left;transform: translateY(-70px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .episodes em{
+  font-size: 6px;
+  font-weight: 200;
+  line-height: 1.8;
+  display: block;
+}
+
+.cardTvBlock a:hover > .imdbRating{background: #FFEB3B;display: inline-block;width: 40px;height: 40px;margin: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;float: left;transform: translateY(-70px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .imdbRating em{
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.8;
+  display: block;
+}
+
+.cardTvBlock a:hover > .Thumb{clear: both;width: 45%;height: 45%;position: absolute;z-index: 999;top: 10px;right: 10px;border-radius: 14px;border: 4px solid  rgb(234 234 234 / 39%);display: block;}
+.cardTvBlock a:hover > .Thumb .tvpost img{
+ /*  background-image: url(https://www.elboujiyassine.com/codepen/assets/img/BB_S5A_poster.jpg); */
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+}
+.cardTvBlock a:hover > .BoxInfo{
+  display: block;
+  clear: both;
+  transform: translateY(-70px);
+  position: relative;
+}
+.cardTvBlock a:hover > .BoxInfo .BoxTitle{
+  color: white;
+  text-align: center;
+  border: 0px solid;
+  position: absolute;
+  box-shadow: none;
+  top: 170px;
+  background: none;
+  font-size: 18px;
+  width: 100%;
+}
+.cardTvBlock a:hover > .BoxInfo .GenresList{
+  display: inline-block;
+  background: #242c35;
+  padding: 5px 15px;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 5px #ffc107 solid;
+  color: #f7f7f7;
+  position: absolute;
+  font-size: 12px;
+  top: 40px;
+  transform: translateX(0px);
+}
+.cardTvBlock a:hover > .BoxInfo .Category{
+  background: gold;
+  padding: 1px 15px;
+  display: inline-block;
+  border-radius: 20px;
+  color: #54471d;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: translateX(-0px);
+  top: 10px;
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 14%);
+  left: 10px;
+  position: absolute;
+  font-size: 12px;
+  border: 1px solid gold;
+}
+.cardTvBlock a:hover > .BoxInfo .BoxInfoParagraph{
+  text-align: left;
+  color: #99a2b1;
+  padding: 10px;
+  font-size: 12px;
+  position: absolute;
+  top: 210px;
+  font-weight: 500;
+  transform: translateX(0px);
+}
+.BlockBar {
+  width: 100%;
+  display:block;
+  position: relative;
+  color: white;
+  transform: translateY(232px);
+}
+.BlockBar .Views {
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.BlockBar .Views i {float: left;left: 20px;display: inline-block;top: 10px;position: absolute;}
+
+.BlockBar .Reviews {
+  display: block;
+  width: 50%;
+  float: left;
+}
+.BlockBar .Reviews i {
+  display: block;
+  width: 50%;
+}
+li.cardTvBlock .BlockBar {
+  transform: translateY(290px);
+  transition: .3s;
+  z-index: 99;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+li.cardTvBlock a {
+  width: 100%;
+  height: 100%;
+}
+.cardTvBlock .season{background: white;display: inline-block;width: 40px;height: 40px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;margin-left: 15px;text-align: center;color: #080808;float: left;border: 3px solid #ccc6c6;z-index: 9999;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .season em{
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.8;
+  font-style: normal;
+  display: block;
+  text-transform: uppercase;
+}
+.cardTvBlock .season span{
+  font-weight: 900;
+}
+.cardTvBlock .episodes{background: #ffffff;display: inline-block;width: 40px;height: 40px;margin-left: 5px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;z-index: 99999999;border: 3px solid #ccc6c6;float: left;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .episodes em{
+  font-size: 10px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1.8;
+  display: block;
+  text-transform: uppercase;
+}
+.cardTvBlock .episodes span{
+  font-weight: 900;
+}
+.cardTvBlock .imdbRating{background: #FFEB3B;display: inline-block;width: 40px;height: 40px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;margin-left: 5px;color: #080808;border: 3px solid #d6a71a;z-index: 99;float: left;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .imdbRating em{
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.8;
+  font-style: normal;
+  text-transform: uppercase;
+  display: block;
+}
+.cardTvBlock .imdbRating span{
+  font-weight: 900;
+}
+.cardTvBlock .Thumb{clear: both;width: 100%;height: 100%;position: absolute;top: 0;right: 0;transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .Thumb .tvpost img{
+ /*  background-image: url(https://www.elboujiyassine.com/codepen/assets/img/BB_S5A_poster.jpg); */
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+}
+.cardTvBlock .BoxInfo{
+  display: block;
+  clear: both;
+  transform: translateY(-70px);
+  position: relative;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+.cardTvBlock .BoxInfo .BoxTitle{
+  padding: 15px 0px;
+  color: white;
+  text-align: center;
+  border: 0px solid;
+  position: absolute;
+  top: 295px;
+  font-size: 20px;
+  box-shadow: 0px -15px 20px 20px rgb(0 0 0 / 58%);
+  width: 100%;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+  z-index: 999;
+  background: rgb(0 0 0 / 58%);
+}
+.cardTvBlock .BoxInfo .GenresList{
+  display: inline-block;
+  background: #242c35;
+  padding: 5px 15px;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 5px #ffc107 solid;
+  color: #f7f7f7;
+  position: absolute;
+  font-size: 12px;
+  top: 40px;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+  transform: translateX(-75px);
+}
+.cardTvBlock .BoxInfo .Category{
+  background: #FFC107;
+  padding: 1px 15px;
+  display: inline-block;
+  border-radius: 5px;
+  color: #101010;
+  text-transform: uppercase;
+  transform: translateX(-120px);
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+.cardTvBlock .BoxInfo .BoxInfoParagraph{
+  text-align: left;
+  color: white;
+  padding: 10px;
+  font-weight: 500;
+  position: absolute;
+  top: 188px;
+  transform: translateX(-245px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+.BlockBar {
+  width: 100%;
+  display:block;
+  position: relative;
+  color: white;
+  transform: translateY(232px);
+}
+.BlockBar .Views {
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: center;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+.BlockBar .Views em{display: block;color: gold;font-style: normal;}
+.BlockBar .Reviews {
+  display: block;
+  width: 50%;
+  text-align: center;
+  float: left;
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+.BlockBar .Reviews i {float: left;left: 85px;display: inline-block;top: 10px;position: absolute;}
+.BlockBar .Reviews em{
+  color: gold;
+  display: block;
+  font-style: normal;
+}

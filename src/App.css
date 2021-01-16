@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.promociones p {
+  padding: 0 0 0.1% 2%;
+  margin: 0;
+  font: normal 20px/24px ECI;
+  color: #da1e1e;
+  font-weight: 600;
+}
+
+.promociones hr {
+  width: 96%;
+  margin: 0 2% 1% 2% ;
+  height: 2.5px;
+  background-color: red;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+.nav-bar-blocks {
+  background-color: #fff;
+}
+
+div {
+  display: block;
+}
+
+@media only screen and (min-width: 48.0625em) {
+.nav-bar-container._main {
+    padding-bottom: 5px;
+}
+}
+
+.nav-bar-container._main {
+  background: #f5f5f5;
+  transition: none;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  color: #3e3e3e;
+  position: relative;
+  height: 100%;
+}
+
+@media only screen and (min-width: 26.625em) {
+.vp {
+    padding: 0 1em;
+}
+}
+.vp {
+    position: relative;
+    margin: 10;
+    padding: 0 .5em;
+    max-width: 90em;
+}
+
+.context_menu.place-home {
+    padding: .5em 0 .5em 0;
+}
+.context_menu {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    width: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.context_menu.place-home .context_menu-list {
+  display: flex;
+  
+  align-items: flex-end;
+  justify-content: normal;
+  font-weight: 700;
+}
+.context_menu-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  height: 2em;
+  flex: 1;
+  flex-direction: row;
+  align-self: end;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.context_menu.place-home .context_menu-item {
+  padding: 0 1em;
+  border-right: solid 1px #242424;
+  margin: 0;
+  font-weight: 700;
+}
+
+.context_menu.place-home .context_menu-item-last {
+  padding: 0 1em;
+ 
+  margin: 0;
+  font-weight: 700;
+}
+.context_menu-item, .context_menu-item-last {
+  font: normal 13px/24px ECI;
+  color: #242424;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  user-select: none;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.context_menu.place-home .context_menu-item a, .context_menu-item-last a, .context_menu.place-home .context_menu-item span, .context_menu-item-last span {
+  font-weight: 700;
+}
+.context_menu-item a, .context_menu-item-last a, .context_menu-item span, .context_menu-item-last span {
+  user-select: inherit;
+  font: normal 13px/24px ECI;
+  color: #242424;
+  text-decoration: none;
+  font-weight: 700;
+}
