@@ -31,9 +31,6 @@ function Peliculas() {
 
   let mostrarPeliculas = data.map(pelicula=>{
     return(<>
-
-
-
 <li className="cardTvBlock">
         <a href="#">
             <div className="season"><em>Media</em><span>{pelicula.vote_average}</span></div>
@@ -59,13 +56,6 @@ function Peliculas() {
                 <div className="Reviews"><i className="zmdi zmdi-accounts-alt"></i> <em>Reviews</em>120</div>
             </div>
         </a></li>
-
-
-
-
-
-
-      
     </>)
   })
 
@@ -80,6 +70,25 @@ function Peliculas() {
       setNumPag(numPag + 1)
     }
   }
+
+  let dos = (pagina=>{
+    if (numPag == 1) {
+      return (<></>);
+    } else if (numPag == 2) {
+      return(<>
+      <a href="#" onClick={anterior} className="page gradient">Anterior</a>
+      <a href="#" className="page gradient">{numPag - 1}</a>
+      </>);
+    } else {
+      return(<>
+      <a href="#" onClick={anterior} className="page gradient">Anterior</a>
+      <a href="#" className="page gradient">{numPag - 2}</a>
+      <a href="#" className="page gradient">{numPag - 1}</a>
+      </>);
+    }
+  })
+
+
     return(<>
     <div className="container-fluid">
 			<div className="row">
@@ -91,8 +100,13 @@ function Peliculas() {
       </div>
     </div>
     <div className="botones">
-    <button onClick={anterior}>Anterior</button>
-  <button onClick={siguiente}>Siguiente</button>
+      <div className="pagination">
+        {dos}      
+        <span className="page active">{numPag}</span>
+        <a href="#" className="page gradient">{numPag + 1}</a>
+        <a href="#" className="page gradient">{numPag + 2}</a>
+        <a href="#" onClick={siguiente} className="page gradient">Siguiente</a>
+	    </div>
     </div>
     </>)
 }
