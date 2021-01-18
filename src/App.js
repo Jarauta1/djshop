@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter, Route} from "react-router-dom"
 
 import Header from "./JS/Header.js"
+import Login from "./JS/login.js"
 import Peliculas from "./JS/peliculas.js"
 import Portada from "./JS/portada.js"
 import Libros from "./JS/libros.js"
@@ -11,9 +12,22 @@ import Footer from "./JS/Footer.js"
 
 
 function App() {
+/*   const [ usuario, setUsuario] = useState({})
+
+
+  const login = (email, pass) => {
+  fetch("/login")
+}
+
+if( usuario.administrador){
+return
+}else{´
+  return <Redirect to="/" />
+} */
+
 
   return(<BrowserRouter>
-  <Header/>
+  <Header/*  usuario={usuario} *//>
   <Route exact path="/">
     <br></br>
 <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
@@ -22,6 +36,9 @@ function App() {
   </Route>
   <Route exact path="/ropa">
 <div><p>Ropa</p></div>
+  </Route>
+  <Route exact path="/login">
+    <Login /* login={login} */ />
   </Route>
   <Route exact path="/zapatillas">
 <div><p>Zapatillas</p></div>

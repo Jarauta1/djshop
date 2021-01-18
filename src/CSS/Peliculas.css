@@ -59,7 +59,9 @@ li.cardTvBlock a {
   line-height: 1.8;
   display: block;
 }
-.cardTvBlock a:hover > .episodes{background: #ffffff;display: inline-block;width: 40px;height: 40px;margin-left: 10px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;float: left;transform: translateY(-70px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock a:hover > .episodes{background: #ffffff;display: inline-block;width: 40px;height: 40px;margin-left: 10px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;
+  float: left;
+  transform: translateY(-70px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
 .cardTvBlock .episodes em{
   font-size: 6px;
   font-weight: 200;
@@ -67,15 +69,43 @@ li.cardTvBlock a {
   display: block;
 }
 
-.cardTvBlock a:hover > .imdbRating{background: #FFEB3B;display: inline-block;width: 40px;height: 40px;margin: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;float: left;transform: translateY(-70px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
-.cardTvBlock .imdbRating em{
-  font-size: 10px;
+.cardTvBlock a:hover > .imdbRating{
+  background: #FFEB3B;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 5px;
+  left: 15px;
+  text-align: center;
+  color: #080808;
+  float: left;
+  transform: translateY(-70px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+
+/* .cardTvBlock .imdbRating em{
+  font-size: 4px;
   font-weight: 900;
   line-height: 1.8;
   display: block;
+} */
+
+.cardTvBlock a:hover > .Thumb{
+  clear: both;
+  width: 45%;
+  height: 45%;
+  position: absolute;
+  z-index: 999;
+  top: 10px;
+  right: 10px;
+  border-radius: 14px;
+  border: 4px solid  rgb(234 234 234 / 39%);
+  display: block;
 }
 
-.cardTvBlock a:hover > .Thumb{clear: both;width: 45%;height: 45%;position: absolute;z-index: 999;top: 10px;right: 10px;border-radius: 14px;border: 4px solid  rgb(234 234 234 / 39%);display: block;}
 .cardTvBlock a:hover > .Thumb .tvpost img{
  /*  background-image: url(https://www.elboujiyassine.com/codepen/assets/img/BB_S5A_poster.jpg); */
   background-size: cover;
@@ -113,19 +143,19 @@ li.cardTvBlock a {
   color: #f7f7f7;
   position: absolute;
   font-size: 12px;
-  top: 40px;
+  top: 55px;
   transform: translateX(0px);
 }
 .cardTvBlock a:hover > .BoxInfo .Category{
   background: gold;
-  padding: 1px 15px;
+  padding: 1px 1px;
   display: inline-block;
   border-radius: 20px;
   color: #54471d;
   font-weight: 700;
   text-transform: uppercase;
   transform: translateX(-0px);
-  top: 10px;
+  top: 15px;
   box-shadow: 0px 2px 5px rgb(0 0 0 / 14%);
   left: 10px;
   position: absolute;
@@ -155,7 +185,8 @@ li.cardTvBlock a {
   float: left;
   text-align: center;
 }
-.BlockBar .Views i {float: left;left: 20px;display: inline-block;top: 10px;position: absolute;}
+.BlockBar .Views i {
+  float: left;left: 20px;display: inline-block;top: 10px;position: absolute;}
 
 .BlockBar .Reviews {
   display: block;
@@ -176,11 +207,29 @@ li.cardTvBlock a {
   width: 100%;
   height: 100%;
 }
-.cardTvBlock .season{background: white;display: inline-block;width: 40px;height: 40px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;margin-left: 15px;text-align: center;color: #080808;float: left;border: 3px solid #ccc6c6;z-index: 9999;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .season{
+  background: white;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 5px;
+  margin-left: 15px;
+  text-align: center;
+  color: #080808;
+  float: left;
+  border: 3px solid #ccc6c6;
+  z-index: 9999;
+  transform: translateY(0px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+
 .cardTvBlock .season em{
   font-size: 10px;
   font-weight: 900;
-  line-height: 1.8;
+  line-height: 0.8;
   font-style: normal;
   display: block;
   text-transform: uppercase;
@@ -188,30 +237,69 @@ li.cardTvBlock a {
 .cardTvBlock .season span{
   font-weight: 900;
 }
-.cardTvBlock .episodes{background: #ffffff;display: inline-block;width: 40px;height: 40px;margin-left: 5px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;color: #080808;z-index: 99999999;border: 3px solid #ccc6c6;float: left;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .episodes{
+  background: #ffffff;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+  margin-left: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 5px;
+  left: 15px;
+  text-align: center;
+  color: #080808;
+  z-index: 99999999;
+  border: 3px solid #ccc6c6;
+  float: left;
+  transform: translateY(0px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+
 .cardTvBlock .episodes em{
   font-size: 10px;
   font-weight: 900;
   font-style: normal;
-  line-height: 1.8;
+  line-height: 0.8;
   display: block;
   text-transform: uppercase;
 }
 .cardTvBlock .episodes span{
-  font-weight: 900;
+  font-weight: 700;
 }
-.cardTvBlock .imdbRating{background: #FFEB3B;display: inline-block;width: 40px;height: 40px;margin-top: 10px;border-radius: 10px;box-shadow: 0px 0px 5px black;padding: 5px;left: 15px;text-align: center;margin-left: 5px;color: #080808;border: 3px solid #d6a71a;z-index: 99;float: left;transform: translateY(0px);transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
+.cardTvBlock .imdbRating{
+  background: #FFEB3B;
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 5px;left: 15px;
+  text-align: center;
+  margin-left: 5px;
+  color: #080808;
+  border: 3px solid #d6a71a;
+  z-index: 99;
+  float: left;
+  transform: translateY(0px);
+  transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
+}
+
 .cardTvBlock .imdbRating em{
-  font-size: 10px;
+  font-size: 4px;
   font-weight: 900;
   line-height: 1.8;
   font-style: normal;
   text-transform: uppercase;
   display: block;
 }
+
 .cardTvBlock .imdbRating span{
   font-weight: 900;
 }
+
 .cardTvBlock .Thumb{clear: both;width: 100%;height: 100%;position: absolute;top: 0;right: 0;transition: .3s .05s all cubic-bezier(.86,.01,0,.98);}
 .cardTvBlock .Thumb .tvpost img{
  /*  background-image: url(https://www.elboujiyassine.com/codepen/assets/img/BB_S5A_poster.jpg); */
@@ -236,7 +324,7 @@ li.cardTvBlock a {
   text-align: center;
   border: 0px solid;
   position: absolute;
-  top: 295px;
+  top: 280px;
   font-size: 20px;
   box-shadow: 0px -15px 20px 20px rgb(0 0 0 / 58%);
   width: 100%;
@@ -247,7 +335,7 @@ li.cardTvBlock a {
 .cardTvBlock .BoxInfo .GenresList{
   display: inline-block;
   background: #242c35;
-  padding: 5px 15px;
+  padding: 1px 1px;
   border-radius: 0px 5px 5px 0px;
   border-left: 5px #ffc107 solid;
   color: #f7f7f7;
@@ -280,7 +368,7 @@ li.cardTvBlock a {
   transform: translateX(-245px);
   transition: .3s .05s all cubic-bezier(.86,.01,0,.98);
 }
-.BlockBar {
+/* .BlockBar {
   width: 100%;
   display:block;
   position: relative;
@@ -307,17 +395,19 @@ li.cardTvBlock a {
   color: gold;
   display: block;
   font-style: normal;
-}
+} */
 
 /* ---------------------- */
 /* INICIO BOTONES PAGINAS */
 /* ---------------------- */
 
 .botones {
-  width: 600px;
-  margin: 0 auto;
+ /*  width: 600px; */
+ /*  margin: 0 auto; */
   padding: 20px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #666;
   font: 14px/24px sans-serif;
 }
@@ -402,3 +492,82 @@ li.cardTvBlock a {
 /* ------------------- */
 /* FIN BOTONES PAGINAS */
 /* ------------------- */
+
+/* --------------------- */
+/* PRINCIPIO BOTON HEART */
+/* --------------------- */
+
+.like [type="checkbox"]{
+  display: none;
+}
+.like{
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-item: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: .3s;
+}
+.like:hover{
+  background: white;
+  }
+
+.heart{
+  color: linear-gradient(to top, #151a23 0%, #4b5e80 100%);
+  text-align: center;
+  user-select:none;
+  position: relative;
+  top:4px;
+}
+.ripple{
+  position:absolute;
+  width: 24px;
+  height: 24px;
+  background-color: red;
+  border-radius:50% ;
+  transform: scale(0);
+}
+
+.like [type="checkbox"]:checked ~ .heart{
+  animation-name: heart;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+.like [type="checkbox"]:checked ~ .ripple {
+  animation-name: ripple;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
+}
+@keyframes ripple {
+
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity:0;
+  }
+}
+
+/* ----------------- */
+/* FINAL BOTON HEART */
+/* ----------------- */
