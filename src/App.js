@@ -9,6 +9,7 @@ import Peliculas from "./JS/peliculas.js"
 import Portada from "./JS/portada.js"
 import Libros from "./JS/libros.js"
 import Footer from "./JS/Footer.js"
+import PeliculaCard from "./JS/peliculaCard.js"
 
 
 function App() {
@@ -44,8 +45,11 @@ return
 <div><p>Zapatillas</p></div>
   </Route>
   <Route exact path="/peliculas">
-<div><Peliculas/></div>
+<Peliculas/>
   </Route>
+<Route exact path="/peliculas/:titulo/:id">
+  <PeliculaCard/>
+</Route>
   <Route exact path="/libros">
 <div><p>Libros</p></div>
 <Libros />

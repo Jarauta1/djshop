@@ -1,7 +1,7 @@
 import '../CSS/Peliculas.css';
 import {useState, useEffect} from "react"
 import {BrowserRouter,Route,Link, Redirect} from "react-router-dom"
-import Detalle from "./Detalle.js"
+import PeliculaCard from "./peliculaCard.js"
 
 function Peliculas() {
 
@@ -93,8 +93,8 @@ function Peliculas() {
 
  
     if (numPag == 1) {
-      return(<BrowserRouter>
-      <Route exact path="/peliculas">
+      return(<>
+      
         <div className="container-fluid">
           <div className="row">
               <div className="col-12">
@@ -113,11 +113,9 @@ function Peliculas() {
                     <a href="#" onClick={siguiente} className="page gradient">Siguiente</a>
                 </div>
               </div>
-             </Route>
-             <Route exact path="/peliculas/:titulo/:id">
-               <Detalle/>
-             </Route>
-        </BrowserRouter>)
+             
+             
+        </>)
     } else if (numPag == 2) {
       return(<>
         <div className="container-fluid">

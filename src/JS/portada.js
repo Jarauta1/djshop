@@ -14,19 +14,19 @@ function Portada () {
 					<div className="col-3">
 						<div className="row">
 							<div className="col-12">
-								<div class="book-card">
-    								<div class="book-card__cover">
-     									<div class="book-card__book">
-        									<div class="book-card__book-front">
-          										<img class="book-card__img" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg"/>
+								<div className="book-card">
+    								<div className="book-card__cover">
+     									<div className="book-card__book">
+        									<div className="book-card__book-front">
+          										<img className="book-card__img" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg"/>
         									</div> 
-        									<div class="book-card__book-back"></div>
-        									<div class="book-card__book-side"></div>
+        									<div className="book-card__book-back"></div>
+        									<div className="book-card__book-side"></div>
       									</div>  
     								</div>    
   								</div>
     							<div>
-      								<div class="book-card__title">
+      								<div className="book-card__title">
         								| batman
         							</div>
       								<div class="book-card__author">
@@ -152,125 +152,125 @@ function Portada () {
     			<div className="row">
 					<div className="col-12">
 
-					<div class="slider">
-		<div class="popular-movies">
-			<div class="movie-container">
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+					<div className="slider">
+		<div className="popular-movies">
+			<div className="movie-container">
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
 			</div>
-			<div class="image-effect">
-			<div class="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div class="movie-info">
-				<h2 class="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p class="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div class="links">
-					<a class="watch" href="ver" >Ver</a>
-					<a class="down" href="down" >Descargar</a>
+			<div className="image-effect">
+			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
+			<div className="movie-info">
+				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
+				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
+				<div className="links">
+					<a className="watch" href="ver" >Ver</a>
+					<a className="down" href="down" >Descargar</a>
 				</div>
 			</div>
 			</div>
