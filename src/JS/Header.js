@@ -7,31 +7,36 @@ function Header() {
     return(<>
     <div className="nav-bar-blocks">
 
-        <div className="nav-bar-container _main">
+         <div className="nav-bar-container _main">
             <div className="nav-bar vp">
                 <div className="context_menu place-home">
-                    <ul className="context_menu-list">
-                        <li className="context_menu-item">
+                <header class="nav-menu">
+	<label for="nav-toggle" class="nav-toggle-label"></label>
+</header>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle"/>	
+                    <ul id="menu-topo" className="context_menu-list">
+                        <li className="context_menu-item nav-item">
                             <Link to="/">
                                 <a>INICIO</a>
                             </Link>
                         </li>
-                        <li className="context_menu-item">
+                        <li className="context_menu-item nav-item">
                             <Link to="/zapatillas">
                                 <a>CALZADO</a>
                             </Link>
                         </li>
-                        <li className="context_menu-item">
+                        <li className="context_menu-item nav-item">
                             <Link to="/gammer">
                                 <a>GAMMER</a>
                             </Link>
                         </li>
-                        <li className="context_menu-item">
+                        <li className="context_menu-item nav-item">
                             <Link to="/libros">
                                 <a>LIBROS</a>
                             </Link>
                         </li>
-                        <li className="context_menu-item">
+                        <li className="context_menu-item nav-item">
                             <Link to="/peliculas">
                                 <a>PELICULAS</a>
                             </Link>
@@ -41,24 +46,26 @@ function Header() {
                                 <a>ROPA</a>
                             </Link>
                         </li>
-                    </ul>
-                </div>
-            
-            <ul className="topbar-user">
-                <li className="js-guest-user">
+            <ul id="menu-topo" className="topbar-user">
+                <li className="js-guest-user context_menu-item-last">
                     <a>
                         <i className="icon user-line"></i>
                         <strong>Iniciar sesión</strong>
                     </a>
                 </li>
             </ul>
+                    </ul>
+            
+                </div>
             
             </div>
 
             
         </div>
+ 
+   			
 
-   
+
   
     </div>
     
