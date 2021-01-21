@@ -10,6 +10,7 @@ import Portada from "./JS/portada.js"
 import Libros from "./JS/libros.js"
 import Footer from "./JS/Footer.js"
 import PeliculaCard from "./JS/peliculaCard.js"
+import Comics from "./JS/comics.js"
 
 
 function App() {
@@ -51,11 +52,10 @@ return
   <PeliculaCard/>
 </Route>
   <Route exact path="/libros">
-<div><p>Libros</p></div>
 <Libros />
   </Route>
-  <Route exact path="/gammer">
-<div><p>Videojuegos</p></div>
+  <Route exact path="/comics">
+<Comics/>
   </Route>
   <Footer/>
   </BrowserRouter>)
