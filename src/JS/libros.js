@@ -58,7 +58,7 @@ function Libros (){
       			      <div className="book-card__title">
         			      {libro.title}
         		      </div>
-      			      <div class="book-card__author">
+      			      <div className="book-card__author">
         			      | by {libro.author}
         		      </div>
                     {/* <div className="options"><div className="price">9.95€</div><button className="price">Comprar</button></div> */}
@@ -127,14 +127,14 @@ function Libros (){
               <span onClick={eleccion} value="idiomas">Idiomas</span>
             </div>
           </div>
-          <div class="col-10">
+          <div className="col-10">
             <div className="spinner-book">
-              <div class="stack">
-	              <div class="book"></div>
-	              <div class="book"></div>  
-	              <div class="book"></div>
-          	    <div class="book"></div>  
-	              <div class="book"></div>  
+              <div className="stack">
+	              <div className="book"></div>
+	              <div className="book"></div>  
+	              <div className="book"></div>
+          	    <div className="book"></div>  
+	              <div className="book"></div>  
               </div>
             </div>
           </div>
@@ -245,7 +245,7 @@ function Libros (){
               
             </div>
           </div>
-          <div class="col-9">
+          <div className="col-9">
           <div className="col-12">
                 <div className="row">
                   {mostrarLibros}

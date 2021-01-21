@@ -10,11 +10,11 @@ function Header() {
          <div className="nav-bar-container _main">
             <div className="nav-bar vp">
                 <div className="context_menu place-home">
-                <header class="nav-menu">
-	<label for="nav-toggle" class="nav-toggle-label"></label>
+                <header className="nav-menu">
+	<label for="nav-toggle" className="nav-toggle-label"></label>
 </header>
 
-<input type="checkbox" id="nav-toggle" class="nav-toggle"/>	
+<input type="checkbox" id="nav-toggle" className="nav-toggle"/>	
                     <ul id="menu-topo" className="context_menu-list">
                         <li className="context_menu-item nav-item">
                             <Link to="/">

@@ -29,7 +29,7 @@ function Portada () {
       								<div className="book-card__title">
         								| batman
         							</div>
-      								<div class="book-card__author">
+      								<div className="book-card__author">
         								| J. K. Rowling
         							</div>
     							</div> 

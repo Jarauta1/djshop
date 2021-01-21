@@ -76,9 +76,9 @@ document.querySelectorAll('.add-to-cart-button').forEach(function(addToCartButto
               <label for="rating5"></label>
             </fieldset>
             <span className="likes"><a href={info.homepage}>Web Oficial</a></span>
-            <div className="colum-catogary">{genero.map(mostrar=>{return(<><span class="tag">{mostrar.name}</span><div className="separacion"></div></>)})}
+            <div className="colum-catogary">{genero.map(mostrar=>{return(<><span className="tag">{mostrar.name}</span><div className="separacion"></div></>)})}
             </div>
-            <div class="avatars">{actores.map(cast=>{
+            <div className="avatars">{actores.map(cast=>{
                   if (contador <=3) {
                       contador = contador + 1
                       return(<><img className="imagen" title={cast.name} src={`https://image.tmdb.org/t/p/w500/${cast.profile_path}`}/><div className="separacion"></div></>)
@@ -89,13 +89,13 @@ document.querySelectorAll('.add-to-cart-button').forEach(function(addToCartButto
           <div className="colum-second">
             <p> {info.overview}</p>
             
-            <button class="add-to-cart-button">
-              <svg class="add-to-cart-box box-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="2" fill="#ffffff"/></svg>
-              <svg class="add-to-cart-box box-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="2" fill="#ffffff"/></svg>
-              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-              <svg class="tick" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="#ffffff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z"/></svg>
-              <span class="add-to-cart">Add to cart</span>
-              <span class="added-to-cart">Added to cart</span>
+            <button className="add-to-cart-button">
+              <svg className="add-to-cart-box box-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="2" fill="#ffffff"/></svg>
+              <svg className="add-to-cart-box box-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="2" fill="#ffffff"/></svg>
+              <svg className="cart-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <svg className="tick" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="#ffffff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z"/></svg>
+              <span clclassNameass="add-to-cart">Add to cart</span>
+              <span className="added-to-cart">Added to cart</span>
             </button>
           </div>
         </div>
