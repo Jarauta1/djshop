@@ -67,11 +67,31 @@ function Peliculas() {
                   <label className="like">
                    <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
                     <span className="material-icons heart">favorite</span>
+                    {/* https://google.github.io/material-design-icons/ */}
+                    {/* https://material.io/resources/icons/?style=baseline */}
+                     <div className="ripple"></div>
+                  </label>
+                </div>
+                <div className="Category2">
+                  <label className="like">
+                   <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
+                    <span className="material-icons heart">shopping_cart</span>
+                    {/* https://google.github.io/material-design-icons/ */}
+                    {/* https://material.io/resources/icons/?style=baseline */}
                      <div className="ripple"></div>
                   </label>
                 </div>
                 <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
-                  <div> <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`}><button>Detalle</button></Link></div>
+                  <div className="separacion"> 
+                    <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`}>
+                      <a className="detalles">
+                        <div className="view-story">
+                          <span>Detalles</span>
+                          <i className="fa fa-arrow-right"></i>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
                 </div>
             </div>
         </a>
