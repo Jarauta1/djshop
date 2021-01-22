@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.comicCard{
+width: 100vw;
+    height: 100vh;
+  background-image: url("https://raw.githubusercontent.com/KingLee/awesome/master/marvel-bg.jpg");
+  
+  background-size:cover;
+  
+  background-repeat:no-repeat;
+  font-family:"Open Sans",sans-serif;
+}
+
+.card-container{
+  width:700px;
+  height:400px;
+  background:#171717;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin-top:-200px;
+  margin-left:-300px;
+  box-shadow: 0px 0px 80px #000;
+}
+.left-image{
+  width:260px;
+  height:400px;
+  float:left;
+  display:inline-block;
+  /* background-image: url('https://raw.githubusercontent.com/KingLee/awesome/master/003gif-test.gif'); */
+  background-size:cover;
+}
+.container-right{
+  width:410px;
+  float:left;
+  display:inline-block;
+  padding-left:30px;
+}
+.top-section{
+  clear:both;
+}
+.title-content{
+  width:380px;
+  float:left;
+  display:inline-block;
+  font-size:12px;
+}
+.title-content p{
+  color:#4E4E4E;
+  margin-top:-7px;
+}
+.title-content img {
+  margin-left:10px;
+}
+.rating{
+  border:1px solid #4e4e4e;
+  padding:1px 8px;
+  border-radius: 3px;
+  margin-right:10px;
+  font-size:10px;
+  font-weight:900; 
+}
+.studio{
+  margin-left:10px;
+  margin-right:10px;
+}
+h1 {
+  color:white;
+  font-size:26px;
+  font-family:sans-serif;
+  font-weight:900;
+  line-height:1.25;
+  padding-top:10px;
+  letter-spacing:.4px;
+}
+
+.score {
+  color:white;
+  margin-left:2px;
+}
+.top-right p{
+  padding-top:12px;
+  padding-right:30px;
+}
+.description {
+  color:#a2a2a2;
+  clear:both;
+  padding-right:30px;
+  line-height:1.5;
+  font-size:14px;
+  padding-top:0px;
+}
+.favorite{
+  color:#145ce0;
+  font-size:14px;
+  margin-top:70px;
+}
+.favorite:hover{
+  color:#146fe0;
+  cursor:pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.favorite:hover #star-icon{
+  fill:#ffd555;
+}
+.wishlist{
+  color:#145ce0;
+  font-size:14px;
+}
+.wishlist:hover{
+  color:#146fe0;
+  cursor:pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.wishlist:hover g{
+  fill:#fff;
+}
+.price {
+  float:left;
+  display:inline;
+  padding-left:37px;
+}
+.arrow {
+  float:left;
+  display:inline;
+  padding-top:15px;
+  padding-left:15px;
+}
+.star-icon {
+  float:left;
+  display:inline;
+  padding-right:10px;
+}
+.list-icon {
+  float:left;
+  display:inline;
+  padding-left:3px;
+  padding-right:12px;
+}
+.button {
+  width:175px;
+  background:#145ce0;
+  height:50px;
+  float:left;
+  display:inline;
+  margin-right:30px;
+  text-align:center;
+  border-radius: 4px;
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  margin-top:15px;
+  letter-spacing:1px;
+}
+.button:hover {
+  background:#146fe0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  cursor:pointer;
+}
+.outline {
+  width:173px;
+  border: 1px solid #145ce0;
+  background:none;
+  
+}
+.outline:hover{
+  background:#1f293a;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  cursor:pointer;
+  border:1px solid #146fe0;
+}
+.button p{
+  padding-top:4px;
+}

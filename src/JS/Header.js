@@ -27,8 +27,8 @@ function Header() {
                             </Link>
                         </li>
                         <li className="context_menu-item nav-item">
-                            <Link to="/commics">
-                                <a>COMMICS</a>
+                            <Link to="/comics">
+                                <a>COMICS</a>
                             </Link>
                         </li>
                         <li className="context_menu-item nav-item">

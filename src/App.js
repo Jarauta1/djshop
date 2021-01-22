@@ -11,6 +11,7 @@ import Libros from "./JS/libros.js"
 import Footer from "./JS/Footer.js"
 import PeliculaCard from "./JS/peliculaCard.js"
 import Comics from "./JS/comics.js"
+import ComicCard from "./JS/comicCard.js"
 
 
 function App() {
@@ -56,6 +57,9 @@ return
   </Route>
   <Route exact path="/comics">
 <Comics/>
+  </Route>
+  <Route exact path="/comics/:id">
+    <ComicCard/>
   </Route>
   <Footer/>
   </BrowserRouter>)
