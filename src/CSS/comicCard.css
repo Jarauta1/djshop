@@ -348,3 +348,82 @@ h1 {
 /* ---------------- */
 /* FIN BOTON VOLVER */
 /* -----------------*/
+
+/* --------------------- */
+/* PRINCIPIO BOTON HEART */
+/* --------------------- */
+
+.like-comic [type="checkbox"]{
+	display: none;
+  }
+  .like-comic{
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	/* align-items: center; */
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	transition: .3s;
+  }
+  .like-comic:hover{
+	background: white;
+	}
+  
+  .heart{
+	color: linear-gradient(to top, #151a23 0%, #4b5e80 100%);
+	text-align: center;
+	user-select:none;
+	position: relative;
+	top:4px;
+  }
+  .ripple{
+	position:absolute;
+	width: 24px;
+	height: 24px;
+	background-color: red;
+	border-radius:50% ;
+	transform: scale(0);
+  }
+  
+  .like-comic [type="checkbox"]:checked ~ .heart{
+	animation-name: heart;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+  }
+  .like-comic [type="checkbox"]:checked ~ .ripple {
+	animation-name: ripple;
+	animation-duration: .6s;
+	animation-fill-mode: forwards;
+  }
+  
+  @keyframes heart {
+  
+	0% {
+	  transform: scale(0);
+	}
+	50% {
+	  transform: scale(1.1);
+	}
+	100% {
+	  transform: scale(1);
+	  color: red;
+	}
+  }
+  @keyframes ripple {
+  
+	0% {
+	  transform: scale(0);
+	}
+	50% {
+	  transform: scale(1.1);
+	}
+	100% {
+	  transform: scale(1);
+	  opacity:0;
+	}
+  }
+  
+  /* ----------------- */
+  /* FINAL BOTON HEART */
+  /* ----------------- */
