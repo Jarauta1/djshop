@@ -197,7 +197,10 @@
 /* --------- */
 .container {
   padding: 1%;
-  margin: 1%;
+  margin: 0px 0px 0px 0px;
+  padding: 0 1vmin 0 1vmin;
+  max-width: 100vw;
+
 }
 /* -------------- */
 /* BANNER LATERAL */
@@ -209,11 +212,11 @@
   background:#fff;
   font-family: 'Bangers', cursive;
   font-size: 25px;
-  
+  padding: 1vmin;
 }
 .box{
  
-  width:250px;
+  /* width:250px; */
   height:100vh;
   background:#fff;
   border: solid black;
@@ -224,19 +227,19 @@
 .box1{
   border-width: 3px 4px 3px 5px;
   border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-  transform: rotate(2deg);
+  height: 100vh;
 }
 .box2{
   width:350px;
   border-width: 3px 3px 5px 5px;
   border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-  transform: rotate(-2deg);
+  
 }
 
 .box3{
   border-width: 5px 3px 3px 5px;
   border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-  transform: rotate(2deg);
+  
 }
 
 .oddboxinner{
@@ -279,8 +282,7 @@ html, body {
     box-shadow:0 6px 6px -6px #000;
     display:inline-block;
     flex:1 1;
-    height:400px;
-    
+    width: 300px;
     margin:0.5vmin;
     overflow:hidden;
     position:relative;
@@ -288,30 +290,8 @@ html, body {
    perspective: 1000;
   }
 
-  .panel:hover .flip, .panel.hover .flip {
-      transform: rotateY(180deg);
-  }
-
-  .flip {
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-  }
-
-  .front, .back {
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-  }
-
-  .front {
-      z-index: 2;
-      transform: rotateY(0deg);
-  }
-
-  .back {
-      transform: rotateY(180deg);
+  .panel a {
+    margin: 0;
   }
   
   .text {
@@ -334,102 +314,67 @@ html, body {
     right:-6px;
     transform:skew(-15deg);
   }
-  
-  .speech {
-    background-color:#fff;
-    border:solid 2px #000;
-    border-radius:12px;
-    display:inline-block;
-    margin:.5em;
-    padding:.5em 1em;
-    position:relative;
-  }
-  
-  .speech:before {
-    border:solid 12px transparent;
-    border-left:solid 12px #000;
-    border-top:solid 12px #000;
-    bottom:-24px;
-    content:"";
-    height:0;
-    left:24px;
-    position:absolute;
-    transform:skew(-15deg);
-    width:0;
-  }
-  
-  .speech:after {
-    border:solid 10px transparent;
-    border-left:solid 10px #fff;
-    border-top:solid 10px #fff;
-    bottom:-19px;
-    content:"";
-    height:0;
-    left:27px;
-    position:absolute;
-    transform:skew(-15deg);
-    width:0;
-  }
+
   
   .panel:nth-child(1) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(2) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(3) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(4) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(5) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(6) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(7) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(8) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(9) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(10) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(11) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(12) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(13) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(14) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(15) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(16) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(17) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(18) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(19) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   .panel:nth-child(20) {
-    flex-basis: 200px;
+    flex-basis: 250px;
   }
   
   /* background colours */
@@ -453,6 +398,33 @@ html, body {
 /* --------- */
 /* FIN COMIC */
 /* --------- */
+
+/* ---------------- */
+/* TRANSICION COLOR */
+/* ---------------- */
+
+.imagen-comic {
+  filter: grayscale(100%)
+}
+
+.imagen-comic:hover {
+  filter: grayscale(0%);
+ 
+transition:0.6s all;
+}
+
+.panel:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  transition:0.6s all;
+  z-index: 10000;
+}
+
+/* -------------------- */
+/* FIN TRANSICION COLOR */
+/* -------------------- */
+
 
 /* -------------------- */
 /* MARVEL LOADER BANNER */

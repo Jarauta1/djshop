@@ -457,12 +457,12 @@
 	 border-color: #fff;
 	 border-style: none;
 }
- .starRating {
+/*  .starRating {
 	 margin-left: -22px;
 }
  .starRating > * {
 	 float: left;
-}
+} */
 /* some animtion do when load window */
  @-webkit-keyframes pulse {
 	 50% {
@@ -476,7 +476,7 @@
 		 text-shadow: 0 0 15px #777;
 	}
 }
- .starRating label {
+ /* .starRating label {
 	 height: 40px;
 	 width: 15%;
 	 position: relative;
@@ -525,11 +525,11 @@
 	 display: none;
 }
 /* " +" This will only work on IE7 or above. In IE6, the style will not be applied to any elements so used "~ " this meaning select any element after the input radio button show http://jsfiddle.net/7c05m7tv/ https://css-tricks.com/almanac/selectors/a/adjacent-sibling/ http://jsfiddle.net/7c05m7tv/70/ */
- .starRating input:checked + label:after, .starRating input:checked ~ label:after {
+/*  .starRating input:checked + label:after, .starRating input:checked ~ label:after {
 	 content: "★";
 	 color: #f9bf3b;
 	 text-shadow: 0 0 20px #f9bf3b;
-}
+} */ 
 
  
 .avatars {
@@ -573,7 +573,7 @@
 
 
 
-  .rating {
+  .ratingFilm {
     width: 40px;
     height: 37px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAyCAYAAAD845PIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkY3RjFBQjE2NEMzMzExRTdBNEExQ0VDNDc5NzVDOTJDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkY3RjFBQjE3NEMzMzExRTdBNEExQ0VDNDc5NzVDOTJDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjdGMUFCMTQ0QzMzMTFFN0E0QTFDRUM0Nzk3NUM5MkMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjdGMUFCMTU0QzMzMTFFN0E0QTFDRUM0Nzk3NUM5MkMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz72S8QWAAAElklEQVR42txaa2xMQRSerlKtVxA0CBFt0W754RWPeLZCI/jVhKQJRSOhP2jRVoUERaIiCOpRjUSFH14hafTh1YdGJBpt0RIpqkJI0Khn6pzsd5Oxdru73Tt373WSL7ezM/fe8803M3fOmQa13xKqLZmQRhhNeELIJeSrfKFNMaGthFOEaLwrGuVsq5IaStiCv7MIw6RyNuotRyqTEEK4S9hNeEXIQTkERJVYkKI5xSo8g/NzCWVS3RxCKeE7IYLw2ipKZYBQuRMhgXI56jOsotQQwnM4HQdVnI3VK4FaIwnNZlcqU1Kp1E2bUkmtTLMrNQRzqTshHmq4M1axmPANc6vZrEplgFC5B0IC9eVon2FWpWSV5kEFT8Zq3tBbLZsClSq8JCTQrgL3bTabUp1RyZVavBK+MYtSu0Co0kdCmlqVuD8nUEqFEyIlTMR3p50wm3C7E37MJNxkf7Dc3yc0SnirB6mBmLijcNUQRejpov0vzIn9fnTwBsJeQrCLulZCA4a4hqe4vnNHKpSQTlgEx3t38HIm0IQHci/WE4oIL3QYOSMI8xGiRKIjh7shqtlnEL5K2EdoY1LdsXOeIDX8TXgJxxskAo1w/qcwzrqCbKRENApXDme6SG0fEKZzD6SA0HuoVQ3Hfwhz2E90bIOLum4gPBkqjWc+wVhS2fYQzghr2Q/MLUZ/zOl4XtLb0KCvsLb1w7WNSV1GYRMh0aKEEqUdyUUmdQ7DjsdnISHJYoSS4HdX8Dhvw0czGVkeXkkKCKstQigF/rLf+eDRbpOWcCZyBFunPEKqyQmxf8fgL/u9Cjz+2vuxYuuwNPJ25aCeO2edbTP8Yz9z4Xe7uw0tV2wk7JSW+W0mI7Qdfmkb6XSZUEe7dM6sZrl4SKBN7mROjGb7GnpwAnI9ekGWOxAmTwf2J62jMCXYw8MOIHg7gonJ2Z81znIbQCgPCxm/dy3hqL9BIq8wK7CypGBoGmlbQYjfv9ITIV+DRO1b9pUwAFfVFoaNdhiInVQR+X5BkGgn1BlAKoZQiyCxl4ocRQ/0GNtHg4beB0mxHipIxaA9E2oxiNRbELPh/UpIsT0yeKGoxTVaBSl7gEhp74tVQSrWqef+K1J1BpOqV0WKQ+XwAA+/cClk14WU1kucNvtkMKlPeK/XavlKqjMqJRAuEWpwTVA9r7wlZXca394Y58f5UO06YQlhLK5c5uObWarmlbekfPlGTRKOoxnegE3DHpGj0wWIqrk8VTgOBIrR3lulYoweftyG0233hCNByonGw8KRHubotAhRdQR+5/o4tL/iQYVHTiPGb1KDCX2w9X/sop7z22cJDwmL0e60cOS7U11sqVrwexTacftFuL8Qz3O2x2jXB/74Tcom5S9Cpd85OX8c430ZfruA3uQwpcnDc5vQzo772JbieSfwfM1CpcC0i16hRw0m+h3ENFPgUAjqryFfUOPH0j0OCZ+FKPM/jnAurwrprxn48Nv1IsWnCiXi3wO3MpCp0vG7xB22QzhOJ2VrxRys1jNI5AnO+bUxCAkKsIKpMj5qXU4YJBynGoeE45zMo/0RYAB4wC9Me7D6owAAAABJRU5ErkJggg==);
@@ -586,10 +586,116 @@
     margin-top: 0px;
     }
 
-    .rating b {
+    .ratingFilm b {
       margin-left: 8px;
     }
-    .rating:hover {
+    .ratingFilm:hover {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAyCAMAAADLPWP6AAAAsVBMVEVHcEz///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8Q9rufAAAAOnRSTlMAYvS7k5b5/vwaAcMXZ35xJZqpiN95P0T38AoQbTYuzB60QlwHSp+iPI2LxLAEX+o5hMG4IVfF1SvRoK3uYwAAAiBJREFUSMeVldd26yAQRUfFAsmxJdfEJe497k7d//9h9yFxlhwjXTFPMLA5AwyMSIY5H+rDEUurAlC1g8KA1qhFEFpRJcoiUqZkKTURkYmdmE9ZRETK+NZSlmJXKSux8InHn+YjT6G1lIVYSspCzOcl1XspJnYjVVhswftN/51FPvCwchoeqn3jbCu8hrN6MEw/Oqf60AVAx38GYw2AO6yfnOMV7laHHb5NNy9+5fVuzdeKf2lqAKAzrHZFZkNANz0/nie7nOh3yTz2vaYGhjPpc9gns8LJNkv2B/oyJrZ85jFjqXOypE7UZUrwZgW9BbxJtERPLaCpZhmJ7GqoSmGooljsRESiEqpfEOorStF3M9pAqxDUgnWUOpZCH2aV2wNvQeO/UOMupFjhR7lM5KNiw+HU8rDIfNR7nbu3KtpYYhzcbibUdcmoSy6fmdQnbsZyiux/5QFlDuSZTs6+DjybayrnHOrM3uhf5/6XPmuj3yMv9St4GZGvcqgVB9Pd96CXQ2UMt2nm5mGTtunBMU5359uv7TztGGN6ujU2KeEXAN5Ty2+oGagyv5/Oswfuer5xwfu92+lNWbtah8F3Y7BVBH4oIqEfoLZXtyl1QvRMRCRZKvRi9OMdLTSqnoiIzLQhTUN0T2RU+531Y0ldoWsjkZ5mdC/2xXlaCmA8+DMwGENQmp75MKW8C+AdDUNHD8A1Jn3iX5aTjCueLC9+Ku5/NvxD9byi+MMAAAAASUVORK5CYII=);
     color: #febf15;
-    }
+	}
+	
+	/* Imagenes actores */
+	
+.img {
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+	max-width: 190px;
+	width: 100%;
+	color: #bbb;
+	font-size: 16px;
+	box-shadow: none !important;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+  }
+  
+  .img *,
+  .img:before,
+  .img:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+  }
+  
+  .img:before,
+  .img:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 50%;
+	content: '';
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+	border: 2px solid #bbb;
+	border-color: transparent #bbb;
+  }
+  
+  .img img {
+	max-width: 100%;
+	backface-visibility: hidden;
+	vertical-align: top;
+	border-radius: 50%;
+	padding: 10px;
+  }
+  
+  .img figcaption {
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 50%;
+  }
+  
+  .img i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+	z-index: 1;
+  }
+  
+  .img a {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+  }
+  
+  .img:hover figcaption,
+  .img.hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+  }
+  
+  .img:hover:before,
+  .img.hover:before,
+  .img:hover:after,
+  .img.hover:after {
+	border-width: 10px;
+  }
+  
+  .img:hover:before,
+  .img.hover:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+  
+  .img:hover:after,
+  .img.hover:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+  
+	/* FinImagenes actores */

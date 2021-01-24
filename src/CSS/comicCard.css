@@ -46,10 +46,17 @@ width: 100vw;
   display:inline-block;
   font-size:12px;
 }
-.title-content p{
+.detalles-comic{
   color:#4E4E4E;
-  margin-top:-7px;
+  margin-top:7px;
 }
+
+.Category-comic{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 .title-content img {
   margin-left:10px;
 }
@@ -140,27 +147,115 @@ h1 {
   padding-left:3px;
   padding-right:12px;
 }
-.button {
-  width:175px;
-  background:#145ce0;
-  height:50px;
-  float:left;
-  display:inline;
-  margin-right:30px;
-  text-align:center;
-  border-radius: 4px;
-  color:white;
-  font-size:13px;
-  font-weight:900;
-  margin-top:15px;
-  letter-spacing:1px;
+.boton-cesta {
+  width:700px;
 }
-.button:hover {
-  background:#146fe0;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-  cursor:pointer;
+.cart-button {
+	position: relative;
+	padding: 10px;
+	width: 700px;
+	height: 60px;
+	border: 0;
+	border-radius: 10px;
+	background-color: #4834d4;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: .3s ease-in-out;
+	overflow: hidden;
 }
+.cart-button:hover {
+	background-color: #35269b;
+}
+.cart-button:active {
+	transform: scale(.9);
+}
+
+.cart-button .fa-shopping-cart {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: -10%;
+	font-size: 2em;
+	transform: translate(-50%,-50%);
+}
+.cart-button .fa-box {
+	position: absolute;
+	z-index: 3;
+	top: -20%;
+	left: 52%;
+	font-size: 1.2em;
+	transform: translate(-50%,-50%);
+}
+.cart-button span {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	font-size: 1.2em;
+	color: #fff;
+	transform: translate(-50%,-50%);
+}
+.cart-button span.add-to-cart {
+	opacity: 1;
+}
+.cart-button span.added {
+	opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+	animation: cart 1.5s ease-in-out forwards;
+}
+.cart-button.clicked .fa-box {
+	animation: box 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.add-to-cart {
+	animation: txt1 1.5s ease-in-out forwards;
+}
+.cart-button.clicked span.added {
+	animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+	0% {
+		left: -10%;
+	}
+	40%, 60% {
+		left: 50%;
+	}
+	100% {
+		left: 110%;
+	}
+}
+@keyframes box {
+	0%, 40% {
+		top: -20%;
+	}
+	60% {
+		top: 40%;
+		left: 52%;
+	}
+	100% {
+		top: 40%;
+		left: 112%;
+	}
+}
+@keyframes txt1 {
+	0% {
+		opacity: 1;
+	}
+	20%, 100% {
+		opacity: 0;
+	}
+}
+@keyframes txt2 {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .outline {
   width:173px;
   border: 1px solid #145ce0;
@@ -177,3 +272,79 @@ h1 {
 .button p{
   padding-top:4px;
 }
+
+/* ------------ */
+/* BOTON VOLVER */
+/* -------------*/
+
+.close-button {
+	width: 50px;
+	height: 50px;
+	box-shadow: 0px 10 10px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	background: #16161600;
+	border: none;
+	left: 0%;
+	top: 0%;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: relative;
+	display: block;
+	z-index: 200;
+	text-indent: -9999px;
+  }
+  .close-button:before,
+  .close-button:after {
+	content: '';
+	width: 55%;
+	height: 2px;
+	background: #ffffff;
+	position: absolute;
+	top: 48%;
+	left: 22%;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+  }
+  .close-button:after {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+  }
+  .close-button:hover:before {
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+	top: 29%;
+	left: 18%;
+  }
+  .close-button:hover:after {
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	top: 67%;
+	left: 18%;
+  }
+  
+
+/* ---------------- */
+/* FIN BOTON VOLVER */
+/* -----------------*/
