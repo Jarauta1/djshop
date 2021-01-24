@@ -526,10 +526,10 @@ li.cardTvBlock a {
 /* PRINCIPIO BOTON HEART */
 /* --------------------- */
 
-.like [type="checkbox"]{
+.like-pelicula [type="checkbox"]{
   display: none;
 }
-.like{
+.like-pelicula{
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -539,7 +539,7 @@ li.cardTvBlock a {
   border-radius: 50%;
   transition: .3s;
 }
-.like:hover{
+.like-pelicula:hover{
   background: white;
   }
 
@@ -559,12 +559,12 @@ li.cardTvBlock a {
   transform: scale(0);
 }
 
-.like [type="checkbox"]:checked ~ .heart{
+.like-pelicula [type="checkbox"]:checked ~ .heart{
   animation-name: heart;
   animation-duration: .6s;
   animation-fill-mode: forwards;
 }
-.like [type="checkbox"]:checked ~ .ripple {
+.like-pelicula [type="checkbox"]:checked ~ .ripple {
   animation-name: ripple;
   animation-duration: .6s;
   animation-fill-mode: forwards;

@@ -68,7 +68,7 @@ let mostrarImagen = imagen.map(mostrar=>{
                             <h1>{data.title}</h1>
                             <p className="detalles-comic"><span className="rating">{data.variantDescription}</span>| <span className="studio">Marvel Studios</span>|<span>Favorito 
                            {/*  <div className="Category-comic"> */}
-                  <label className="like">
+                  <label className="like-comic">
                    <input onClick={()=>{favorito(data.title)}} type="checkbox"/>
                     <span className="material-icons heart">favorite</span>
                     {/* https://google.github.io/material-design-icons/ */}

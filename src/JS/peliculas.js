@@ -64,7 +64,7 @@ function Peliculas() {
                     
                 </div>
                 <div className="Category">
-                  <label className="like">
+                  <label className="like-pelicula">
                    <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
                     <span className="material-icons heart">favorite</span>
                     {/* https://google.github.io/material-design-icons/ */}
@@ -73,7 +73,7 @@ function Peliculas() {
                   </label>
                 </div>
                 <div className="Category2">
-                  <label className="like">
+                  <label className="like-pelicula">
                    <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
                     <span className="material-icons heart">shopping_cart</span>
                     {/* https://google.github.io/material-design-icons/ */}
