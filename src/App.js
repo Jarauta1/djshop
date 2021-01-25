@@ -1,6 +1,6 @@
 import './App.css';
-
-import {BrowserRouter, Route} from "react-router-dom"
+import {useState,useEffect} from "react"
+import {BrowserRouter, Route, Redirect} from "react-router-dom"
 
 import Header from "./JS/Header.js"
 import Login from "./JS/login.js"
@@ -15,16 +15,16 @@ import Buscador from "./JS/buscador.js"
 
 
 function App() {
-/*   const [ usuario, setUsuario] = useState({})
 
+let [ usuario, setUsuario] = useState({})
 
-  const login = (email, pass) => {
+const login = (email, pass) => {
   fetch("/login")
 }
 
-if( usuario.administrador){
+/* if(usuario.administrador){
 return
-}else{´
+}else{
   return <Redirect to="/" />
 } */
 

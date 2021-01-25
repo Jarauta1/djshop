@@ -29,12 +29,32 @@ function Peliculas() {
   }
 
   function favorito (titulo) {
-    console.log(titulo)
-    return(<>
+      
+    fetch("http://localhost:3000/peliculas",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+  }
+
+  function visualizado (titulo) {
+    fetch("http://localhost:3000/peliculas/visualizado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({pelicula:titulo}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+  }
+
     
     
-    </>
-  )}
 
   let mostrarPeliculas = data.map(pelicula=>{
     return(<>
@@ -74,7 +94,7 @@ function Peliculas() {
                   </div>
                   <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
                     <div className="separacion"> 
-                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`}>
+                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={visualizado}>
                         <a className="detalles">
                           <div className="view-story">
                             <span>Detalles</span>
