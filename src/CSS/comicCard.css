@@ -72,7 +72,7 @@ width: 100vw;
   margin-left:10px;
   margin-right:10px;
 }
-h1 {
+h2 {
   color:white;
   font-size:26px;
   font-family:sans-serif;
@@ -147,47 +147,53 @@ h1 {
   padding-left:3px;
   padding-right:12px;
 }
-.boton-cesta {
-  width:700px;
+.boton-cesta-comic {
+	width:700px;
+	outline: none;
 }
-.cart-button {
+.cart-button-comic {
 	position: relative;
 	padding: 10px;
 	width: 700px;
 	height: 60px;
-	border: 0;
-	border-radius: 10px;
+	border: none;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 	background-color: #4834d4;
 	outline: none;
 	cursor: pointer;
-	color: #fff;
+	color: #4834d4;
 	transition: .3s ease-in-out;
 	overflow: hidden;
+	margin-top: 10px;
 }
-.cart-button:hover {
+.cart-button-comic:hover {
 	background-color: #35269b;
 }
-.cart-button:active {
+.cart-button-comic:active {
 	transform: scale(.9);
+	outline: none;
 }
 
-.cart-button .fa-shopping-cart {
+.cart-button-comic .fa-shopping-cart {
 	position: absolute;
 	z-index: 2;
 	top: 50%;
 	left: -10%;
 	font-size: 2em;
 	transform: translate(-50%,-50%);
+	outline: none;
 }
-.cart-button .fa-box {
+.cart-button-comic .fa-box {
 	position: absolute;
 	z-index: 3;
 	top: -20%;
 	left: 52%;
 	font-size: 1.2em;
 	transform: translate(-50%,-50%);
+	outline: none;
 }
-.cart-button span {
+.cart-button-comic span {
 	position: absolute;
 	z-index: 3;
 	left: 50%;
@@ -195,25 +201,30 @@ h1 {
 	font-size: 1.2em;
 	color: #fff;
 	transform: translate(-50%,-50%);
+	outline: none;
 }
-.cart-button span.add-to-cart {
+.cart-button-comic span.add-to-cart {
 	opacity: 1;
 }
-.cart-button span.added {
+.cart-button-comic span.added {
 	opacity: 0;
 }
 
-.cart-button.clicked .fa-shopping-cart {
+.cart-button-comic.clicked .fa-shopping-cart {
 	animation: cart 1.5s ease-in-out forwards;
+	outline: none;
 }
-.cart-button.clicked .fa-box {
+.cart-button-comic.clicked .fa-box {
 	animation: box 1.5s ease-in-out forwards;
+	outline: none;
 }
-.cart-button.clicked span.add-to-cart {
+.cart-button-comic.clicked span.add-to-cart {
 	animation: txt1 1.5s ease-in-out forwards;
+	outline: none;
 }
-.cart-button.clicked span.added {
+.cart-button-comic.clicked span.added {
 	animation: txt2 1.5s ease-in-out forwards;
+	outline: none;
 }
 @keyframes cart {
 	0% {

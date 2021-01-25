@@ -1,4 +1,3 @@
-/* import logo from './logo.svg'; */
 import './App.css';
 
 import {BrowserRouter, Route} from "react-router-dom"
@@ -12,6 +11,7 @@ import Footer from "./JS/Footer.js"
 import PeliculaCard from "./JS/peliculaCard.js"
 import Comics from "./JS/comics.js"
 import ComicCard from "./JS/comicCard.js"
+import Buscador from "./JS/buscador.js"
 
 
 function App() {
@@ -33,30 +33,29 @@ return
   <Header/*  usuario={usuario} *//>
   <Route exact path="/">
     <br></br>
-<div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
-
-<div><Portada/></div>
+      <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
+      <div><Portada/></div>
   </Route>
-  <Route exact path="/ropa">
-<div><p>Ropa</p></div>
+  <Route exact path="/buscador">
+    <Buscador/>
   </Route>
   <Route exact path="/login">
     <Login /* login={login} */ />
   </Route>
   <Route exact path="/zapatillas">
-<div><p>Zapatillas</p></div>
+    <div><p>Zapatillas</p></div>
   </Route>
   <Route exact path="/peliculas">
-<Peliculas/>
+    <Peliculas/>
   </Route>
-<Route exact path="/peliculas/:titulo/:id">
-  <PeliculaCard/>
-</Route>
+  <Route exact path="/peliculas/:titulo/:id">
+    <PeliculaCard/>
+  </Route>
   <Route exact path="/libros">
-<Libros />
+    <Libros />
   </Route>
   <Route exact path="/comics">
-<Comics/>
+    <Comics/>
   </Route>
   <Route exact path="/comics/:id">
     <ComicCard/>

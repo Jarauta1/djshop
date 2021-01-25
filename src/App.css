@@ -57,7 +57,7 @@ div {
 .vp {
     position: relative;
     margin: 10;
-    padding: 0 .5em;
+    /* padding: 0 .5em; */
     max-width: 90em;
 }
 
@@ -213,8 +213,6 @@ ul#menu-topo li {
 ul#menu-topo li a {
   display: inline-block;
 
-  margin-right: 10px;
-  margin-left: 10px;
   padding: 4px 10px;
 
   text-decoration: none;

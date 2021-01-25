@@ -29,6 +29,13 @@ li.cardTvBlock {
   z-index: 0;
   margin: 2%;
 }
+
+@media only screen and (max-width: 700px) {
+  li.cardTvBlock {
+    margin-left: 12%;
+  }
+}
+
 li.cardTvBlock a:hover > .BlockBar {
   transform: translateY(225px);
   transition: .3s;
