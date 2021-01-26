@@ -4,6 +4,7 @@ import {Link,Redirect} from "react-router-dom"
 
 function Peliculas(props) {
   let [usuario,setUsuario] = useState(props.usuario)
+  let [check,setCheck] = useState(false)
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
@@ -30,9 +31,10 @@ function Peliculas(props) {
 
   function favorito (titulo,cartel,id) {
     console.log(titulo,cartel,id)
+    setCheck(!check)
   
     fetch("https://dj-server.herokuapp.com/peliculas/favoritas",{
-        method: "POST",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
@@ -72,6 +74,7 @@ function Peliculas(props) {
     
 
   let mostrarPeliculas = data.map(pelicula=>{
+   
     return(<>
             <li className="cardTvBlock">
               <a>
@@ -91,7 +94,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox"/>
+                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox" checked={check}/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -137,7 +140,9 @@ function Peliculas(props) {
     }
   }
 
-  if (numPag == 1) {
+  if (usuario == "nada" && check) {
+      return <Redirect to="/login"/>
+  } else if (numPag == 1) {
       return(<>
               <div className="container-fluid">
                 <div className="row">
