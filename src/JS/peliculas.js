@@ -59,7 +59,7 @@ function Peliculas(props) {
   }
 
   function cesta (titulo,cartel,id,descargas) {
-    fetch("http://dj-server.herokuapp.com/peliculas/cesta",{
+    fetch("https://dj-server.herokuapp.com/peliculas/cesta",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
