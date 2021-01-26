@@ -16,7 +16,7 @@ function ComicCard() {
 
        setData(datos.data.results[0])
        setImagen(datos.data.results[0].images)
-          
+          console.log(datos)
     })
     },[id])
 

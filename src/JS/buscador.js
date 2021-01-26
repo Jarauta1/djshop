@@ -11,7 +11,7 @@ function Buscador() {
 
   useEffect(function(){
     
-    fetch(`https://api.rainforestapi.com/request?api_key=E04BC7E714DB4168B3DE80E019004E39&type=search&amazon_domain=amazon.es&search_term=${busqueda}`).then(respuesta=>respuesta.json()).then(datos=>{
+    fetch(`https://api.rainforestapi.com/request?api_key=A69FDC4BD05A4DFC93B13ED84BF78194&type=search&amazon_domain=amazon.es&search_term=${busqueda}`).then(respuesta=>respuesta.json()).then(datos=>{
      setData(datos.search_results)
      console.log(datos)
     })
@@ -49,7 +49,7 @@ function Buscador() {
         </div>
 
         <p class="ProductCard__description">
-          The Low 2 in Alloy grey is constructed with a premium nubuck leather upper and a leather coated Sanipur insole.
+         {/*  {resultados.brand} */}
         </p>
       </div>
     </a>
@@ -57,9 +57,15 @@ function Buscador() {
   })
  
     return(<>
-            <input onChange={guardarBusqueda} className="input-buscador"/>
-            <button onClick={buscador}>Pulsar</button>
-              
+  
+            <div className="search">
+              <input onChange={guardarBusqueda} type="text" className="searchTerm" placeHolder={busqueda}/>
+              <button onClick={buscador} type="submit" className="searchButton">
+                <i className="fa fa-search"></i>
+              </button>
+            </div>
+           
+            
             <div class="ProductSet ProductSet--grid">
               {mostrarProductos}
               </div>

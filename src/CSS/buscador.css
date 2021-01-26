@@ -1,3 +1,59 @@
+/* ------------ */
+/* INPUT BUSCAR */
+/* ------------ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.search {
+  width: 100%;
+  display: flex;
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .search {
+    width: 100%;
+    display: flex;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+  }
+}
+
+/* ---------------- */
+/* FIN INPUT BUSCAR */
+/* ---------------- */
+
 /* ---------------- */
 /* TARJETA PRODUCTO */
 /* ---------------- */
@@ -56,6 +112,7 @@
   padding: 1rem;
 }
 .ProductSet--grid {
+  margin-top: 80px;/* modificado */
   margin-left: 1rem;
   justify-content: center;
 }
@@ -87,7 +144,8 @@
  }
 }
 .ProductCard--grid {
-  width: 25rem;
+  width: 15rem;/* modificado */
+  height: 25rem;/* modificado */
   flex-direction: column;
 }
 .ProductCard--list {
@@ -109,9 +167,10 @@
 }
 .ProductCard__img {
   width: 100%;
+  height: 200px;
 }
 .ProductCard--grid .ProductCard__details {
-  padding: 3rem 2.5rem;
+  padding: 1rem 1rem;/* modificado */
 }
 .ProductCard--list .ProductCard__details {
   margin: 2.5rem;
@@ -139,10 +198,11 @@
 }
 .ProductCard__title {
   color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;/* modificado */
   text-transform: uppercase;
   font-family: var(--font-secondary);
   font-weight: 400;
+  font-size: 16px;/* modificado */
 }
 .ProductCard--list .ProductCard__title {
   margin-bottom: 1.5rem;

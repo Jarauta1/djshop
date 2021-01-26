@@ -14,22 +14,22 @@ function Portada () {
 					<div className="col-3">
 						<div className="row">
 							<div className="col-12">
-								<div className="book-card">
-    								<div className="book-card__cover">
-     									<div className="book-card__book">
-        									<div className="book-card__book-front">
-          										<img className="book-card__img" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg"/>
+								<div className="book-card-portada">
+    								<div className="book-card__cover-portada">
+     									<div className="book-card__book-portada">
+        									<div className="book-card__book-front-portada">
+          										<img className="book-card__img-portada" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg"/>
         									</div> 
-        									<div className="book-card__book-back"></div>
-        									<div className="book-card__book-side"></div>
+        									<div className="book-card__book-back-portada"></div>
+        									<div className="book-card__book-side-portada"></div>
       									</div>  
     								</div>    
   								</div>
     							<div>
-      								<div className="book-card__title">
+      								<div className="book-card__title-portada">
         								| batman
         							</div>
-      								<div className="book-card__author">
+      								<div className="book-card__author-portada">
         								| J. K. Rowling
         							</div>
     							</div> 

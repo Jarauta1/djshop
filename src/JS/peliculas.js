@@ -1,9 +1,9 @@
 import '../CSS/Peliculas.css';
 import {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
+import {Link,Redirect} from "react-router-dom"
 
-function Peliculas() {
-
+function Peliculas(props) {
+  let [usuario,setUsuario] = useState(props.usuario)
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
@@ -28,26 +28,41 @@ function Peliculas() {
     }
   }
 
-  function favorito (titulo) {
-      
-    fetch("http://localhost:3000/peliculas",{
+  function favorito (titulo,cartel,id) {
+    console.log(usuario)
+  
+    fetch("http://dj-server.herokuapp.com/peliculas/favoritas",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+     
+    
+  }
+
+  function visualizado (titulo,cartel,id) {
+    fetch("http://dj-server.herokuapp.com/peliculas/visualizado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
   }
 
-  function visualizado (titulo) {
-    fetch("http://localhost:3000/peliculas/visualizado",{
+  function cesta (titulo,cartel,id,descargas) {
+    fetch("http://dj-server.herokuapp.com/peliculas/cesta",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({pelicula:titulo}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id,descargas:descargas}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
@@ -76,7 +91,7 @@ function Peliculas() {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
+                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox"/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -85,7 +100,7 @@ function Peliculas() {
                   </div>
                   <div className="Category2">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title)}} type="checkbox"/>
+                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,pelicula.popularity)}} type="checkbox"/>
                       <span className="material-icons heart">shopping_cart</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -94,7 +109,7 @@ function Peliculas() {
                   </div>
                   <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
                     <div className="separacion"> 
-                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={visualizado}>
+                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id)}}>
                         <a className="detalles">
                           <div className="view-story">
                             <span>Detalles</span>

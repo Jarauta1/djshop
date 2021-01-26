@@ -707,7 +707,7 @@
 	  }
   
 	  .cardMovie .container .back-cover {
-		  background-size: ;
+		  background-size: 100vw;
 	  }
   
 	  .cardMovie .container .about-movie .colum-one {
@@ -717,5 +717,9 @@
 	  
 	  .persons {
 		  display: none
+	  }
+	  
+	  .cart-button {
+		  font-size: 12px;
 	  }
   }
