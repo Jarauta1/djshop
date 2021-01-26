@@ -29,7 +29,7 @@ function Peliculas(props) {
   }
 
   function favorito (titulo,cartel,id) {
-    console.log(usuario)
+    console.log(titulo,cartel,id)
   
     fetch("http://dj-server.herokuapp.com/peliculas/favoritas",{
         method: "POST",
