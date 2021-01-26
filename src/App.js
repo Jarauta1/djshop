@@ -12,11 +12,13 @@ import PeliculaCard from "./JS/peliculaCard.js"
 import Comics from "./JS/comics.js"
 import ComicCard from "./JS/comicCard.js"
 import Buscador from "./JS/buscador.js"
+import Zapatillas from "./JS/zapatillas.js"
 
 
 function App() {
 
-let [ usuario, setUsuario] = useState({})
+/* let [ usuario, setUsuario] = useState({}) */
+let [usuario, setUsuario] = useState("nada")
 
 const login = (email, pass) => {
   fetch("/login")
@@ -30,7 +32,7 @@ return
 
 
   return(<BrowserRouter>
-  <Header/*  usuario={usuario} *//>
+  <Header usuario={usuario}/>
   <Route exact path="/">
     <br></br>
       <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
@@ -43,10 +45,10 @@ return
     <Login /* login={login} */ />
   </Route>
   <Route exact path="/zapatillas">
-    <div><p>Zapatillas</p></div>
+    <Zapatillas/>
   </Route>
   <Route exact path="/peliculas">
-    <Peliculas/>
+    <Peliculas usuario={usuario}/>
   </Route>
   <Route exact path="/peliculas/:titulo/:id">
     <PeliculaCard/>

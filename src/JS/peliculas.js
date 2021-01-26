@@ -31,7 +31,7 @@ function Peliculas(props) {
   function favorito (titulo,cartel,id) {
     console.log(titulo,cartel,id)
   
-    fetch("dj-server.herokuapp.com/peliculas/favoritas",{
+    fetch("/peliculas/favoritas",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
