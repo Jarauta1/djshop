@@ -33,12 +33,12 @@ function Peliculas(props) {
     console.log(titulo,cartel,id)
     setCheck(!check)
   
-    fetch("https://dj-server.herokuapp.com/peliculas/favoritas",{
-        method: "PUT",
+    fetch("http://localhost:3000/peliculas/favoritas",{
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id)}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
@@ -47,24 +47,24 @@ function Peliculas(props) {
   }
 
   function visualizado (titulo,cartel,id) {
-    fetch("http://dj-server.herokuapp.com/peliculas/visualizado",{
+    fetch("http://localhost:3000/peliculas/visualizado",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id)}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
   }
 
   function cesta (titulo,cartel,id,descargas) {
-    fetch("https://dj-server.herokuapp.com/peliculas/cesta",{
+    fetch("http://localhost:3000/peliculas/cesta",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id,descargas:descargas}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id),descargas:parseInt(descargas)}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })

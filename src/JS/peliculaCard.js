@@ -49,7 +49,7 @@ function PeliculaCard() {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:id,descargas:descargas}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id),descargas:parseInt(descargas)}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })

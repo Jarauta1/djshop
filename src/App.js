@@ -18,7 +18,7 @@ import Zapatillas from "./JS/zapatillas.js"
 function App() {
 
 /* let [ usuario, setUsuario] = useState({}) */
-let [usuario, setUsuario] = useState("nada")
+let [usuario, setUsuario] = useState("juan")
 
 const login = (email, pass) => {
   fetch("/login")
