@@ -4,10 +4,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
-section {
+.login {
+  font-family: 'Poppins', sans-serif;
   position: relative;
   min-height: 100vh;
   background-color: #f8dd30;
@@ -17,7 +17,7 @@ section {
   padding: 20px;
 }
 
-section .container-login {
+.login .container-login {
   position: relative;
   width: 800px;
   height: 500px;
@@ -26,7 +26,7 @@ section .container-login {
   overflow: hidden;
 }
 
-section .container-login .user {
+.login .container-login .user {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@ section .container-login .user {
   display: flex;
 }
 
-section .container-login .user .imgBx {
+.login .container-login .user .imgBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -43,7 +43,7 @@ section .container-login .user .imgBx {
   transition: 0.5s;
 }
 
-section .container-login .user .imgBx img {
+.login .container-login .user .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,7 +52,7 @@ section .container-login .user .imgBx img {
   object-fit: cover;
 }
 
-section .container-login .user .formBx {
+.login .container-login .user .formBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -64,7 +64,7 @@ section .container-login .user .formBx {
   transition: 0.5s;
 }
 
-section .container-login .user .formBx form h2 {
+.login .container-login .user .formBx .opcion-registro h2 {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -75,9 +75,8 @@ section .container-login .user .formBx form h2 {
   color: #555;
 }
 
-section .container-login .user .formBx form input {
+.login .container-login .user .formBx .opcion-registro input {
   position: relative;
-  width: 100%;
   padding: 10px;
   background: #f5f5f5;
   color: #333;
@@ -90,7 +89,20 @@ section .container-login .user .formBx form input {
   font-weight: 300;
 }
 
-section .container-login .user .formBx form input[type='submit'] {
+.login .container-login .user .formBx .opcion-registro .input-long {
+  width: 100%;
+}
+
+.login .container-login .user .formBx .opcion-registro .input-short1 {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.login .container-login .user .formBx .opcion-registro .input-short2 {
+  width: 49%;
+}
+
+.login .container-login .user .formBx .opcion-registro input[type='submit'] {
   max-width: 100px;
   background: #677eff;
   color: #fff;
@@ -101,7 +113,7 @@ section .container-login .user .formBx form input[type='submit'] {
   transition: 0.5s;
 }
 
-section .container-login .user .formBx form .signup {
+.login .container-login .user .formBx .opcion-registro .signup {
   position: relative;
   margin-top: 20px;
   font-size: 12px;
@@ -111,62 +123,63 @@ section .container-login .user .formBx form .signup {
   font-weight: 300;
 }
 
-section .container-login .user .formBx form .signup a {
+.login .container-login .user .formBx .opcion-registro .signup a {
   font-weight: 600;
   text-decoration: none;
   color: #677eff;
+  cursor: pointer;
 }
 
-section .container-login .signupBx {
+.login .container-login .signupBx {
   pointer-events: none;
 }
 
-section .container-login.active .signupBx {
+.login .container-login.active .signupBx {
   pointer-events: initial;
 }
 
-section .container-login .signupBx .formBx {
+.login .container-login .signupBx .formBx {
   left: 100%;
 }
 
-section .container-login.active .signupBx .formBx {
+.login .container-login.active .signupBx .formBx {
   left: 0;
 }
 
-section .container-login .signupBx .imgBx {
+.login .container-login .signupBx .imgBx {
   left: -100%;
 }
 
-section .container-login.active .signupBx .imgBx {
+.login .container-login.active .signupBx .imgBx {
   left: 0%;
 }
 
-section .container-login .signinBx .formBx {
+.login .container-login .signinBx .formBx {
   left: 0%;
 }
 
-section .container-login.active .signinBx .formBx {
+.login .container-login.active .signinBx .formBx {
   left: 100%;
 }
 
-section .container-login .signinBx .imgBx {
+.login .container-login .signinBx .imgBx {
   left: 0%;
 }
 
-section .container-login.active .signinBx .imgBx {
+.login .container-login.active .signinBx .imgBx {
   left: -100%;
 }
 
 @media (max-width: 991px) {
-  section .container-login {
+  .login .container-login {
     max-width: 400px;
   }
 
-  section .container-login .imgBx {
+  .login .container-login .imgBx {
     display: none;
   }
 
-  section .container-login .user .formBx {
+  .login .container-login .user .formBx {
     width: 100%;
   }
 }

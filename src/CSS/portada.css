@@ -601,7 +601,7 @@ nav>ul>li>ul{
 	display: none;
 	position: absolute;
 }
-nav>ul>li:hover>ul,form{
+nav>ul>li:hover>ul,.form-portada{
 	background: #000;
 	display: block;
 	position: absolute;
@@ -612,7 +612,7 @@ nav>ul>li>ul a:hover{
 .search{
 	position: relative;
 }
-form{
+.form-portada{
 	
 	border-top: 1px solid #ff3737;
 	position: absolute;
@@ -620,7 +620,7 @@ form{
 	display: flex;
 	right: -100px;
 }
-form #submit{
+.form-portada #submit{
 	display: none;
 }
 .border{

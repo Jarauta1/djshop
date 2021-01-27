@@ -28,16 +28,22 @@ function Comics () {
     let mostrarComics= info.map(resultados=>{
                                     {contador = 0}
                                     return(<>
-                                            <div className="panel">
-                                                <Link to={`/comics/${resultados.id}`}>
-                                                    {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
-                                                        return(<><img className="imagen-comic" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300" />
+                                    <div>
+                                    <Link to={`/comics/${resultados.id}`}>
+                                    {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
+                                                        return(<><img className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
+                                                        
+                                               
                                                         </>)}
                                                     })}
+                                                    <div class="box-top special1">
                                                     <p className="text top-left">{resultados.title}</p>
                                                     <p className="text bottom-right">{resultados.prices[0].price} €</p>
-                                                </Link>
-                                            </div>
+                                                </div>
+                                            </Link>
+                                    </div>
+
+                                            
                                         </>)
     })
 
@@ -103,21 +109,21 @@ function Comics () {
             </header>
             <div className="container">
                 <div className="row">
-                    <div className="col-1">
+                    {/* <div className="col-1">
                         <div className="box box1">
                             <div className="oddboxinner"> bangers?</div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="col-10">
-                        <article className="comic">
+                        <div className="container-comic">
                             {mostrarComics}
-                        </article>
+                        </div>
                     </div>
-                    <div className="col-1">
+                    {/* <div className="col-1">
                         <div className="box box1">
                             <div className="oddboxinner"> bangers?</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <footer><p>{data.attributionText}</p></footer>
