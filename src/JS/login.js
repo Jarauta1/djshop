@@ -1,15 +1,30 @@
 import '../CSS/login.css';
 import accederFoto from "../Imagenes/acceder.jpg"
 
-import {useState} from "react"
+import {useState,useEffect} from "react"
 
 function Login () {
 
   let [emailAcceso, setEmailAcceso] = useState("")
   let [eventMailAcceso, setEventMailAcceso] = useState("")
-
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
   let [eventContrasenaAcceso, setEventContrasenaAcceso] =useState("")
+
+  let [nombreRegistro,setNombreRegistro] = useState("")
+  let [eventNombreRegistro,setEventNombreRegistro] = useState("")
+  let [apellido1Registro,setApellido1Registro] = useState("")
+  let [eventApellido1Registro,setEventApellido1Registro] = useState("")
+  let [apellido2Registro,setApellido2Registro] = useState("")
+  let [eventApellido2Registro,setEventApellido2Registro] = useState("")
+  let [fechaRegistro,setFechaRegistro] = useState("")
+  let [eventFechaRegistro,setEventFechaRegistro] = useState("")
+  let [emailRegistro,setEmailRegistro] = useState("")
+  let [eventEmailRegistro,setEventEmailRegistro] = useState("")
+  let [passwordRegistro,setPasswordRegistro] = useState("")
+  let [eventPasswordRegistro,setEventPasswordRegistro] = useState("")
+  let [confirmacionRegistro,setConfirmacionRegistro] = useState("")
+  let [eventConfirmacionRegistro,setEventConfirmacionRegistro] = useState("")
+
 
     function cambioPantalla () {
   
@@ -18,23 +33,87 @@ function Login () {
 
 function changeMailAcceso(e) {
   setEventMailAcceso(e.target.value)
-  
 }
 
 function changeContrasenaAcceso(e) {
-  
   setEventContrasenaAcceso(e.target.value)
+}
+
+function changeNombreRegistro(e) {
+  setEventNombreRegistro(e.target.value)
+}
+
+function changeApellido1Registro(e) {
+  setEventApellido1Registro(e.target.value)
+}
+
+function changeApellido2Registro(e) {
+  setEventApellido2Registro(e.target.value)
+}
+
+function changeFechaRegistro(e) {
+  setEventFechaRegistro(e.target.value)
+}
+
+function changeEmailRegistro(e) {
+  setEventFechaRegistro(e.target.value)
+}
+
+function changePasswordRegistro(e) {
+  setEventPasswordRegistro(e.target.value)
+}
+
+function changeConfirmacionRegistro(e) {
+  setEventConfirmacionRegistro(e.target.value)
 }
 
 function acceder() {
   setEmailAcceso(eventMailAcceso)
   setContrasenaAcceso(eventContrasenaAcceso)
-  console.log(emailAcceso,contrasenaAcceso)
+
+  fetch("usuarios/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({mail: emailAcceso, password: contrasenaAcceso}),
+  }).then((res)=>res.json()).then((res)=>{
+    console.log(res)
+    document.getElementById("mensajeAcceso").innerHTML = `<span>${res.mensaje}</span>`
+    if (res.entrar == "si") {
+      console.log(emailAcceso)
+    }
+  })
 }
 
 function registrar() {
+  setNombreRegistro(eventNombreRegistro)
+  setApellido1Registro(eventApellido1Registro)
+  setApellido2Registro(eventApellido2Registro)
+  setFechaRegistro(eventFechaRegistro)
+  setEmailRegistro(eventEmailRegistro)
+  setPasswordRegistro(eventPasswordRegistro)
+  setConfirmacionRegistro(eventConfirmacionRegistro)
 
+  if (passwordRegistro.length < 6) {
+    document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña debe tener al menos 6 carácteres</span>"
+  } else {
+    if (confirmacionRegistro !== passwordRegistro) {
+      document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña no coincide</span>"
+    } else {
+      fetch("http://localhost:3000/usuarios/registro",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({nombre: nombreRegistro,apellido1: apellido1Registro, apellido2: apellido2Registro, fecha: fechaRegistro, mail: emailRegistro, password: passwordRegistro}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+    }
+  }
 
+  
 
 }
     
@@ -50,6 +129,7 @@ function registrar() {
             <input onChange={changeMailAcceso} className="input-long" type="text" name="" placeholder="Correo electrónico" />
             <input onChange={changeContrasenaAcceso} className="input-long" type="password" name="" placeholder="Contraseña" />
             <input onClick={acceder} className="input-long" type="submit" name="" value="Acceder"/>
+            <div id="mensajeAcceso"></div>
             <p className="signup">
               ¿No tienes cuenta?
               <a onClick={cambioPantalla}>  Regístrate</a>
@@ -61,14 +141,15 @@ function registrar() {
         <div className="formBx">
           <div className="opcion-registro">
             <h2>CREA UNA CUENTA</h2>
-            <input className="input-long" type="text" name="nombre" placeholder="Nombre"/>
-            <input className="input-short1" type="text" name="primerApellido" placeholder="Primer apellido"/>
-            <input className="input-short2" type="text" name="segundoApellido" placeholder="Segundo apellido"/>
-            <input className="input-long" type="date" name="fecha" placeholder="Fecha nacimiento" />
-            <input className="input-long" type="email" name="email" placeholder="Correo electrónico" />
-            <input className="input-long" type="password" name="contraseña" placeholder="Contraseña" />
-            <input className="input-long" type="password" name="confContraseña" placeholder="Confirmar contraseña" />
+            <input onChange={changeNombreRegistro} className="input-long" type="text" name="nombre" placeholder="Nombre"/>
+            <input onChange={changeApellido1Registro} className="input-short1" type="text" name="primerApellido" placeholder="Primer apellido"/>
+            <input onChange={changeApellido2Registro} className="input-short2" type="text" name="segundoApellido" placeholder="Segundo apellido"/>
+            <input onChange={changeFechaRegistro} className="input-long" type="date" name="fecha" placeholder="Fecha nacimiento" />
+            <input onChange={changeEmailRegistro} className="input-long" type="email" name="email" placeholder="Correo electrónico" />
+            <input onChange={changePasswordRegistro} className="input-long" type="password" name="contraseña" placeholder="Contraseña" />
+            <input onChange={changeConfirmacionRegistro} className="input-long" type="password" name="confContraseña" placeholder="Confirmar contraseña" />
             <input onClick={registrar} className="input-long" type="submit" name="" value="Regístrate" />
+            <div id="mensajeRegistro"></div>
             <p className="signup">
               ¿Ya tienes una cuenta? 
               <a onClick={cambioPantalla}>  INICIAR SESIÓN</a>

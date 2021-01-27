@@ -26,25 +26,28 @@ function Comics () {
     let element = document.getElementById("animate");
 
     let mostrarComics= info.map(resultados=>{
-                                    {contador = 0}
-                                    return(<>
-                                    <div>
-                                    <Link to={`/comics/${resultados.id}`}>
-                                    {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
-                                                        return(<><img className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
-                                                        
-                                               
-                                                        </>)}
-                                                    })}
-                                                    <div class="box-top special1">
-                                                    <p className="text top-left">{resultados.title}</p>
-                                                    <p className="text bottom-right">{resultados.prices[0].price} €</p>
-                                                </div>
-                                            </Link>
-                                    </div>
+        if (resultados.description !== null) {
+            {contador = 0}
+            return(<>
+            <div>
+            <Link to={`/comics/${resultados.id}`}>
+            {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
+                                return(<><img className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
+                                
+                       
+                                </>)}
+                            })}
+                            <div class="box-top special1">
+                            <p className="text top-left">{resultados.title}</p>
+                            <p className="text bottom-right">{resultados.prices[0].price} €</p>
+                        </div>
+                    </Link>
+            </div>
 
-                                            
-                                        </>)
+                    
+                </>)
+        }
+                                    
     })
 
     if (isLoading) {
