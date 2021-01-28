@@ -4,7 +4,8 @@ import {Link,Redirect} from "react-router-dom"
 
 function Peliculas(props) {
   let [usuario,setUsuario] = useState(props.usuario)
-  let [check,setCheck] = useState(false)
+  let [checkFavoritos,setCheckFavoritos] = useState(false)
+  let [checkCesta,setCheckCesta] = useState(false)
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
@@ -30,8 +31,7 @@ function Peliculas(props) {
   }
 
   function favorito (titulo,cartel,id) {
-    console.log(titulo,cartel,id)
-    setCheck(!check)
+    setCheckFavoritos(!checkFavoritos)
   
     fetch("http://localhost:3000/peliculas/favoritas",{
         method: "POST",
@@ -59,6 +59,7 @@ function Peliculas(props) {
   }
 
   function cesta (titulo,cartel,id,descargas) {
+    setCheckCesta(!checkCesta)
     fetch("http://localhost:3000/peliculas/cesta",{
         method: "POST",
         headers: {
@@ -94,7 +95,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox" checked={check}/>
+                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox" checked={checkFavoritos}/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -103,7 +104,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category2">
                     <label className="like-pelicula">
-                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,pelicula.popularity)}} type="checkbox"/>
+                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,pelicula.popularity)}} type="checkbox" checked={checkCesta}/>
                       <span className="material-icons heart">shopping_cart</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -140,8 +141,11 @@ function Peliculas(props) {
     }
   }
 
-  if (usuario == "nada" && check) {
+  if (usuario == "nada" && checkFavoritos) {
+    localStorage.setItem("retorno", "peliculas")
       return <Redirect to="/login"/>
+  } else if ( usuario == "nada" && checkCesta) {
+      return <Redirect to ="/login"/>
   } else if (numPag == 1) {
       return(<>
               <div className="container-fluid">

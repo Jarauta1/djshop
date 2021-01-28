@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 import '../App.css';
+import logo from "../Imagenes/logo_header.png"
 
 
 
@@ -16,6 +17,11 @@ function Header(props) {
                             </header>
                             <input type="checkbox" id="nav-toggle" className="nav-toggle"/>	
                             <ul id="menu-topo" className="context_menu-list">
+                                <li className="context_menu-item nav-item">
+                                    <Link to="/">
+                                        <a href="/">LOGO HERE</a>
+                                    </Link>
+                                </li>
                                 <li className="context_menu-item nav-item">
                                     <Link to="/">
                                         <a href="/">INICIO</a>
@@ -90,6 +96,11 @@ function Header(props) {
                             <input type="checkbox" id="nav-toggle" className="nav-toggle"/>	
                             <ul id="menu-topo" className="context_menu-list">
                                 <li className="context_menu-item nav-item">
+                                   
+                                        <img src={logo} height="30" alt=""/>
+                                    
+                                </li>
+                                <li className="context_menu-item nav-item">
                                     <Link to="/">
                                         <a href="/">INICIO</a>
                                     </Link>
@@ -131,6 +142,13 @@ function Header(props) {
                                             <strong>Iniciar sesión</strong>
                                         </a>
                                     </li>
+                                    <li className="js-guest-user context_menu-item-last">
+                                        <a href="/">
+                                            <i className="icon user-line"></i>
+                                            <strong>Cesta</strong>
+                                        </a>
+                                    </li>
+                                    
                                 </ul>
                             </ul>
                         </div>

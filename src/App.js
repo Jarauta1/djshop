@@ -51,7 +51,7 @@ return
     <Peliculas usuario={usuario}/>
   </Route>
   <Route exact path="/peliculas/:titulo/:id">
-    <PeliculaCard/>
+    <PeliculaCard usuario={usuario}/>
   </Route>
   <Route exact path="/libros">
     <Libros />

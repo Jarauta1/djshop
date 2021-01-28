@@ -2,9 +2,13 @@ import '../CSS/login.css';
 import accederFoto from "../Imagenes/acceder.jpg"
 
 import {useState,useEffect} from "react"
+import {Redirect} from "react-router-dom"
 
 function Login () {
-
+  let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
+  console.log(retorno)
+  let [vuelta,setVuelta] = useState(false)
+  
   let [emailAcceso, setEmailAcceso] = useState("")
   let [eventMailAcceso, setEventMailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
@@ -56,7 +60,7 @@ function changeFechaRegistro(e) {
 }
 
 function changeEmailRegistro(e) {
-  setEventFechaRegistro(e.target.value)
+  setEventEmailRegistro(e.target.value)
 }
 
 function changePasswordRegistro(e) {
@@ -71,17 +75,18 @@ function acceder() {
   setEmailAcceso(eventMailAcceso)
   setContrasenaAcceso(eventContrasenaAcceso)
 
-  fetch("usuarios/login", {
+  fetch("http://localhost:3000/usuarios/login", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
     },
     body: JSON.stringify({mail: emailAcceso, password: contrasenaAcceso}),
   }).then((res)=>res.json()).then((res)=>{
-    console.log(res)
+    window.alert(res.mensaje)
     document.getElementById("mensajeAcceso").innerHTML = `<span>${res.mensaje}</span>`
     if (res.entrar == "si") {
       console.log(emailAcceso)
+      setVuelta(true)
     }
   })
 }
@@ -94,7 +99,8 @@ function registrar() {
   setEmailRegistro(eventEmailRegistro)
   setPasswordRegistro(eventPasswordRegistro)
   setConfirmacionRegistro(eventConfirmacionRegistro)
-
+  console.log(fechaRegistro)
+  console.log(emailRegistro)
   if (passwordRegistro.length < 6) {
     document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña debe tener al menos 6 carácteres</span>"
   } else {
@@ -109,14 +115,19 @@ function registrar() {
         body: JSON.stringify({nombre: nombreRegistro,apellido1: apellido1Registro, apellido2: apellido2Registro, fecha: fechaRegistro, mail: emailRegistro, password: passwordRegistro}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
+        setVuelta(true)
       })
-    }
+    } 
   }
 
   
 
 }
     
+
+if (vuelta) {
+  return(<Redirect to={`/${retorno}`}/>)
+} else {
     return(<>
     
   <section className="login">
@@ -145,7 +156,7 @@ function registrar() {
             <input onChange={changeApellido1Registro} className="input-short1" type="text" name="primerApellido" placeholder="Primer apellido"/>
             <input onChange={changeApellido2Registro} className="input-short2" type="text" name="segundoApellido" placeholder="Segundo apellido"/>
             <input onChange={changeFechaRegistro} className="input-long" type="date" name="fecha" placeholder="Fecha nacimiento" />
-            <input onChange={changeEmailRegistro} className="input-long" type="email" name="email" placeholder="Correo electrónico" />
+            <input onChange={changeEmailRegistro} className="input-long" type="text" name="email" placeholder="Correo electrónico" />
             <input onChange={changePasswordRegistro} className="input-long" type="password" name="contraseña" placeholder="Contraseña" />
             <input onChange={changeConfirmacionRegistro} className="input-long" type="password" name="confContraseña" placeholder="Confirmar contraseña" />
             <input onClick={registrar} className="input-long" type="submit" name="" value="Regístrate" />
@@ -161,6 +172,7 @@ function registrar() {
     </div>
   </section>
     </>)
+}
 }
 
 export default Login;
