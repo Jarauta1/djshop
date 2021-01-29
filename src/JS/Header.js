@@ -1,3 +1,4 @@
+import { useState, useEffect} from "react";
 import {Link} from "react-router-dom"
 /* import '../App.css'; */
 import '../CSS/header.css';
@@ -7,7 +8,25 @@ import logo from "../Imagenes/logo_header_blanco.png"
 
 function Header(props) {
 
+    let [datos, setDatos] = useState([])
+
+    useEffect(function(){
+    
+        fetch("http://localhost:3000/usuarios/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: props.usuario}),
+            }).then((res)=>res.json()).then((res)=>{
+                setDatos(res.datos[0])
+                console.log(res.datos[0])
+            })
+      },[props.usuario])
+
+console.log(props.usuario)
     if (props.usuario !== "") {
+
         return(<>
          <section class="top-nav">
                 <div>
@@ -27,9 +46,9 @@ function Header(props) {
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li>Iniciar</li>
+                    <li></li>
                     <li>Cesta</li>
-                    <li>Favoritos</li>
+                    <li><span className="material-icons heart">account_circle</span></li>
                 </ul>
             </section>
         </>)
@@ -54,9 +73,9 @@ function Header(props) {
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li>Iniciar</li>
-                    <li>Cesta</li>
-                    <li>Favoritos</li>
+                    <li></li>
+                    <li></li>
+                    <li className="material-icons heart"><Link to="/login">account_circle</Link></li>
                 </ul>
             </section>
         </>)
