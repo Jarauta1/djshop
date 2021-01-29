@@ -63,12 +63,12 @@ function Comics () {
             </header>
             <div className="container">
                 <div className="row">
-                    <div className="col-1">
+                    {/* <div className="col-1">
                         <div className="box box1">
                             <div className="oddboxinner"> bangers?</div>
                         </div>
-                    </div>
-                    <div className="col-10">
+                    </div> */}
+                    <div className="col-12">
                         <div className="loader-comic">
                             <span>
                                 <span></span>
@@ -90,11 +90,11 @@ function Comics () {
                         </div>
                         <h1>CARGANDO</h1>
                     </div>
-                    <div className="col-1">
+                    {/* <div className="col-1">
                         <div className="box box1">
                             <div className="oddboxinner"> bangers?</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         <footer><p>{data.attributionText}</p></footer>
