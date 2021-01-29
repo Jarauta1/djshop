@@ -17,11 +17,28 @@ import Zapatillas from "./JS/zapatillas.js"
 
 function App() {
 
-/* let [ usuario, setUsuario] = useState({}) */
-let [usuario, setUsuario] = useState("nada")
+let [usuario, setUsuario] = useState("")
+let [mensaje,setMensaje] = useState("")
 
-const login = (email, pass) => {
-  fetch("/login")
+const login = (email, password) => {
+  console.log(email,password)
+  fetch("http://localhost:3000/usuarios/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({mail: email, password: password}),
+  }).then((res)=>res.json()).then((res)=>{
+    setMensaje(res.mensaje)
+    if (res.entrar == "si") {
+      /* setVuelta(true) */
+      setUsuario(res.usuario)
+    }
+  })
+}
+
+const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword) => {
+
 }
 
 /* if(usuario.administrador){
@@ -42,7 +59,7 @@ return
     <Buscador/>
   </Route>
   <Route exact path="/login">
-    <Login /* login={login} */ />
+    <Login login={login} registrar={registrar}/>
   </Route>
   <Route exact path="/zapatillas">
     <Zapatillas/>

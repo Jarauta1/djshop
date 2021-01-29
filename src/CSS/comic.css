@@ -374,8 +374,6 @@ box-shadow:3px 3px 0 #222;
   .container .box {
       width: 210px*1.2;
       height: 300px*1.2;
-    
-     
       background: black;
       display: relative;
       border-radius: 4px;
@@ -417,6 +415,18 @@ box-shadow:3px 3px 0 #222;
   .box {
     overflow: hidden;
     margin: 0;
+  }
+
+  .marvel, .studios {
+    margin: 0;
+  }
+
+  .wrapper {
+    height: 200px;
+  }
+
+  .intro {
+    margin-top: 25px;
   }
 }
 }

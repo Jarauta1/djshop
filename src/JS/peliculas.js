@@ -43,7 +43,17 @@ function Peliculas(props) {
         console.log(res)
       })
      
-    
+      if (usuario !== "nada") {
+      fetch("http://localhost:3000/usuarios/favoritos",{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id)}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+    }
   }
 
   function visualizado (titulo,cartel,id) {
@@ -141,10 +151,10 @@ function Peliculas(props) {
     }
   }
 
-  if (usuario == "nada" && checkFavoritos) {
+  if (usuario == "" && checkFavoritos) {
     localStorage.setItem("retorno", "peliculas")
       return <Redirect to="/login"/>
-  } else if ( usuario == "nada" && checkCesta) {
+  } else if ( usuario == "" && checkCesta) {
     localStorage.setItem("retorno", "peliculas")
       return <Redirect to ="/login"/>
   } else if (numPag == 1) {

@@ -147,7 +147,7 @@ box-shadow:
 /* ------- */
 
 .centrado{
-  margin: 100px 45vw;
+  margin: 300px 45vw;
   padding: 50px;
 }
 .book {
@@ -1123,3 +1123,10 @@ select {
 /* --------------- */
 /* FIN SELECT MENU */
 /* --------------- */
+
+@media only screen and (max-width: 700px) {
+  .centrado{
+    margin: 300px 35vw;
+    padding: 50px;
+  }
+}

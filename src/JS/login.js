@@ -4,10 +4,10 @@ import accederFoto from "../Imagenes/acceder.jpg"
 import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"
 
-function Login () {
+function Login (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
-  console.log(retorno)
   let [vuelta,setVuelta] = useState(false)
+  let [mensaje,setMensaje] = useState("")
   
   let [emailAcceso, setEmailAcceso] = useState("")
   let [eventMailAcceso, setEventMailAcceso] = useState("")
@@ -37,10 +37,12 @@ function Login () {
 
 function changeMailAcceso(e) {
   setEventMailAcceso(e.target.value)
+  setEmailAcceso(eventMailAcceso)
 }
 
 function changeContrasenaAcceso(e) {
   setEventContrasenaAcceso(e.target.value)
+  setContrasenaAcceso(eventContrasenaAcceso)
 }
 
 function changeNombreRegistro(e) {
@@ -71,7 +73,7 @@ function changeConfirmacionRegistro(e) {
   setEventConfirmacionRegistro(e.target.value)
 }
 
-function acceder() {
+/* function login() {
   setEmailAcceso(eventMailAcceso)
   setContrasenaAcceso(eventContrasenaAcceso)
 
@@ -89,7 +91,7 @@ function acceder() {
       setVuelta(true)
     }
   })
-}
+} */
 
 function registrar() {
   setNombreRegistro(eventNombreRegistro)
@@ -99,8 +101,6 @@ function registrar() {
   setEmailRegistro(eventEmailRegistro)
   setPasswordRegistro(eventPasswordRegistro)
   setConfirmacionRegistro(eventConfirmacionRegistro)
-  console.log(fechaRegistro)
-  console.log(emailRegistro)
   if (passwordRegistro.length < 6) {
     document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña debe tener al menos 6 carácteres</span>"
   } else {
@@ -126,7 +126,7 @@ function registrar() {
     
 
 if (vuelta) {
-  return(<Redirect to={`/${retorno}`}/>)
+  return(<Redirect to={{pathname: ""}`/${retorno}`}/>)
 } else {
     return(<>
     
@@ -139,8 +139,8 @@ if (vuelta) {
             <h2>Inicia sesión</h2>
             <input onChange={changeMailAcceso} className="input-long" type="text" name="" placeholder="Correo electrónico" />
             <input onChange={changeContrasenaAcceso} className="input-long" type="password" name="" placeholder="Contraseña" />
-            <input onClick={acceder} className="input-long" type="submit" name="" value="Acceder"/>
-            <div id="mensajeAcceso"></div>
+            <input onClick={()=>props.login(emailAcceso,contrasenaAcceso)} className="input-long" type="submit" name="" value="Acceder"/>
+            <div id="mensajeAcceso">{mensaje}</div>
             <p className="signup">
               ¿No tienes cuenta?
               <a onClick={cambioPantalla}>  Regístrate</a>

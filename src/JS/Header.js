@@ -7,7 +7,7 @@ import logo from "../Imagenes/logo_header_blanco.png"
 
 function Header(props) {
 
-    if (props.usuario !== "nada") {
+    if (props.usuario !== "") {
         return(<>
           <section class="top-nav">
                 <div>
@@ -42,7 +42,7 @@ function Header(props) {
           
             <section class="top-nav">
                 <div>
-                    <img src={logo} height="30" alt=""/>
+                    <Link to="/"><img src={logo} height="30" alt=""/></Link>
                 </div>
                 <input id="menu-toggle" type="checkbox" />
                 <label class='menu-button-container' for="menu-toggle">
