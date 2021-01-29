@@ -170,6 +170,17 @@
   left: -100%;
 }
 
+.boton-mensaje {
+  display: flex;
+  align-items: center;
+}
+
+#mensajeAcceso, #mensajeRegistro {
+  padding-left: 20px;
+  color: red;
+  font-size: 14px;
+}
+
 @media (max-width: 991px) {
   .login .container-login {
     max-width: 400px;

@@ -5,20 +5,29 @@
 
 
 
-.fondo{
+.fondo-zapatillas{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.fondo .card{
+.fondo-zapatillas .card-zapatilla{
     position: relative;
     width: 320px;
     height: 450px;
     background: #232323;
     border-radius: 20px;
     overflow: hidden;
+    margin: 2%;
 }
 
-.fondo .card::before{
+@media only screen and (max-width: 700px) {
+    .fondo-zapatillas .card-zapatilla {
+        margin: 20px 10%;
+    }
+}
+
+.fondo-zapatillas .card-zapatilla::before{
     content: '';
     position: absolute;
     top: 0;
@@ -30,11 +39,11 @@
     transition: 0.5s ease-in-out;
 }
 
-.fondo .card:hover::before{
+.fondo-zapatillas .card-zapatilla:hover::before{
     clip-path: circle(300px at 80% -20%);
 }
 
-.fondo .card::after{
+.fondo-zapatillas .card-zapatilla::after{
     content: 'Adidas';
     position: absolute;
     top: 50%;
@@ -46,7 +55,7 @@
     text-shadow: 1px 1px 10px #FF0000;
 }
 
-.fondo .card .imgBx{
+.fondo-zapatillas .card-zapatilla .imgBx{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -56,7 +65,7 @@
     transition: 0.5s;
 }
 
-.fondo .card .imgBx img{
+.fondo-zapatillas .card-zapatilla .imgBx img{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,12 +73,12 @@
     width: 270px;
 }
 
-.fondo .card:hover .imgBx{
+.fondo-zapatillas .card-zapatilla:hover .imgBx{
     top: 0%;
     transform: translateY(0%);
 }
 
-.fondo .card .contentBx{
+.fondo-zapatillas .card-zapatilla .contentBx{
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -79,19 +88,19 @@
     z-index: 10;
 }
 
-.fondo .card:hover .contentBx{
+.fondo-zapatillas .card-zapatilla:hover .contentBx{
     height: 210px;
 }
 
-.fondo .card .contentBx h2{
+.fondo-zapatillas .card-zapatilla .contentBx h4{
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
     color: #fff;
 }
 
-.fondo .card .contentBx .size,
-.fondo .card .contentBx .color{
+.fondo-zapatillas .card-zapatilla .contentBx .size,
+.fondo-zapatillas .card-zapatilla .contentBx .color{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,20 +110,20 @@
     visibility: hidden;
 }
 
-.fondo .card:hover .contentBx .size{
+.fondo-zapatillas .card-zapatilla:hover .contentBx .size{
     opacity: 1;
     visibility: visible;
     transition-delay: 0.5s;
 }
 
-.fondo .card:hover .contentBx .color{
+.fondo-zapatillas .card-zapatilla:hover .contentBx .color{
     opacity: 1;
     visibility: visible;
     transition-delay: 0.6s;
 }
 
-.fondo .card .contentBx .size h3,
-.fondo .card .contentBx .color h3{
+.fondo-zapatillas .card-zapatilla .contentBx .size h3,
+.fondo-zapatillas .card-zapatilla .contentBx .color h3{
     color: #fff;
     font-weight: 300;
     font-size: 14px;
@@ -123,7 +132,7 @@
     margin-right: 10px;
 }
 
-.fondo .card .contentBx .size span{
+.fondo-zapatillas .card-zapatilla .contentBx .size span{
     width: 26px;
     height: 26px;
     text-align: center;
@@ -138,12 +147,12 @@
     cursor: pointer;
 }
 
-.fondo .card .contentBx .size span:hover{
+.fondo-zapatillas .card-zapatilla .contentBx .size span:hover{
     background: #A3081C;
     color: #fff;
 }
 
-.fondo .card .contentBx .color span{
+.fondo-zapatillas .card-zapatilla .contentBx .color span{
     width: 20px;
     height: 20px;
     background: #ff0;
@@ -152,19 +161,19 @@
     cursor: pointer;
 }
 
-.fondo .card .contentBx .color span:nth-child(2){
+.fondo-zapatillas .card-zapatilla .contentBx .color span:nth-child(2){
     background: #BF0210;
 }
 
-.fondo .card .contentBx .color span:nth-child(3){
+.fondo-zapatillas .card-zapatilla .contentBx .color span:nth-child(3){
     background: #03a9f4;
 }
 
-.fondo .card .contentBx .color span:nth-child(4){
+.fondo-zapatillas .card-zapatilla .contentBx .color span:nth-child(4){
     background: #9bdc28;
 }
 
-.fondo .card .contentBx a{
+.fondo-zapatillas .card-zapatilla .contentBx a{
     display: inline-block;
     padding: 10px 20px;
     background: #fff;
@@ -178,13 +187,13 @@
     transition: 0.5s;
 }
 
-.fondo .card:hover .contentBx a{
+.fondo-zapatillas .card-zapatilla:hover .contentBx a{
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
 }
 
-.fondo .card .contentBx a:hover{
+.fondo-zapatillas .card-zapatilla .contentBx a:hover{
     background: #A3081C;
     color: #fff;
 }

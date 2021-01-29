@@ -1,11 +1,13 @@
 import "../CSS/libros.css"
 import {useState, useEffect} from "react"
 
+
 function Libros (){
     
     let [data,setData] = useState([])
     let [categoria, setCategoria] = useState("libros_programacion")
     let [isLoading, setIsLoading] = useState (false)
+    let [precio, setPrecio] = useState("")
   
     useEffect(function(){
 
@@ -30,10 +32,9 @@ function Libros (){
     /* FINPOP-UP */
 
     let mostrarLibros = data.map(libro=>{
+   
       return(<>
-              <div className="librosCard">
-					      {/* <div className="row">
-						      <div className="col-12"> */}
+
 							      <div className="book-card">
     						      <div className="book-card__cover">
      							      <div className="book-card__book">
@@ -51,13 +52,19 @@ function Libros (){
       			            <div className="book-card__author">
         			            | by {libro.author}
         		            </div>
-                        {/* <div className="options"><div className="price">9.95€</div><button className="price">Comprar</button></div> */}
+                        <div className="options">
+                          <div className="price-book">9.95€</div>
+                          <button className="button-price-book">
+                            <div className="book-surface"></div>
+                            <div className="book-bind">
+                              <p>Añadir</p>
+                            </div>
+                          </button>
+                        </div>
                         <div className="container"></div>
                       </div> 
                     </div>
-				          {/* </div>
-			          </div> */}
-			        </div>
+				     
             </>)
     })
   
@@ -133,12 +140,10 @@ function Libros (){
                   <option value="textos-academicos-biblioteca">Textos Académicos</option>
                 </select>
               </label>
-              <div className="container">
-                <div className="row">
-                  <div className="col-12">
+              <div className="contenedor-libros">
+                
                     {mostrarLibros}
-                    </div>
-                  </div>
+                    
                 </div>
               </>)
     }

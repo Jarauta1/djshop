@@ -6,71 +6,59 @@ import {Redirect} from "react-router-dom"
 
 function Login (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
-  let [vuelta,setVuelta] = useState(false)
-  let [mensaje,setMensaje] = useState("")
+  let [vuelta,setVuelta] = useState(props.vuelta)
   
   let [emailAcceso, setEmailAcceso] = useState("")
-  let [eventMailAcceso, setEventMailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
-  let [eventContrasenaAcceso, setEventContrasenaAcceso] =useState("")
 
   let [nombreRegistro,setNombreRegistro] = useState("")
-  let [eventNombreRegistro,setEventNombreRegistro] = useState("")
   let [apellido1Registro,setApellido1Registro] = useState("")
-  let [eventApellido1Registro,setEventApellido1Registro] = useState("")
   let [apellido2Registro,setApellido2Registro] = useState("")
-  let [eventApellido2Registro,setEventApellido2Registro] = useState("")
   let [fechaRegistro,setFechaRegistro] = useState("")
-  let [eventFechaRegistro,setEventFechaRegistro] = useState("")
   let [emailRegistro,setEmailRegistro] = useState("")
-  let [eventEmailRegistro,setEventEmailRegistro] = useState("")
   let [passwordRegistro,setPasswordRegistro] = useState("")
-  let [eventPasswordRegistro,setEventPasswordRegistro] = useState("")
   let [confirmacionRegistro,setConfirmacionRegistro] = useState("")
-  let [eventConfirmacionRegistro,setEventConfirmacionRegistro] = useState("")
+  
 
-
-    function cambioPantalla () {
+  function cambioPantalla () {
   
   document.querySelector('.container-login').classList.toggle('active');
-}
+  }
 
 function changeMailAcceso(e) {
-  setEventMailAcceso(e.target.value)
-  setEmailAcceso(eventMailAcceso)
+  setEmailAcceso(e.target.value)
 }
 
 function changeContrasenaAcceso(e) {
-  setEventContrasenaAcceso(e.target.value)
-  setContrasenaAcceso(eventContrasenaAcceso)
+  setContrasenaAcceso(e.target.value)
 }
 
 function changeNombreRegistro(e) {
-  setEventNombreRegistro(e.target.value)
+  setNombreRegistro(e.target.value)
 }
 
 function changeApellido1Registro(e) {
-  setEventApellido1Registro(e.target.value)
+  setApellido1Registro(e.target.value)
 }
 
 function changeApellido2Registro(e) {
-  setEventApellido2Registro(e.target.value)
+  setApellido2Registro(e.target.value)
 }
 
 function changeFechaRegistro(e) {
-  setEventFechaRegistro(e.target.value)
+  setFechaRegistro(e.target.value)
 }
 
 function changeEmailRegistro(e) {
-  setEventEmailRegistro(e.target.value)
+  setEmailRegistro(e.target.value)
 }
 
 function changePasswordRegistro(e) {
-  setEventPasswordRegistro(e.target.value)
+  setPasswordRegistro(e.target.value)
 }
 
 function changeConfirmacionRegistro(e) {
-  setEventConfirmacionRegistro(e.target.value)
+  setConfirmacionRegistro(e.target.value)
 }
 
 /* function login() {
@@ -93,7 +81,7 @@ function changeConfirmacionRegistro(e) {
   })
 } */
 
-function registrar() {
+/* function registrar() {
   setNombreRegistro(eventNombreRegistro)
   setApellido1Registro(eventApellido1Registro)
   setApellido2Registro(eventApellido2Registro)
@@ -122,11 +110,11 @@ function registrar() {
 
   
 
-}
+} */
     
 
 if (vuelta) {
-  return(<Redirect to={{pathname: ""}`/${retorno}`}/>)
+  return(<Redirect to={`/${retorno}`}/>)
 } else {
     return(<>
     
@@ -136,11 +124,13 @@ if (vuelta) {
         <div className="imgBx"><img src={accederFoto} alt="" /></div>
         <div className="formBx">
           <div className="opcion-registro">
-            <h2>Inicia sesión</h2>
+            <h2>IniciaR sesión</h2>
             <input onChange={changeMailAcceso} className="input-long" type="text" name="" placeholder="Correo electrónico" />
             <input onChange={changeContrasenaAcceso} className="input-long" type="password" name="" placeholder="Contraseña" />
+            <div className="boton-mensaje">
             <input onClick={()=>props.login(emailAcceso,contrasenaAcceso)} className="input-long" type="submit" name="" value="Acceder"/>
-            <div id="mensajeAcceso">{mensaje}</div>
+            <div id="mensajeAcceso">{props.mensaje}</div>
+            </div>
             <p className="signup">
               ¿No tienes cuenta?
               <a onClick={cambioPantalla}>  Regístrate</a>
@@ -151,7 +141,7 @@ if (vuelta) {
       <div className="user signupBx">
         <div className="formBx">
           <div className="opcion-registro">
-            <h2>CREA UNA CUENTA</h2>
+            <h2>CREAR UNA CUENTA</h2>
             <input onChange={changeNombreRegistro} className="input-long" type="text" name="nombre" placeholder="Nombre"/>
             <input onChange={changeApellido1Registro} className="input-short1" type="text" name="primerApellido" placeholder="Primer apellido"/>
             <input onChange={changeApellido2Registro} className="input-short2" type="text" name="segundoApellido" placeholder="Segundo apellido"/>
@@ -159,8 +149,10 @@ if (vuelta) {
             <input onChange={changeEmailRegistro} className="input-long" type="text" name="email" placeholder="Correo electrónico" />
             <input onChange={changePasswordRegistro} className="input-long" type="password" name="contraseña" placeholder="Contraseña" />
             <input onChange={changeConfirmacionRegistro} className="input-long" type="password" name="confContraseña" placeholder="Confirmar contraseña" />
-            <input onClick={registrar} className="input-long" type="submit" name="" value="Regístrate" />
-            <div id="mensajeRegistro"></div>
+            <div className="boton-mensaje">
+            <input onClick={()=>props.registrar(nombreRegistro,apellido1Registro,apellido2Registro,fechaRegistro,emailRegistro,passwordRegistro,confirmacionRegistro)} className="input-long" type="submit" name="" value="Regístrate" />
+            <div id="mensajeRegistro">{props.mensaje}</div>
+            </div>
             <p className="signup">
               ¿Ya tienes una cuenta? 
               <a onClick={cambioPantalla}>  INICIAR SESIÓN</a>

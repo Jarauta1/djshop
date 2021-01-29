@@ -9,6 +9,7 @@ function Peliculas(props) {
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
+  console.log(props.usuario)
 
   useEffect(function(){
     
@@ -32,6 +33,7 @@ function Peliculas(props) {
 
   function favorito (titulo,cartel,id) {
     setCheckFavoritos(!checkFavoritos)
+    console.log(usuario)
   
     fetch("http://localhost:3000/peliculas/favoritas",{
         method: "POST",
@@ -43,7 +45,7 @@ function Peliculas(props) {
         console.log(res)
       })
      
-      if (usuario !== "nada") {
+      if (usuario !== "") {
       fetch("http://localhost:3000/usuarios/favoritos",{
         method: "PUT",
         headers: {

@@ -19,6 +19,7 @@ function App() {
 
 let [usuario, setUsuario] = useState("")
 let [mensaje,setMensaje] = useState("")
+let [vuelta,setVuelta] = useState(false)
 
 const login = (email, password) => {
   console.log(email,password)
@@ -30,15 +31,41 @@ const login = (email, password) => {
     body: JSON.stringify({mail: email, password: password}),
   }).then((res)=>res.json()).then((res)=>{
     setMensaje(res.mensaje)
+    console.log(res.mensaje)
     if (res.entrar == "si") {
-      /* setVuelta(true) */
+      setVuelta(true)
       setUsuario(res.usuario)
     }
   })
 }
 
 const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword) => {
-
+   console.log(nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword)
+    
+    if (password.length < 6) {
+      document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña debe tener al menos 6 carácteres</span>"
+    } else {
+      if (confirmarPassword !== password) {
+        document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña no coincide</span>"
+      } else {
+        fetch("http://localhost:3000/usuarios/registro",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({nombre: nombre,apellido1: apellido1, apellido2: apellido2, fecha: fecha, mail: mail, password: password}),
+        }).then((res)=>res.json()).then((res)=>{
+          setMensaje(res.mensaje)
+          setUsuario(res.usuario)
+          console.log(res)
+         /*  setVuelta(true) */
+        })
+      } 
+    }
+  
+    
+  
+  
 }
 
 /* if(usuario.administrador){
@@ -59,7 +86,7 @@ return
     <Buscador/>
   </Route>
   <Route exact path="/login">
-    <Login login={login} registrar={registrar}/>
+    <Login vuelta={vuelta} mensaje={mensaje} login={login} registrar={registrar}/>
   </Route>
   <Route exact path="/zapatillas">
     <Zapatillas/>

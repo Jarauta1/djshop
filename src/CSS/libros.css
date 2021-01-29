@@ -7,6 +7,15 @@
   margin: 0;
 }
 
+.contenedor-libros {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  margin: 2% 2% 1% 2%;
+}
+
 /* -------------------------- */
 /* FIN BOOTSTRAP CONTENEDORES */
 /* -------------------------- */
@@ -46,7 +55,7 @@
 width: 280px;
 padding: 16px;
 border-radius: 5px;
-background-color: #fff;
+background-color: rgba(249, 234, 217);
 box-shadow:
   0 3px 6px rgba(0, 0, 0, 0.16),
   0 3px 6px rgba(0, 0, 0, 0.23);
@@ -122,10 +131,14 @@ box-shadow:
   }
 
   .options{
-    margin: 10px 0px;
+    margin-top: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  .button-price-book {
+    padding: 2px 5px;
   }
 
 /* ------ */
@@ -1129,4 +1142,93 @@ select {
     margin: 300px 35vw;
     padding: 50px;
   }
+
+  .book-card {
+    margin: 20px 15vw;
+  }
+
+  .select-libros {
+    margin-top: 20px;
+  }
 }
+
+/* ----------- */
+/* BOTON LIBRO */
+/* ----------- */
+.button-price-book {
+  width: 100px;
+  font-size: 15px;
+  position: relative;
+  border: none;
+}
+
+.book-surface::before, .book-surface::after {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 100px;
+  position: absolute;
+}
+
+.book-surface::before {
+  background: #E7CC88;
+  height: 14px;
+  top: 30px;
+  left: -41px;
+  width: 20px;
+  z-index: 0;
+}
+
+.book-surface::after {
+  height: 30px;
+  width: 12px;
+  top: 6px;
+  left: -24px;
+  transform: skewX(-50deg) skewY(40deg);
+  background: #eee;
+}
+
+.book-surface {
+  background: #E7CC88;
+  height: 10px;
+  transform: skew(50deg) translateX(-6px);
+  position: relative;
+  z-index: 10;
+}
+
+.book-bind {
+  background: #9C813C;
+  text-align: center;
+  padding-top: 10px;
+  padding: 9px;
+  position: relative;
+  z-index: 10;
+  height: 35px;
+  color: white;
+}
+
+.book-bind::before, .book-bind::after {
+  position: absolute;
+  content: "";
+  background: #9C813C;
+  height: 35px;
+  width: 5px;
+  border-radius: 50%;
+  top: 0;
+}
+
+.book-bind::before {
+  left: -2px;
+}
+
+.book-bind::after {
+  right: -2px;
+}
+
+.book-bind p {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+/* --------------- */
+/* FIN BOTON LIBRO */
+/* --------------- */
