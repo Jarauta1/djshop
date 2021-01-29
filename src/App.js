@@ -60,7 +60,7 @@ return
     <Comics/>
   </Route>
   <Route exact path="/comics/:id">
-    <ComicCard/>
+    <ComicCard usuario={usuario}/>
   </Route>
   <Footer/>
   </BrowserRouter>)

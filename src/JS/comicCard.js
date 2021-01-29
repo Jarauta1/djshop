@@ -1,13 +1,18 @@
 import {useParams} from "react-router-dom"
 import {useState,useEffect} from "react"
-import {Link} from "react-router-dom"
+import {Link,Redirect} from "react-router-dom"
 import '../CSS/comicCard.css';
 
-function ComicCard() {
+function ComicCard(props) {
 
   let {id} =useParams()
   let [data, setData] = useState([])
+  let [precio,setPrecio] = useState([])
   let [imagen,setImagen] = useState([])
+  let [checkFavoritos,setCheckFavoritos] = useState(false)
+  let [checkCesta,setCheckCesta] = useState(false)
+  let [url,setUrl] = useState(`comics/${id}`)
+  let [usuario,setUsuario] = useState(props.usuario)
   let contador = 0
   
   useEffect(function(){
@@ -16,6 +21,7 @@ function ComicCard() {
 
        setData(datos.data.results[0])
        setImagen(datos.data.results[0].images)
+       setPrecio(datos.data.results[0].prices[0])
           console.log(datos)
     })
     },[id])
@@ -37,12 +43,33 @@ function ComicCard() {
     /* FIN BOTON CESTA */
     /* --------------- */
 
-    function favorito (titulo) {
-        console.log(titulo)
-        return(<>
-    
-        </>
-    )}
+    function favorito (titulo,id) {
+        setCheckFavoritos(!checkFavoritos)
+        console.log(titulo,id)
+    fetch("http://localhost:3000/comics/favoritos",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+    }
+
+    function cesta (titulo,id) {
+        setCheckCesta(!checkCesta)
+        console.log(titulo,id)
+    fetch("http://localhost:3000/comics/cesta",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+    }
 
     let mostrarImagen = imagen.map(mostrar=>{
         if (contador <=0) {
@@ -51,6 +78,16 @@ function ComicCard() {
         }
     })
 
+   /*  let mostrarPrecio = precio.map(price=>{return({price.price})}) */
+
+
+    if (usuario == "nada" && checkFavoritos) {
+        localStorage.setItem("retorno", url)
+          return <Redirect to="/login"/>
+      } else if ( usuario == "nada" && checkCesta) {
+        localStorage.setItem("retorno", url)
+          return <Redirect to ="/login"/>
+      } else {
   return(<div className="comicCard">
             <div className="card-container">
                 {mostrarImagen}
@@ -59,12 +96,12 @@ function ComicCard() {
                         <div className="title-content">
                             <h2>{data.title}</h2>
                             <p className="detalles-comic">
-                                <span className="rating">{data.variantDescription}</span>
+                                <span className="rating">{precio.price} €</span>
                                 | <span className="studio">Marvel Studios</span>|
                                 <span>Favorito 
                                     {/*  <div className="Category-comic"> */}
                                     <label className="like-comic">
-                                        <input onClick={()=>{favorito(data.title)}} type="checkbox"/>
+                                        <input onClick={()=>{favorito(data.title,id)}} type="checkbox"/>
                                         <span className="material-icons heart">favorite</span>
                                         {/* https://google.github.io/material-design-icons/ */}
                                         {/* https://material.io/resources/icons/?style=baseline */}
@@ -80,7 +117,7 @@ function ComicCard() {
                     </div>
                 </div>
                 <div className="boton-cesta-comic full">
-                    <button class="cart-button-comic">
+                    <button onClick={()=>{cesta(data.title,id)}} class="cart-button-comic">
 	                    <span class="add-to-cart">Añadir a la cesta</span>
 	                    <span class="added">Añadido</span>
 	                    <i class="fas fa-shopping-cart"></i>
@@ -89,6 +126,7 @@ function ComicCard() {
                 </div>
             </div>
         </div>)
+      }
 }
 
 export default ComicCard;

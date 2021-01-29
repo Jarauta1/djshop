@@ -29,7 +29,7 @@ function Comics () {
         if (resultados.description !== null) {
             {contador = 0}
             return(<>
-            <div>
+            <div className="card-comic">
             <Link to={`/comics/${resultados.id}`}>
             {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
                                 return(<><img className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
@@ -37,10 +37,10 @@ function Comics () {
                        
                                 </>)}
                             })}
-                            <div class="box-top special1">
-                            <p className="text top-left">{resultados.title}</p>
-                            <p className="text bottom-right">{resultados.prices[0].price} €</p>
-                        </div>
+                            
+                            <div className="text top-left"><p>{resultados.title}</p></div>
+                            <div className="text bottom-right"><p>{resultados.prices[0].price} €</p></div>
+                        
                     </Link>
             </div>
 
@@ -117,7 +117,7 @@ function Comics () {
                             <div className="oddboxinner"> bangers?</div>
                         </div>
                     </div> */}
-                    <div className="col-10">
+                    <div className="col-12">
                         <div className="container-comic">
                             {mostrarComics}
                         </div>

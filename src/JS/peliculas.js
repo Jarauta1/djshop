@@ -145,6 +145,7 @@ function Peliculas(props) {
     localStorage.setItem("retorno", "peliculas")
       return <Redirect to="/login"/>
   } else if ( usuario == "nada" && checkCesta) {
+    localStorage.setItem("retorno", "peliculas")
       return <Redirect to ="/login"/>
   } else if (numPag == 1) {
       return(<>

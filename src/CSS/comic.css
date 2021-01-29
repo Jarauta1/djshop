@@ -269,19 +269,29 @@ box-shadow:3px 3px 0 #222;
   border:solid 2px #000;
   margin:0;
   padding:3px 10px;
+  font-family: "Comic Sans, cursive;"
+}
+
+.card-comic {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  overflow:hidden;
+  margin: 20px;
 }
 
 .top-left {
-  left:-6px;
-  position:absolute;
-  top:-2px;
+  position: absolute;
+ top: -2px;
+ left: -12px;
   transform:skew(-15deg);
+  font-size: 14px;
 }
 
 .bottom-right {
-  bottom:-2px;
-  position:absolute;
-  right:-6px;
+  position: absolute;
+  bottom: -14px;
+  right: -6px;
   transform:skew(-15deg);
 }
 
@@ -299,25 +309,25 @@ box-shadow:3px 3px 0 #222;
   .box {
     width: 210px;
     height: 300px;
-    margin: 20px;
     background: black;
     display: relative;
     border-radius: 4px;
     display: flex;
     box-shadow: 5px 5px 8px  rgba(0,0,0,.5);
+    overflow: hidden;
   }
     
     
   .box {
     background-size: cover;
-    backgroung-image: linear-gradient(135deg, #c67fb3 0%,#ffba66 100%);
+    background-image: linear-gradient(135deg, #c67fb3 0%,#ffba66 100%);
   }
     
 
 /******  TOP LAYER  ********/
 
 .box-top {
-  align-item: bottom;
+  align-items: bottom;
   border-radius: 5px;
   height: inherit;
   width: inherit;
@@ -351,7 +361,7 @@ box-shadow:3px 3px 0 #222;
       width: 210px*1.1;
       height: 300px*1.1;
   }
-}
+  
       
 @media screen and (max-width: 964px) {
   .container .box {
@@ -365,13 +375,50 @@ box-shadow:3px 3px 0 #222;
       width: 210px*1.2;
       height: 300px*1.2;
     
-      margin: 20px;
+     
       background: black;
       display: relative;
       border-radius: 4px;
       display: flex;
       box-shadow: 5px 5px 8px  rgba(0,0,0,.5);
   }
+
+  .text {
+    background-color:#fff;
+    border:solid 2px #000;
+    margin:0;
+    padding:3px 10px;
+    font-family: "Comic Sans, cursive;"
+  }
+  
+  .card-comic {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow:hidden;
+    margin: 20px;
+  }
+  
+  .top-left {
+    position: absolute;
+   top: -2px;
+   left: -14px;
+    transform:skew(-15deg);
+    font-size: 10px;
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: -14px;
+    right: -6px;
+    transform:skew(-15deg);
+  }
+
+  .box {
+    overflow: hidden;
+    margin: 0;
+  }
+}
 }
 
 /* --------- */
@@ -382,17 +429,17 @@ box-shadow:3px 3px 0 #222;
 /* TRANSICION COLOR */
 /* ---------------- */
 
-.box {
+.card-comic {
 filter: grayscale(100%)
 }
 
-.box:hover {
+.card-comic:hover {
 filter: grayscale(0%);
 
 transition:0.6s all;
 }
 
-.box:hover {
+.card-comic:hover {
 -webkit-transform: scale(1.3);
 -ms-transform: scale(1.3);
 transform: scale(1.3);

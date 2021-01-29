@@ -290,7 +290,7 @@
    @media (max-width: 768px) {
 	   .container {
 		   width: 250px !important;
-		   height: 950px !important;
+		  /*  height: 950px !important; */
 		   overflow: hidden;
 	  }
 	   .container .about-movie {
