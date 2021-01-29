@@ -59,12 +59,10 @@ function PeliculaCard(props) {
       })
   }
 
-  if ( usuario == "nada" && checkCesta) {
-    console.log(usuario,checkCesta)
+  if ( usuario == "" && checkCesta) {
     localStorage.setItem("retorno", url)
     return <Redirect to ="/login"/>
 } else {
-  console.log(usuario,checkCesta)
   return(<>
           <div className="cardMovie">
             <div className="container">

@@ -9,7 +9,6 @@ function Peliculas(props) {
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
-  console.log(props.usuario)
 
   useEffect(function(){
     
