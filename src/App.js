@@ -19,10 +19,9 @@ function App() {
 
 let [usuario, setUsuario] = useState("")
 let [mensaje,setMensaje] = useState("")
-let [vuelta,setVuelta] = useState(false)
+let [vuelta,setVuelta] = useState("")
 
 const login = (email, password) => {
-  console.log(email,password)
   fetch("http://localhost:3000/usuarios/login", {
     method: "POST",
     headers: {
@@ -30,10 +29,11 @@ const login = (email, password) => {
     },
     body: JSON.stringify({mail: email, password: password}),
   }).then((res)=>res.json()).then((res)=>{
-    setMensaje(res.mensaje)
     console.log(res.mensaje)
+    setMensaje(res.mensaje)
     if (res.entrar == "si") {
-      setVuelta(true)
+      setVuelta("volver")
+      console.log(res.usuario)
       setUsuario(res.usuario)
     }
   })

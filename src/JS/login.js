@@ -6,7 +6,6 @@ import {Redirect} from "react-router-dom"
 
 function Login (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
-  let [vuelta,setVuelta] = useState(props.vuelta)
   
   let [emailAcceso, setEmailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
@@ -111,13 +110,14 @@ function changeConfirmacionRegistro(e) {
   
 
 } */
+
+
     
 
-if (vuelta) {
+if (props.mensaje === "Logueado correctamente") {
   return(<Redirect to={`/${retorno}`}/>)
 } else {
-    return(<>
-    
+  return(<>
   <section className="login">
     <div className="container-login">
       <div className="user signinBx">
