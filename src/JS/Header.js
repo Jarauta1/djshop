@@ -8,22 +8,6 @@ import logo from "../Imagenes/logo_header_blanco.png"
 
 function Header(props) {
 
-    let [datos, setDatos] = useState([])
-
-    useEffect(function(){
-    
-        fetch("http://localhost:3000/usuarios/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({usuario: props.usuario}),
-            }).then((res)=>res.json()).then((res)=>{
-                setDatos(res.datos[0])
-                console.log(res.datos[0])
-            })
-      },[props.usuario])
-
 console.log(props.usuario)
     if (props.usuario !== "") {
 
@@ -46,13 +30,15 @@ console.log(props.usuario)
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li></li>
-                    <li>Cesta</li>
-                    <li><span className="material-icons heart">account_circle</span></li>
+                    <li className="material-icons">favorite</li>
+                    <li className="material-icons">shopping_bag</li>
+                    <li><div className="user-div">{props.nombre}<div className="material-icons">account_circle</div></div></li>
+                    <li className="material-icons">exit_to_app</li>
                 </ul>
             </section>
         </>)
     } else {
+       /*  localStorage.setItem("retorno", "/") */
         return(<>
           
             <section class="top-nav">

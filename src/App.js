@@ -13,6 +13,7 @@ import Comics from "./JS/comics.js"
 import ComicCard from "./JS/comicCard.js"
 import Buscador from "./JS/buscador.js"
 import Zapatillas from "./JS/zapatillas.js"
+import Dashboard from "./Dashboard/dashboard.js"
 
 
 function App() {
@@ -20,6 +21,33 @@ function App() {
 let [usuario, setUsuario] = useState("")
 let [mensaje,setMensaje] = useState("")
 let [vuelta,setVuelta] = useState("")
+let [datos, setDatos] = useState([])
+let [nombre, setNombre] = useState()
+let [edad, setEdad] = useState()
+let [rango,setRango] = useState()
+
+useEffect(function(){
+  
+  if (usuario !== "") {
+  fetch("http://localhost:3000/usuarios/", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({usuario: usuario}),
+      }).then((res)=>res.json()).then((res)=>{
+          setDatos(res.datos[0])
+          setNombre(res.datos[0].usuario)
+
+          let anyo = res.datos[0].anyo
+          let edad = 2021 - parseInt(anyo)
+          setEdad(edad)
+
+          setRango(res.datos[0].rango)
+          
+      })
+    }
+},[usuario])
 
 const login = (email, password) => {
   fetch("http://localhost:3000/usuarios/login", {
@@ -76,7 +104,7 @@ return
 
 
   return(<BrowserRouter>
-  <Header usuario={usuario}/>
+  <Header nombre={nombre} usuario={usuario}/>
   <Route exact path="/">
     <br></br>
       <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
@@ -92,10 +120,10 @@ return
     <Zapatillas/>
   </Route>
   <Route exact path="/peliculas">
-    <Peliculas usuario={usuario}/>
+    <Peliculas edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/peliculas/:titulo/:id">
-    <PeliculaCard usuario={usuario}/>
+    <PeliculaCard edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/libros">
     <Libros />
@@ -105,6 +133,9 @@ return
   </Route>
   <Route exact path="/comics/:id">
     <ComicCard usuario={usuario}/>
+  </Route>
+  <Route exact path="/dashboard">
+    <Dashboard rango={rango} edad={edad} usuario={usuario}/>
   </Route>
   <Footer/>
   </BrowserRouter>)

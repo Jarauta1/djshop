@@ -116,3 +116,15 @@
 	}
 }
  
+
+.user-div {
+	display: flex;
+}
+
+.user-div div {
+	margin-left: 10px;
+}
+  
+  
+  
+  

@@ -4,6 +4,7 @@ import {Link,Redirect} from "react-router-dom"
 
 function Peliculas(props) {
   let [usuario,setUsuario] = useState(props.usuario)
+  let [edadUsuario,setEdadUsuario] = useState(props.edad)
   let [checkFavoritos,setCheckFavoritos] = useState(false)
   let [checkCesta,setCheckCesta] = useState(false)
   let [numPag,setNumPag] = useState(1)
@@ -11,7 +12,7 @@ function Peliculas(props) {
   let [data,setData] = useState([])
 
   useEffect(function(){
-    
+    console.log(edadUsuario)
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=670095a48bfcd1a43ef073e54c4dc56f&language=es-US&page="+numPag).then(respuesta=>respuesta.json()).then(datos=>{
      setData(datos.results)
      setTotalPag(data.total_pages)
@@ -30,7 +31,7 @@ function Peliculas(props) {
     }
   }
 
-  function favorito (titulo,cartel,id) {
+  function favorito (titulo,cartel,id,edad) {
     setCheckFavoritos(!checkFavoritos)
     console.log(usuario)
   
@@ -39,14 +40,14 @@ function Peliculas(props) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id)}),
+        body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id)}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
      
       if (usuario !== "") {
       fetch("http://localhost:3000/usuarios/favoritos",{
-        method: "PUT",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
@@ -57,30 +58,44 @@ function Peliculas(props) {
     }
   }
 
-  function visualizado (titulo,cartel,id) {
+  function visualizado (titulo,cartel,id,edad) {
     fetch("http://localhost:3000/peliculas/visualizado",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id)}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
+        console.log(edad)
       })
+
   }
 
-  function cesta (titulo,cartel,id,descargas) {
+  function cesta (titulo,cartel,id,edad) {
+    
     setCheckCesta(!checkCesta)
     fetch("http://localhost:3000/peliculas/cesta",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id),descargas:parseInt(descargas)}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
+      if (usuario !== "") {
+        fetch("http://localhost:3000/usuarios/cesta",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id)}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
   }
+}
 
     
     
@@ -106,7 +121,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id)}} type="checkbox" checked={checkFavoritos}/>
+                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}} type="checkbox" checked={checkFavoritos}/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -115,7 +130,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category2">
                     <label className="like-pelicula">
-                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,pelicula.popularity)}} type="checkbox" checked={checkCesta}/>
+                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}} type="checkbox" checked={checkCesta}/>
                       <span className="material-icons heart">shopping_cart</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -124,7 +139,7 @@ function Peliculas(props) {
                   </div>
                   <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
                     <div className="separacion"> 
-                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id)}}>
+                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}}>
                         <a className="detalles">
                           <div className="view-story">
                             <span>Detalles</span>

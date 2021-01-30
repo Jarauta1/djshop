@@ -45,31 +45,43 @@ function ComicCard(props) {
 
     function favorito (titulo,id) {
         setCheckFavoritos(!checkFavoritos)
-        console.log(titulo,id)
-    fetch("http://localhost:3000/comics/favoritos",{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
-      }).then((res)=>res.json()).then((res)=>{
-        console.log(res)
-      })
-    }
+        console.log(usuario)
+      
+        fetch("http://localhost:3000/comics/favoritos",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
+          }).then((res)=>res.json()).then((res)=>{
+            console.log(res)
+          })
+         
+          if (usuario !== "") {
+          fetch("http://localhost:3000/usuarios/favoritos",{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: usuario,titulo:titulo,id:parseInt(id)}),
+          }).then((res)=>res.json()).then((res)=>{
+            console.log(res)
+          })
+        }
+      }
 
-    function cesta (titulo,id) {
+      function cesta (titulo,id,descargas) {
         setCheckCesta(!checkCesta)
-        console.log(titulo,id)
-    fetch("http://localhost:3000/comics/cesta",{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
-      }).then((res)=>res.json()).then((res)=>{
-        console.log(res)
-      })
-    }
+        fetch("http://localhost:3000/comics/cesta",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({titulo:titulo,id:parseInt(id),descargas:parseInt(descargas)}),
+          }).then((res)=>res.json()).then((res)=>{
+            console.log(res)
+          })
+      }
 
     let mostrarImagen = imagen.map(mostrar=>{
         if (contador <=0) {
