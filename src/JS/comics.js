@@ -28,42 +28,17 @@ function Comics (props) {
     },[])
 
 
-    function favorito (titulo,imagen1,imagen2,id,edad,precio) {
-        setCheckFavoritos(!checkFavoritos)
-        let poster = imagen1+imagen2
-      console.log(poster)
-        if (usuario !== "") {
-        fetch("http://localhost:3000/comics/favoritas",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({titulo:titulo,edad:edad,cartel:poster,id:parseInt(id),producto: "comics"}),
-          }).then((res)=>res.json()).then((res)=>{
-            console.log(res)
-          })
-         
-          fetch("http://localhost:3000/usuarios/favoritos",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:poster,id:parseInt(id),precio:precio,producto: "comics"}),
-          }).then((res)=>res.json()).then((res)=>{
-            console.log(res)
-          })
-        }
-      }
     
-      function visualizado (titulo,imagen1,imagen2,id,edad) {
-        let poster = imagen1+imagen2
+    
+      function visualizado (titulo,imagen1,imagen2,id,edad,precio) {
+        let poster = imagen1+"."+imagen2
         console.log(poster)
         fetch("http://localhost:3000/comics/visualizado",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({titulo:titulo,cartel:poster,id:parseInt(id), edad: edad,producto: "comics"}),
+            body: JSON.stringify({titulo:titulo,cartel:poster,id:parseInt(id), edad: edad,producto: "comics",precio:precio}),
           }).then((res)=>res.json()).then((res)=>{
             console.log(res)
             console.log(edad)
@@ -71,31 +46,7 @@ function Comics (props) {
     
       }
     
-      function cesta (titulo,imagen1,imagen2,id,edad,precio) {
-        let poster = imagen1+imagen2
-        console.log(poster)
-        setCheckCesta(!checkCesta)
-        if (usuario !== "") {
-        fetch("http://localhost:3000/comics/cesta",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({titulo:titulo,cartel:poster,id:parseInt(id), edad:edad,producto: "comics"}),
-          }).then((res)=>res.json()).then((res)=>{
-            console.log(res)
-          })
-            fetch("http://localhost:3000/usuarios/cesta",{
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json",
-              },
-              body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:poster,id:parseInt(id),precio:precio,producto: "comics"}),
-            }).then((res)=>res.json()).then((res)=>{
-              console.log(res)
-            })
-      }
-    }
+      
     
    function prueba() {
        console.log("funciona")
@@ -108,9 +59,9 @@ function Comics (props) {
             {contador = 0}
             return(<>
             <div className="card-comic">
-            <Link onClick={prueba} to={`/comics/${resultados.id}`}>
+            <Link to={`/comics/${resultados.id}`}>
             {resultados.images.map(mostrar=>{if (contador <= 0) {contador = contador + 1
-                                return(<><img className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
+                                return(<><img onClick={()=>{visualizado(resultados.title,mostrar.path,mostrar.extension,resultados.id,edadUsuario,resultados.prices[0].price)}} className="box" src={`${mostrar.path}.${mostrar.extension}`} alt="" width="300"/>
                                 
                        
                                 </>)}

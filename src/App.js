@@ -129,10 +129,10 @@ return
     <Libros />
   </Route>
   <Route exact path="/comics">
-    <Comics/>
+    <Comics edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/comics/:id">
-    <ComicCard usuario={usuario}/>
+    <ComicCard edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/dashboard">
     <Dashboard rango={rango} edad={edad} usuario={usuario}/>

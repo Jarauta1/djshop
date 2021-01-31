@@ -13,6 +13,7 @@ function ComicCard(props) {
   let [checkCesta,setCheckCesta] = useState(false)
   let [url,setUrl] = useState(`comics/${id}`)
   let [usuario,setUsuario] = useState(props.usuario)
+  let [edadUsuario,setEdadUsuario] = useState(props.edad)
   let contador = 0
   
   useEffect(function(){
@@ -43,45 +44,56 @@ function ComicCard(props) {
     /* FIN BOTON CESTA */
     /* --------------- */
 
-    function favorito (titulo,id) {
-        setCheckFavoritos(!checkFavoritos)
-        console.log(usuario)
+    function favorito (titulo,id,edad,precio) {
+      setCheckFavoritos(!checkFavoritos)
       
-        fetch("http://localhost:3000/comics/favoritos",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({titulo:titulo,id:parseInt(id)}),
-          }).then((res)=>res.json()).then((res)=>{
-            console.log(res)
-          })
-         
-          if (usuario !== "") {
-          fetch("http://localhost:3000/usuarios/favoritos",{
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({usuario: usuario,titulo:titulo,id:parseInt(id)}),
-          }).then((res)=>res.json()).then((res)=>{
-            console.log(res)
-          })
-        }
+      if (usuario !== "") {
+      fetch("http://localhost:3000/comics/favoritas",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({titulo:titulo,edad:edad,cartel:null,id:parseInt(id),producto: "comics",precio:precio}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
+       
+        fetch("http://localhost:3000/usuarios/favoritos",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:null,id:parseInt(id),precio:precio,producto: "comics"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
       }
+    }
 
-      function cesta (titulo,id,descargas) {
+      function cesta (titulo,id,edad,precio) {
+        
         setCheckCesta(!checkCesta)
+        if (usuario !== "") {
         fetch("http://localhost:3000/comics/cesta",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({titulo:titulo,id:parseInt(id),descargas:parseInt(descargas)}),
+            body: JSON.stringify({titulo:titulo,cartel:null,id:parseInt(id), edad:edad,producto: "comics",precio:precio}),
           }).then((res)=>res.json()).then((res)=>{
             console.log(res)
           })
+            fetch("http://localhost:3000/usuarios/cesta",{
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:null,id:parseInt(id),precio:precio,producto: "comics"}),
+            }).then((res)=>res.json()).then((res)=>{
+              console.log(res)
+            })
       }
+    }
 
     let mostrarImagen = imagen.map(mostrar=>{
         if (contador <=0) {
@@ -113,7 +125,7 @@ function ComicCard(props) {
                                 <span>Favorito 
                                     {/*  <div className="Category-comic"> */}
                                     <label className="like-comic">
-                                        <input onClick={()=>{favorito(data.title,id)}} type="checkbox"/>
+                                        <input onClick={()=>{favorito(data.title,id,edadUsuario,precio.price)}} type="checkbox"/>
                                         <span className="material-icons heart">favorite</span>
                                         {/* https://google.github.io/material-design-icons/ */}
                                         {/* https://material.io/resources/icons/?style=baseline */}
@@ -129,7 +141,7 @@ function ComicCard(props) {
                     </div>
                 </div>
                 <div className="boton-cesta-comic full">
-                    <button onClick={()=>{cesta(data.title,id)}} class="cart-button-comic">
+                    <button onClick={()=>{cesta(data.title,id,edadUsuario,precio.price)}} class="cart-button-comic">
 	                    <span class="add-to-cart">Añadir a la cesta</span>
 	                    <span class="added">Añadido</span>
 	                    <i class="fas fa-shopping-cart"></i>
