@@ -44,7 +44,7 @@ function ComicCard(props) {
     /* FIN BOTON CESTA */
     /* --------------- */
 
-    function favorito (titulo,id,edad,precio) {
+    function favorito (titulo,id,edad,precio,cartel) {
       setCheckFavoritos(!checkFavoritos)
       
       if (usuario !== "") {
@@ -53,7 +53,7 @@ function ComicCard(props) {
           headers: {
               "Content-Type": "application/json",
           },
-          body: JSON.stringify({titulo:titulo,edad:edad,cartel:null,id:parseInt(id),producto: "comics",precio:precio}),
+          body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id),producto: "comics",precio:precio}),
         }).then((res)=>res.json()).then((res)=>{
           console.log(res)
         })
@@ -63,14 +63,14 @@ function ComicCard(props) {
           headers: {
               "Content-Type": "application/json",
           },
-          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:null,id:parseInt(id),precio:precio,producto: "comics"}),
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "comics"}),
         }).then((res)=>res.json()).then((res)=>{
           console.log(res)
         })
       }
     }
 
-      function cesta (titulo,id,edad,precio) {
+      function cesta (titulo,id,edad,precio,cartel) {
         
         setCheckCesta(!checkCesta)
         if (usuario !== "") {
@@ -79,7 +79,7 @@ function ComicCard(props) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({titulo:titulo,cartel:null,id:parseInt(id), edad:edad,producto: "comics",precio:precio}),
+            body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad,producto: "comics",precio:precio}),
           }).then((res)=>res.json()).then((res)=>{
             console.log(res)
           })
@@ -88,7 +88,7 @@ function ComicCard(props) {
               headers: {
                   "Content-Type": "application/json",
               },
-              body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:null,id:parseInt(id),precio:precio,producto: "comics"}),
+              body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "comics"}),
             }).then((res)=>res.json()).then((res)=>{
               console.log(res)
             })
@@ -125,7 +125,7 @@ function ComicCard(props) {
                                 <span>Favorito 
                                     {/*  <div className="Category-comic"> */}
                                     <label className="like-comic">
-                                        <input onClick={()=>{favorito(data.title,id,edadUsuario,precio.price)}} type="checkbox"/>
+                                        <input onClick={()=>{favorito(data.title,id,edadUsuario,precio.price,"https://images-na.ssl-images-amazon.com/images/I/81tA%2B9H7ZTL._AC_SL1000_.jpg")}} type="checkbox"/>
                                         <span className="material-icons heart">favorite</span>
                                         {/* https://google.github.io/material-design-icons/ */}
                                         {/* https://material.io/resources/icons/?style=baseline */}
@@ -141,7 +141,7 @@ function ComicCard(props) {
                     </div>
                 </div>
                 <div className="boton-cesta-comic full">
-                    <button onClick={()=>{cesta(data.title,id,edadUsuario,precio.price)}} class="cart-button-comic">
+                    <button onClick={()=>{cesta(data.title,id,edadUsuario,precio.price,"https://images-na.ssl-images-amazon.com/images/I/81tA%2B9H7ZTL._AC_SL1000_.jpg")}} class="cart-button-comic">
 	                    <span class="add-to-cart">Añadir a la cesta</span>
 	                    <span class="added">Añadido</span>
 	                    <i class="fas fa-shopping-cart"></i>

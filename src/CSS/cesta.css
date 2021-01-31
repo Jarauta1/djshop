@@ -40,9 +40,7 @@
 }
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
- .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-	 content: '$';
-}
+
 /* Body/Header stuff */
  .body-cesta {
 	 padding: 30px 30px 30px 20px;
@@ -191,9 +189,7 @@
 		 width: auto;
 		 margin-top: 10px;
 	}
-	 .product .product-line-price:before {
-		 content: 'Item Total: $';
-	}
+	
 	 .totals .totals-item label {
 		 width: 60%;
 	}

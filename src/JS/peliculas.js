@@ -123,7 +123,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkFavoritos}/>
+                      <input onClick={()=>{favorito(pelicula.title,`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkFavoritos}/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -132,7 +132,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category2">
                     <label className="like-pelicula">
-                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkCesta}/>
+                      <input onClick={()=>{cesta(pelicula.title,`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkCesta}/>
                       <span className="material-icons heart">shopping_cart</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -141,7 +141,7 @@ function Peliculas(props) {
                   </div>
                   <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
                     <div className="separacion"> 
-                      <Link to={`/peliculas/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}}>
+                      <Link to={`/peliculas/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`,pelicula.id,edadUsuario)}}>
                         <a className="detalles">
                           <div className="view-story">
                             <span>Detalles</span>

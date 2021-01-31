@@ -10,19 +10,21 @@ function Cesta(props) {
 
 
     let [usuario,setUsuario] = useState(props.usuario)
-    let [data,setData] = useState({})
+    let [total,setTotal] = useState("")
+    let [cesta,setCesta] = useState([])
 
     useEffect(function(){
   
-        fetch("http://localhost:3000/usuarios/", {
+        fetch("http://localhost:3000/usuarios/visualizarCesta", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({usuario: usuario}),
             }).then((res)=>res.json()).then((res)=>{
-               console.log(res.datos[0].cesta)
-               setData(res.datos[0].cesta)
+               console.log(res)
+               setCesta(res.datos[0].cesta)
+               setTotal(parseFloat(res.total))
                
                      
                 
@@ -31,26 +33,44 @@ function Cesta(props) {
       },[usuario])
 
 
-      let mostrarCesta = data.map(cesta=>{
+      function comprar() {
+        window.alert("compra realizada")
+        fetch("http://localhost:3000/usuarios/compras", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: usuario}),
+            }).then((res)=>res.json()).then((res)=>{
+               console.log(res)
+               setCesta(res.datos[0].cesta)
+               setTotal(parseFloat(res.total))
+               
+                     
+                
+            })
+      }
+
+      let mostrarCesta = cesta.map(producto=>{
           return(<>
           <div class="product">
     <div class="product-image">
-      <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg"/>
+      <img src={producto.cartel}/>
     </div>
     <div class="product-details">
-      <div class="product-title">Dingo Dog Bones</div>
-      <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
+      <div class="product-title">{producto.titulo}</div>
+      <p class="product-description">Sección: {producto.producto}</p>
     </div>
-    <div class="product-price">12.99</div>
+    <div class="product-price">{producto.precio} €</div>
     <div class="product-quantity">
-      <input type="number" value="2" min="1"/>
+      <input type="number" value={producto.cantidad} min="1"/>
     </div>
     <div class="product-removal">
       <button class="remove-product">
-        Remove
+        Eliminar
       </button>
     </div>
-    <div class="product-line-price">25.98</div>
+    <div class="product-line-price">{producto.precio} €</div>
   </div>
           </>)
       })
@@ -75,24 +95,13 @@ function Cesta(props) {
 
   <div class="totals">
     <div class="totals-item">
-      <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal">71.97</div>
+      <label>Total</label>
+      <div class="totals-value" id="cart-subtotal">{total} €</div>
     </div>
-    <div class="totals-item">
-      <label>Tax (5%)</label>
-      <div class="totals-value" id="cart-tax">3.60</div>
-    </div>
-    <div class="totals-item">
-      <label>Shipping</label>
-      <div class="totals-value" id="cart-shipping">15.00</div>
-    </div>
-    <div class="totals-item totals-item-total">
-      <label>Grand Total</label>
-      <div class="totals-value" id="cart-total">90.57</div>
-    </div>
+    
   </div>
       
-      <button class="checkout">Checkout</button>
+      <button onClick={comprar} class="checkout">Comprar</button>
 
 </div>
         </div>)
