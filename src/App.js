@@ -14,6 +14,8 @@ import ComicCard from "./JS/comicCard.js"
 import Buscador from "./JS/buscador.js"
 import Zapatillas from "./JS/zapatillas.js"
 import Dashboard from "./Dashboard/dashboard.js"
+import Usuario from "./Usuario/usuario.js"
+import Cesta from "./JS/cesta.js"
 
 
 function App() {
@@ -110,9 +112,9 @@ return
       <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
       <div><Portada/></div>
   </Route>
-  <Route exact path="/buscador">
+  {/* <Route exact path="/buscador">
     <Buscador/>
-  </Route>
+  </Route> */}
   <Route exact path="/login">
     <Login vuelta={vuelta} mensaje={mensaje} login={login} registrar={registrar}/>
   </Route>
@@ -122,7 +124,7 @@ return
   <Route exact path="/peliculas">
     <Peliculas edad={edad} usuario={usuario}/>
   </Route>
-  <Route exact path="/peliculas/:titulo/:id">
+  <Route exact path="/peliculas/:id">
     <PeliculaCard edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/libros">
@@ -134,8 +136,14 @@ return
   <Route exact path="/comics/:id">
     <ComicCard edad={edad} usuario={usuario}/>
   </Route>
+  <Route exact path="/usuario">
+    <Usuario rango={rango} edad={edad} usuario={usuario}/>
+  </Route>
   <Route exact path="/dashboard">
     <Dashboard rango={rango} edad={edad} usuario={usuario}/>
+  </Route>
+  <Route exact path="/cesta">
+    <Cesta rango={rango} edad={edad} usuario={usuario}/>
   </Route>
   <Footer/>
   </BrowserRouter>)

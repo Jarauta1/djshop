@@ -13,10 +13,11 @@ function Peliculas(props) {
   let [precio,setPrecio] = useState(9.99)
 
   useEffect(function(){
-    console.log(edadUsuario)
+    
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=670095a48bfcd1a43ef073e54c4dc56f&language=es-US&page="+numPag).then(respuesta=>respuesta.json()).then(datos=>{
      setData(datos.results)
      setTotalPag(data.total_pages)
+     console.log(datos)
     })
   },[numPag])
 
@@ -131,7 +132,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category2">
                     <label className="like-pelicula">
-                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}} type="checkbox" checked={checkCesta}/>
+                      <input onClick={()=>{cesta(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkCesta}/>
                       <span className="material-icons heart">shopping_cart</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
@@ -140,7 +141,7 @@ function Peliculas(props) {
                   </div>
                   <div className="BoxInfoParagraph">{pelicula.overview.substr(0,146)}...
                     <div className="separacion"> 
-                      <Link to={`/peliculas/${pelicula.title}/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}}>
+                      <Link to={`/peliculas/${pelicula.id}`} onClick={()=>{visualizado(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}}>
                         <a className="detalles">
                           <div className="view-story">
                             <span>Detalles</span>

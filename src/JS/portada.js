@@ -6,282 +6,58 @@ function Portada () {
     return(
 	/* PROMOCIONES */
 	<div className="container-fluid">
-		{/* PRIMERA LINEA */}
-
-		
-    			<div className="row">
-					{/* LATERAL IZQUIERDO */}
-					<div className="col-3">
-						<div className="row">
-							<div className="col-12">
-								<div className="book-card-portada">
-    								<div className="book-card__cover-portada">
-     									<div className="book-card__book-portada">
-        									<div className="book-card__book-front-portada">
-          										<img className="book-card__img-portada" src="https://i.ibb.co/gTvbqnQ/harry-potter.jpg"/>
-        									</div> 
-        									<div className="book-card__book-back-portada"></div>
-        									<div className="book-card__book-side-portada"></div>
-      									</div>  
-    								</div>    
-  								</div>
-    							<div>
-      								<div className="book-card__title-portada">
-        								| batman
-        							</div>
-      								<div className="book-card__author-portada">
-        								| J. K. Rowling
-        							</div>
-    							</div> 
-							</div>
-						</div>
-					</div>
-					{/* CENTRO Y LATERAL DERECHO */}
-					<div className="col-6">
-						
-
-						<div className="col-12"> {/* banner películas */}						
-							<div className="banner">
-								<div className="slider-container">
- 				 					<div className="menu">
-    									<label for="slide-dot-1"></label>
-    									<label for="slide-dot-2"></label>
-    							
-  									</div>
-  									<input id="slide-dot-1" type="radio" name="slides" checked/>
-  									<div className="slide slide-1">
-										<div className="movie-card" style={{backgroundImage: `url("http://digitalspyuk.cdnds.net/15/47/1600x800/landscape-1447754794-harrison-ford-blade-runner.jpg")`}}>
-											<div className="color-overlay">
-												<div className="movie-share">
-													<p>15 €</p>
-												</div>
-												<div className="movie-content">
-													<div className="movie-header">
-														<h1 className="movie-title">Blade Runner</h1>
-														<h4 className="movie-info">(1982) Sci-Fi, Thriller</h4>
-													</div>
-													<p className="movie-desc">A blade runner must pursue and try to terminate four replicants who stole a ship in</p>
-													<a className="btn btn-outline" href="#">Watch Trailer</a>
-												</div>
-											</div>
-										</div>
-									</div>
-  									<input id="slide-dot-2" type="radio" name="slides"/>
-  									<div className="slide slide-2">
-										<div className="movie-card" style={{backgroundImage: `url("http://www.blastr.com/sites/blastr/files/back-to-the-future-part-ii-original.jpg")`}}>
-											<div className="color-overlay">
-												<div className="movie-share">
-													<p>15 €</p>
-												</div>
-												<div className="movie-content">
-													<div className="movie-header">
-														<h1 className="movie-title">LA OTRA</h1>
-														<h4 className="movie-info">(1982) Sci-Fi, Thriller</h4>
-													</div>
-													<p className="movie-desc">A blade runner must pursue and try to terminate four replicants who stole a ship in</p>
-													<a className="btn btn-outline" href="#">Watch Trailer</a>
-												</div>
-											</div>
-										</div>
-									</div>
-						
-						
-								</div>
-							</div>
-						</div> {/* fin banner peliculas */}
-	
-						
-						<div className="col-12">
-							
-					 	{/* 	<div className="movie-card" style={{backgroundImage: `url("http://digitalspyuk.cdnds.net/15/47/1600x800/landscape-1447754794-harrison-ford-blade-runner.jpg")`}}>
-								<div className="color-overlay">
-									<div className="movie-share">
-										<p>15 €</p>
-									</div>
-									<div className="movie-content">
-										<div className="movie-header">
-											<h1 className="movie-title">Blade Runner</h1>
-											<h4 className="movie-info">(1982) Sci-Fi, Thriller</h4>
-										</div>
-										<p className="movie-desc">A blade runner must pursue and try to terminate four replicants who stole a ship in</p>
-										<a className="btn btn-outline" href="#">Watch Trailer</a>
-									</div>
-								</div>
-							</div>  */}
-
-							{/* <div id="shadow">
-							</div> */}
-
-							<div id="slider">
-  
-    							<div id="allpic">
-      								
-  
-    							</div>
-    							<div id="allpic">
-      								<img src="http://i4.ytimg.com/sh/G2lfbxaIEy4/showposter.jpg?v=4fbb28d7"/>
-    							</div>
-  								<div id="allpic">
-      								<img src="http://ec2.images-amazon.com/images/I/41hmD1hLmBL._SL500_AA300_.jpg"/>
-    							</div>
-  								<div id="allpic">
-      								<img src="https://1.bp.blogspot.com/-55F_zXg6TKI/UKB6cCTZ1XI/AAAAAAAAB3c/um9nqYtzfY4/s1600/61bEcpAzU0L._SL500_AA300_.jpg"/>
-    							</div>
-  								<div id="allpic">
-      								<img src="https://1.bp.blogspot.com/-55F_zXg6TKI/UKB6cCTZ1XI/AAAAAAAAB3c/um9nqYtzfY4/s1600/61bEcpAzU0L._SL500_AA300_.jpg"/>
-    							</div>
-  
-  
-  
-							</div>
-
-
-
-
-						</div>
-						
-					</div>
-					<div className="col-2">
-					<div className="prueba">1</div>
-
-					</div>
-
-			</div>
-		
-			<div className="container-fluid">
-    			<div className="row">
-					<div className="col-12">
-
-					<div className="slider">
-		<div className="popular-movies">
-			<div className="movie-container">
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. </p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento.</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			<div className="image-effect">
-			<div className="movie-image" ><img src="https://farm5.staticflickr.com/4487/24153103448_8ce5082f75.jpg" alt="Guardianes de la galaxia vol.2" class="zoom"/>
-			<div className="movie-info">
-				<h2 className="movie-title">Guardianes de la Galaxia vol.2</h2>
-				<p className="movie-sinopsis">La informacion de esta pelicula no se encuentra disponible en este momento. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique odit animi ut nam facilis architecto, minus itaque accusamus labore fugit assumenda omnis ab molestias optio saepe sunt..</p>
-				<div className="links">
-					<a className="watch" href="ver" >Ver</a>
-					<a className="down" href="down" >Descargar</a>
-				</div>
-			</div>
-			</div>
-			</div>
-			</div>
-		</div>
-	</div>
-	
-					</div>
-				</div>
-		</div>
+		<ul class="c-accordion">
+ <li id="joker" class="c-accordion__item" style={{backgroundImage:`url("ttps://i.pinimg.com/originals/1f/62/51/1f6251d4e9ab99d8bd84a4548a6f902e.jpg")`}}>
+  <a href="#joker" class="c-accordion__action">
+   <div class="c-accordion__content">
+    <h2 class="c-accordion__title c-accordion__title--hero c-accordion__title--hover-show">Jocker</h2>
+     <p class="c-accordion__description">In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.</p>
+   </div>
+   <div class="c-accordion__aside">
+    <h2 class="c-accordion__title c-accordion__title--hover-hide">Jocker</h2>
+   </div>
+  </a>
+ </li>
+ <li id="john-wick" class="c-accordion__item" style={{backgroundImage:`url("ttps://i.pinimg.com/originals/1f/62/51/1f6251d4e9ab99d8bd84a4548a6f902e.jpg")`}}>
+  <a href="#john-wick" class="c-accordion__action">
+   <div class="c-accordion__content">
+    <h2 class="c-accordion__title c-accordion__title--hero c-accordion__title--hover-show">John Wick</h2>
+    <p class="c-accordion__description">
+     John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.
+    </p>
+   </div>
+   <div class="c-accordion__aside">
+    <h2 class="c-accordion__title c-accordion__title--hover-hide">John Wick</h2>
+   </div>
+  </a>
+ </li>
+ <li id="black-panther" class="c-accordion__item" style={{backgroundImage:`url("ttps://i.pinimg.com/originals/1f/62/51/1f6251d4e9ab99d8bd84a4548a6f902e.jpg")`}}>
+  <a href="#black-panther" class="c-accordion__action">
+   <div class="c-accordion__content">
+    <h2 class="c-accordion__title c-accordion__title--hero c-accordion__title--hover-show">Black Panther</h2>
+    <p class="c-accordion__description">
+     T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.
+    </p>
+   </div>
+   <div class="c-accordion__aside">
+    <h2 class="c-accordion__title c-accordion__title--hover-hide">Black Panther</h2>
+   </div>
+  </a>
+ </li>
+ <li id="marvel-captain" class="c-accordion__item" style={{backgroundImage:`url("ttps://i.pinimg.com/originals/1f/62/51/1f6251d4e9ab99d8bd84a4548a6f902e.jpg")`}}>
+  <a href="#marvel-captain" class="c-accordion__action">
+   <div class="c-accordion__content">
+    <h2 class="c-accordion__title c-accordion__title--hero c-accordion__title--hover-show">Marvel Captain</h2>
+    <p class="c-accordion__description">
+     Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.
+    </p>
+   </div>
+   <div class="c-accordion__aside">
+    <h2 class="c-accordion__title c-accordion__title--hover-hide">Marvel Captain</h2>
+   </div>
+  </a>
+ </li>
+</ul>
 
 		</div>);
 }

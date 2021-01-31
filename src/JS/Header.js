@@ -26,13 +26,13 @@ console.log(props.usuario)
                     <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
-                    <li><Link to="/buscador"><a>Buscador</a></Link></li>
+                  {/*   <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
                     <li></li>
                     <li></li>
                     <li></li>
                     <li className="material-icons"><Link to="/"><a>favorite</a></Link></li>
-                    <li className="material-icons"><Link to="/"><a className="shopping-bag">shopping_bag</a></Link><span className="num-bag">5</span></li>
-                    <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/"><a>account_circle</a></Link></div></div></li>
+                    <li className="material-icons"><Link to="/cesta"><a className="shopping-bag">shopping_bag</a></Link></li>
+                    <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/usuario"><a>manage_accounts</a></Link></div></div></li>
                     <li className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>
                 </ul>
             </section>
@@ -55,7 +55,7 @@ console.log(props.usuario)
                     <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
-                    <li><Link to="/buscador"><a>Buscador</a></Link></li>
+                   {/*  <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
                     <li></li>
                     <li></li>
                     <li></li>
