@@ -126,5 +126,21 @@
 }
   
   
-  
-  
+.shopping-bag {
+	position: relative;
+}
+
+.num-bag {
+	position: absolute;
+	top: 6px;
+	margin-left: 15px;
+	background: red;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	padding: 2px;
+}

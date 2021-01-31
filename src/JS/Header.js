@@ -30,10 +30,10 @@ console.log(props.usuario)
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li className="material-icons">favorite</li>
-                    <li className="material-icons">shopping_bag</li>
-                    <li><div className="user-div">{props.nombre}<div className="material-icons">account_circle</div></div></li>
-                    <li className="material-icons">exit_to_app</li>
+                    <li className="material-icons"><Link to="/"><a>favorite</a></Link></li>
+                    <li className="material-icons"><Link to="/"><a className="shopping-bag">shopping_bag</a></Link><span className="num-bag">5</span></li>
+                    <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/"><a>account_circle</a></Link></div></div></li>
+                    <li className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>
                 </ul>
             </section>
         </>)

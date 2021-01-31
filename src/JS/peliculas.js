@@ -10,6 +10,7 @@ function Peliculas(props) {
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
+  let [precio,setPrecio] = useState(9.99)
 
   useEffect(function(){
     console.log(edadUsuario)
@@ -31,27 +32,27 @@ function Peliculas(props) {
     }
   }
 
-  function favorito (titulo,cartel,id,edad) {
+  function favorito (titulo,cartel,id,edad,precio) {
     setCheckFavoritos(!checkFavoritos)
     console.log(usuario)
   
+    if (usuario !== "") {
     fetch("http://localhost:3000/peliculas/favoritas",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id)}),
+        body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id),producto: "peliculas"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
      
-      if (usuario !== "") {
       fetch("http://localhost:3000/usuarios/favoritos",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id)}),
+        body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "peliculas"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
@@ -64,7 +65,7 @@ function Peliculas(props) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,producto: "peliculas"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
         console.log(edad)
@@ -72,25 +73,25 @@ function Peliculas(props) {
 
   }
 
-  function cesta (titulo,cartel,id,edad) {
+  function cesta (titulo,cartel,id,edad,precio) {
     
     setCheckCesta(!checkCesta)
+    if (usuario !== "") {
     fetch("http://localhost:3000/peliculas/cesta",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad}),
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad,producto: "peliculas"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
-      if (usuario !== "") {
         fetch("http://localhost:3000/usuarios/cesta",{
           method: "POST",
           headers: {
               "Content-Type": "application/json",
           },
-          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id)}),
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "peliculas"}),
         }).then((res)=>res.json()).then((res)=>{
           console.log(res)
         })
@@ -107,7 +108,7 @@ function Peliculas(props) {
               <a>
                 <div className="season"><em>Media</em><span>{pelicula.vote_average}</span></div>
                 <div className="episodes"><em>Votos</em><span>{pelicula.vote_count}</span></div>
-                <div className="imdbRating"><span>9.9 €</span></div>
+                <div className="imdbRating"><span>{precio} €</span></div>
                 <div className="Thumb">
                   <div className="tvpost">
                     <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} width="200"/>
@@ -121,7 +122,7 @@ function Peliculas(props) {
                   </div>
                   <div className="Category">
                     <label className="like-pelicula">
-                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario)}} type="checkbox" checked={checkFavoritos}/>
+                      <input onClick={()=>{favorito(pelicula.title,pelicula.poster_path,pelicula.id,edadUsuario,precio)}} type="checkbox" checked={checkFavoritos}/>
                       <span className="material-icons heart">favorite</span>
                       {/* https://google.github.io/material-design-icons/ */}
                       {/* https://material.io/resources/icons/?style=baseline */}
