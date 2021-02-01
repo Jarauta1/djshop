@@ -10,34 +10,66 @@ function Camisetas(props) {
 
   useEffect(function(){
     
-    fetch("http://localhost:3000/productos/zapatillas", {
+    fetch("http://localhost:3000/productos/camisetas", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
     },
     body: JSON.stringify(),
   }).then((res)=>res.json()).then((res)=>{
-    setData(res[0].zapatillas)
-    console.log(res[0].zapatillas)
+    setData(res[0].camisetas)
+    console.log(res[0].camisetas)
   })
     
   },[])
 
+  let mostrarCamisetas= data.map(camiseta=>{
+    return(<>
+    <div class="col-md-3">
+        <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src={camiseta.imagen} alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>{camiseta.titulo}</span>
+            </div>
+            <div class="title-product">
+              <h3>My face not my heart</h3>
+            </div>
+            <div class="description-prod">
+              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+            </div>
+            <div class="card-footer">
+              <div class="wcf-left"><span class="price">Rp500.000</span></div>
+              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>)
+  })
+
  
-      return(<>
+      return(<body className="body-camisetas">
 
-<div class="centeri">
-<div class="card">
-    <p class="preco"> R$ 99.99</p>
-  <img src="https://authenticfeet.vteximg.com.br/arquivos/ids/227026-1000-1000/Camiseta-Nike-Swoosh-1-Masculina-Vermelho.jpg" class="foto img-camisetas" /* style="width:100%" *//>
-  <p class="titu">Nike T-Shirt</p>
-  <center>
-  <button class="button"><span><i class="fa fa-shopping-cart" /* style="font-size:24px" */></i></span></button>
-  </center>
-  </div>
-  </div>
 
-            </>);
+
+
+<div class="shell">
+  <div class="container">
+    <div class="row">
+     
+     
+      {mostrarCamisetas}
+      
+    </div>
+   
+  </div>
+</div>
+
+
+            </body>);
       
 }
 
