@@ -2,7 +2,7 @@
 import '../CSS/portada.css';
 
 function Portada () {
-
+  localStorage.setItem("retorno", "")
     return(
 	/* PROMOCIONES */
 	<div className="container-fluid">

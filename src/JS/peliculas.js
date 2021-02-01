@@ -12,6 +12,8 @@ function Peliculas(props) {
   let [data,setData] = useState([])
   let [precio,setPrecio] = useState(9.99)
 
+  localStorage.setItem("retorno", "peliculas")
+
   useEffect(function(){
     
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=670095a48bfcd1a43ef073e54c4dc56f&language=es-US&page="+numPag).then(respuesta=>respuesta.json()).then(datos=>{

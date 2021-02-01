@@ -8,6 +8,10 @@ import logo from "../Imagenes/logo_header_blanco.png"
 
 function Header(props) {
 
+    function cambio() {
+        localStorage.setItem("retorno", "")
+    }
+
 console.log(props.usuario)
     if (props.usuario !== "") {
 
@@ -61,7 +65,7 @@ console.log(props.usuario)
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li className="material-icons heart"><Link to="/login">account_circle</Link></li>
+                    <li onClick={cambio} className="material-icons heart"><Link to="/login">account_circle</Link></li>
                 </ul>
             </section>
         </>)

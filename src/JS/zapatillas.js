@@ -3,7 +3,7 @@ import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 
 function Zapatillas(props) {
-
+  localStorage.setItem("retorno", "zapatillas")
   let [data,setData] = useState([])
   let [usuario,setUsuario] = useState(props.usuario)
   let [edadUsuario,setEdadUsuario] = useState(props.edad)

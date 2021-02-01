@@ -17,6 +17,9 @@ function ComicCard(props) {
   let [portadaComic,setPortadaComic] = useState("")
   let contador = 0
   
+  localStorage.setItem("retorno", url)
+
+  
   useEffect(function(){
 
     fetch(`http://gateway.marvel.com/v1/public/comics/${id}?ts=1&apikey=70945025a9ff9a1f3d2c54de4c8c3599&hash=a92c5e400dfca9dbc06a81b098cf6210`).then(respuesta=>respuesta.json()).then(datos=>{

@@ -13,6 +13,7 @@ function Comics (props) {
     let [checkCesta,setCheckCesta] = useState(false)
     let contador = 0
     
+    localStorage.setItem("retorno", "comics")
   
     useEffect(function(){
       

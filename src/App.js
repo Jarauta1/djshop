@@ -67,7 +67,7 @@ const login = (email, password) => {
       setVuelta("volver")
       console.log(res.usuario)
       setUsuario(res.usuario)
-    }
+    }     
   })
 }
 

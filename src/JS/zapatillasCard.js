@@ -12,7 +12,7 @@ function ZapatillasCard(props) {
     let [checkFavoritos,setCheckFavoritos] = useState(false)
     let [checkCesta,setCheckCesta] = useState(false)
     let [url,setUrl] = useState(`zapatillas/${id}`)
-
+    localStorage.setItem("retorno", url)
     useEffect(function(){
    
         fetch("http://localhost:3000/productos/zapatillas/id", {
@@ -85,7 +85,7 @@ function ZapatillasCard(props) {
         localStorage.setItem("retorno", url)
           return <Redirect to="/login"/>
       } else if ( usuario == "" && checkCesta) {
-        localStorage.setItem("retorno", "peliculas")
+        localStorage.setItem("retorno", url)
           return <Redirect to ="/login"/>
       } else {
     return(<>

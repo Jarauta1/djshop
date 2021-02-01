@@ -4,6 +4,8 @@ import {Redirect, Link} from "react-router-dom"
 
 
 function Libros (props){
+
+  localStorage.setItem("retorno", "libros")
     
     let [data,setData] = useState([])
     let [categoria, setCategoria] = useState("libros_programacion")

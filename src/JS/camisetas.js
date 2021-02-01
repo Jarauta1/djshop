@@ -6,6 +6,8 @@ function Camisetas(props) {
 
   let [data,setData] = useState([])
 
+  localStorage.setItem("retorno", "camisetas")
+
   useEffect(function(){
     
     fetch("http://localhost:3000/productos/zapatillas", {

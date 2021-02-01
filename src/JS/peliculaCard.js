@@ -17,6 +17,8 @@ function PeliculaCard(props) {
   let [precio,setPrecio] = useState(9.99)
   let contador = 0
 
+  localStorage.setItem("retorno", url)
+
   useEffect(function(){
     
     fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=670095a48bfcd1a43ef073e54c4dc56f&language=es`).then(respuesta=>respuesta.json()).then(datos=>{

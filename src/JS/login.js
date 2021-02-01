@@ -6,6 +6,8 @@ import {Redirect} from "react-router-dom"
 
 function Login (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
+  let [mensaje,setMensaje] = useState(props.mensaje)
+  let [num,setNum] = useState(0)
   
   let [emailAcceso, setEmailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
@@ -17,10 +19,14 @@ function Login (props) {
   let [emailRegistro,setEmailRegistro] = useState("")
   let [passwordRegistro,setPasswordRegistro] = useState("")
   let [confirmacionRegistro,setConfirmacionRegistro] = useState("")
-  
+
+  useEffect(function(){
+    setMensaje(props.mensaje)
+  },[num])
 
   function cambioPantalla () {
-  
+    setNum(num+1)
+  setMensaje("")
   document.querySelector('.container-login').classList.toggle('active');
   }
 
@@ -116,6 +122,9 @@ function changeConfirmacionRegistro(e) {
 
 if (props.mensaje === "Logueado correctamente") {
   return(<Redirect to={`/${retorno}`}/>)
+} else if (props.mensaje === "Usuario registrado correctamente")
+{
+  return(<Redirect to={`/${retorno}`}/>)
 } else {
   return(<>
   <section className="login">
@@ -129,7 +138,7 @@ if (props.mensaje === "Logueado correctamente") {
             <input onChange={changeContrasenaAcceso} className="input-long" type="password" name="" placeholder="Contraseña" />
             <div className="boton-mensaje">
             <input onClick={()=>props.login(emailAcceso,contrasenaAcceso)} className="input-long" type="submit" name="" value="Acceder"/>
-            <div id="mensajeAcceso">{props.mensaje}</div>
+            <div id="mensajeAcceso">{mensaje}</div>
             </div>
             <p className="signup">
               ¿No tienes cuenta?
@@ -151,7 +160,7 @@ if (props.mensaje === "Logueado correctamente") {
             <input onChange={changeConfirmacionRegistro} className="input-long" type="password" name="confContraseña" placeholder="Confirmar contraseña" />
             <div className="boton-mensaje">
             <input onClick={()=>props.registrar(nombreRegistro,apellido1Registro,apellido2Registro,fechaRegistro,emailRegistro,passwordRegistro,confirmacionRegistro)} className="input-long" type="submit" name="" value="Regístrate" />
-            <div id="mensajeRegistro">{props.mensaje}</div>
+            <div id="mensajeRegistro">{mensaje}</div>
             </div>
             <p className="signup">
               ¿Ya tienes una cuenta? 
