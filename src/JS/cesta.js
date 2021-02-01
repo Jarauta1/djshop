@@ -12,6 +12,8 @@ function Cesta(props) {
     let [usuario,setUsuario] = useState(props.usuario)
     let [total,setTotal] = useState("")
     let [cesta,setCesta] = useState([])
+    let [num,setNum] = useState(1)
+    let [isLoading,setIsLoading] = useState(false)
 
     useEffect(function(){
   
@@ -30,17 +32,33 @@ function Cesta(props) {
                 
             })
           
-      },[usuario])
-
-
+      },[num])
+  
       function comprar() {
-        window.alert("compra realizada")
+        /* window.alert("compra realizada") */
         fetch("http://localhost:3000/usuarios/compras", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: usuario}),
+          }).then((res)=>res.json()).then((res)=>{
+            console.log(res)
+            setCesta(res.datos[0].cesta)
+            setTotal(parseFloat(res.total))            
+            setIsLoading(false)
+          })
+          setNum(num+1)
+      }
+
+      function eliminar(id) {
+        window.alert("compra realizada")
+        fetch("http://localhost:3000/usuarios/compras/eliminar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({usuario: usuario}),
+            body: JSON.stringify({usuario: usuario, id:id}),
             }).then((res)=>res.json()).then((res)=>{
                console.log(res)
                setCesta(res.datos[0].cesta)
@@ -66,7 +84,7 @@ function Cesta(props) {
       <input type="number" value={producto.cantidad} min="1"/>
     </div>
     <div class="product-removal">
-      <button class="remove-product">
+      <button onClick={()=>{eliminar(producto.id)}} class="remove-product">
         Eliminar
       </button>
     </div>
@@ -75,6 +93,8 @@ function Cesta(props) {
           </>)
       })
 
+
+      if (setIsLoading) {
         return(<div className="body-cesta">
          <h2 className="h2-cesta">Cesta</h2>
 
@@ -101,11 +121,42 @@ function Cesta(props) {
     
   </div>
       
-      <Link to="/cesta_finalizada"><button onClick={comprar} class="checkout">Comprar</button></Link>
+      {/* <Link to="/cesta_finalizada"> */}<button onClick={comprar} class="checkout">Comprar</button>{/* </Link> */}
 
 </div>
         </div>)
-    
+      } else{
+        return(<div className="body-cesta">
+        <h2 className="h2-cesta">Cesta</h2>
+
+<div class="shopping-cart">
+
+ <div class="column-labels">
+   <label class="product-image">Imagen</label>
+   <label class="product-details">Producto</label>
+   <label class="product-price">Precio</label>
+   <label class="product-quantity">Cantidad</label>
+   <label class="product-removal">Eliminar</label>
+   <label class="product-line-price">Total</label>
+ </div>
+
+ 
+
+
+
+ <div class="totals">
+   <div class="totals-item">
+     <label>Total</label>
+     <div class="totals-value" id="cart-subtotal">{total} €</div>
+   </div>
+   
+ </div>
+     
+     {/* <Link to="/cesta_finalizada"> */}<button onClick={comprar} class="checkout">Comprar</button>{/* </Link> */}
+
+</div>
+       </div>)
+      }
 
 
     
