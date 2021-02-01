@@ -53,6 +53,7 @@
 
 .book-card {
 width: 280px;
+height: 575px;
 padding: 16px;
 border-radius: 5px;
 background-color: rgba(249, 234, 217);
@@ -135,10 +136,23 @@ box-shadow:
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
   }
+
+  
+.price-book {
+  background-color: wheat;
+  transition: .6s linear;
+  position: relative;
+  left: -20px;
+
+  padding: 10px 40px;
+  box-shadow: 3px 11px 20px -4px rgba(0,0,0,0.24);
+}
 
   .button-price-book {
     padding: 2px 5px;
+    
   }
 
 /* ------ */
@@ -331,6 +345,12 @@ box-shadow:
 .book ul li:nth-child(18) {
   -webkit-animation-name: page-18;
           animation-name: page-18;
+}
+
+.div-button-book {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
 }
 
 @-webkit-keyframes page-0 {
@@ -1160,6 +1180,7 @@ select {
   font-size: 15px;
   position: relative;
   border: none;
+  background-color: rgba(249,234,217);
 }
 
 .book-surface::before, .book-surface::after {
@@ -1203,7 +1224,7 @@ select {
   padding: 9px;
   position: relative;
   z-index: 10;
-  height: 35px;
+  height: 35px; /* 25-- */
   color: white;
 }
 
@@ -1211,7 +1232,7 @@ select {
   position: absolute;
   content: "";
   background: #9C813C;
-  height: 35px;
+  height: 35px; /* 25-- */
   width: 5px;
   border-radius: 50%;
   top: 0;
@@ -1232,3 +1253,7 @@ select {
 /* --------------- */
 /* FIN BOTON LIBRO */
 /* --------------- */
+
+
+
+ 

@@ -14,6 +14,7 @@ function ComicCard(props) {
   let [url,setUrl] = useState(`comics/${id}`)
   let [usuario,setUsuario] = useState(props.usuario)
   let [edadUsuario,setEdadUsuario] = useState(props.edad)
+  let [portadaComic,setPortadaComic] = useState("")
   let contador = 0
   
   useEffect(function(){
@@ -23,6 +24,7 @@ function ComicCard(props) {
        setData(datos.data.results[0])
        setImagen(datos.data.results[0].images)
        setPrecio(datos.data.results[0].prices[0])
+
           console.log(datos)
     })
     },[id])
@@ -46,7 +48,7 @@ function ComicCard(props) {
 
     function favorito (titulo,id,edad,precio,cartel) {
       setCheckFavoritos(!checkFavoritos)
-      
+      console.log(cartel)
       if (usuario !== "") {
       fetch("http://localhost:3000/comics/favoritas",{
           method: "POST",
@@ -96,6 +98,7 @@ function ComicCard(props) {
     }
 
     let mostrarImagen = imagen.map(mostrar=>{
+     /*  setPortadaComic(mostrar.path + "." + mostrar.extension) */
         if (contador <=0) {
             contador = contador + 1
             return(<><div className="left-image" style={{backgroundImage:`url("${mostrar.path}.${mostrar.extension}")`}} alt="" height="400"><Link to="/comics"><button className="close-button">regresar</button></Link></div></>)
@@ -105,10 +108,10 @@ function ComicCard(props) {
    /*  let mostrarPrecio = precio.map(price=>{return({price.price})}) */
 
 
-    if (usuario == "nada" && checkFavoritos) {
+    if (usuario == "" && checkFavoritos) {
         localStorage.setItem("retorno", url)
           return <Redirect to="/login"/>
-      } else if ( usuario == "nada" && checkCesta) {
+      } else if ( usuario == "" && checkCesta) {
         localStorage.setItem("retorno", url)
           return <Redirect to ="/login"/>
       } else {

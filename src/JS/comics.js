@@ -48,10 +48,6 @@ function Comics (props) {
     
       
     
-   function prueba() {
-       console.log("funciona")
-   }
-
     let element = document.getElementById("animate");
 
     let mostrarComics= info.map(resultados=>{

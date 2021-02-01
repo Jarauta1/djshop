@@ -59,7 +59,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10000;
+    z-index: 100;
     width: 100%;
     height: 220px;
     transition: 0.5s;
@@ -104,7 +104,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 20px;
+    padding: 1px 20px;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
@@ -173,12 +173,12 @@
     background: #9bdc28;
 }
 
-.fondo-zapatillas .card-zapatilla .contentBx a{
+.fondo-zapatillas .card-zapatilla .contentBx button{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 1px 20px;
     background: #fff;
     border-radius: 4px;
-    margin-top: 10px;
+    margin-top: 1px;
     text-decoration: none;
     font-weight: 600;
     color: #111;
@@ -187,13 +187,13 @@
     transition: 0.5s;
 }
 
-.fondo-zapatillas .card-zapatilla:hover .contentBx a{
+.fondo-zapatillas .card-zapatilla:hover .contentBx button{
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
 }
 
-.fondo-zapatillas .card-zapatilla .contentBx a:hover{
+.fondo-zapatillas .card-zapatilla .contentBx button:hover{
     background: #A3081C;
     color: #fff;
 }

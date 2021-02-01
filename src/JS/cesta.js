@@ -101,7 +101,7 @@ function Cesta(props) {
     
   </div>
       
-      <button onClick={comprar} class="checkout">Comprar</button>
+      <Link to="/cesta_finalizada"><button onClick={comprar} class="checkout">Comprar</button></Link>
 
 </div>
         </div>)

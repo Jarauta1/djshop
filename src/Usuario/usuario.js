@@ -559,7 +559,7 @@ let chart1_2_options = {
             </div>
             <div class="main-container">
               <div class="header-dashboard">
-                  <div class="logo-dashboard"><span class="logo-det"><img src={logo} height="20" alt=""/></span></div>
+                  <div class="logo-dashboard"><span class="logo-det"><img classname="img-usuario" src={logo} height="20" alt=""/></span></div>
                   <a class="header-link" >
                     <div className="material-icons header-admin">
                      <a>analytics</a>
@@ -685,7 +685,7 @@ let chart1_2_options = {
                   </div>
                   <div class="discount-profile">
                     <span class="by">Articulo:</span>
-                    <img class="discount-img" src="https://image.tmdb.org/t/p/w500/oG8rC5WEUFEMsMeBLGJWspJ1Gp5.jpg" alt=""/>
+                    <img class="discount-img img-usuario" src="https://image.tmdb.org/t/p/w500/oG8rC5WEUFEMsMeBLGJWspJ1Gp5.jpg" alt=""/>
                     <div class="discount-detail">
                       <div class="discount-name">Titulo: Wonder Woman 1984</div>
                       <div class="discount-type">Sección: Peliculas</div>
@@ -696,7 +696,7 @@ let chart1_2_options = {
                
                 <div class="account-wrapper">
                   <div class="account-profile">
-                    <img src={foto} alt=""/>
+                    <img className="img-usuario" src={foto} alt=""/>
                     <div class="blob-wrap">
                       <div class="blob"></div>
                       <div class="blob"></div>

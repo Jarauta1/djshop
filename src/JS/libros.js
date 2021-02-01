@@ -1,13 +1,18 @@
 import "../CSS/libros.css"
 import {useState, useEffect} from "react"
+import {Redirect, Link} from "react-router-dom"
 
 
-function Libros (){
+function Libros (props){
     
     let [data,setData] = useState([])
     let [categoria, setCategoria] = useState("libros_programacion")
     let [isLoading, setIsLoading] = useState (false)
     let [precio, setPrecio] = useState("")
+    let [edadUsuario, setEdadUsuario] = useState(props.edad)
+    let [usuario, setUsuario] =useState(props.usuario)
+    let [checkFavoritos,setCheckFavoritos] = useState(false)
+    let [checkCesta,setCheckCesta] = useState(false)
   
     useEffect(function(){
 
@@ -27,9 +32,81 @@ function Libros (){
 
     /* POP-UP */
 
-    
+     
 
     /* FINPOP-UP */
+
+    function favorito (titulo,cartel,id,edad,precio) {
+      setCheckFavoritos(!checkFavoritos)
+      if (usuario !== "") {
+      fetch("http://localhost:3000/libros/favoritas",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id),producto: "libros"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
+       
+        fetch("http://localhost:3000/usuarios/favoritos",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "libros"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
+
+        fetch("http://localhost:3000/libros/visualizado",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,precio:precio,producto: "libros"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+          console.log(edad)
+        })
+      }
+    }
+  
+    function cesta (titulo,cartel,id,edad,precio) {
+      setCheckCesta(!checkCesta)
+      if (usuario !== "") {
+      fetch("http://localhost:3000/libros/cesta",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad,producto: "libros"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
+          fetch("http://localhost:3000/usuarios/cesta",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "libros"}),
+          }).then((res)=>res.json()).then((res)=>{
+            console.log(res)
+          })
+
+          fetch("http://localhost:3000/libros/visualizado",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,precio:precio,producto: "libros"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+          console.log(edad)
+        })
+    }
+  }
+
 
     let mostrarLibros = data.map(libro=>{
    
@@ -53,13 +130,21 @@ function Libros (){
         			            | by {libro.author}
         		            </div>
                         <div className="options">
-                          <div className="price-book">9.95€</div>
+                          <div className="price-book">{parseInt(libro.ID)/100} €</div>
+                          <div className="div-button-book">
                           <button className="button-price-book">
                             <div className="book-surface"></div>
-                            <div className="book-bind">
-                              <p>Añadir</p>
+                            <div onClick={()=>{favorito(libro.title,libro.cover,libro.ID,edadUsuario,parseInt(libro.ID)/100)}} className="book-bind">
+                              <p>Favorito</p>
                             </div>
                           </button>
+                          <button className="button-price-book">
+                            <div className="book-surface"></div>
+                            <div onClick={()=>{cesta(libro.title,libro.cover,libro.ID,edadUsuario,parseInt(libro.ID)/100)}} className="book-bind">
+                              <p>Comprar</p>
+                            </div>
+                          </button>
+                          </div>
                         </div>
                         <div className="container"></div>
                       </div> 
@@ -68,7 +153,13 @@ function Libros (){
             </>)
     })
   
-    if (isLoading) {
+    if (usuario == "" && checkFavoritos) {
+      localStorage.setItem("retorno", "libros")
+        return <Redirect to="/login"/>
+    } else if ( usuario == "" && checkCesta) {
+      localStorage.setItem("retorno", "libros")
+        return <Redirect to ="/login"/>
+    } else if (isLoading) {
       return(<>
              
                     <div class="centrado">

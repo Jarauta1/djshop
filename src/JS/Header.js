@@ -22,7 +22,7 @@ console.log(props.usuario)
                 </label>
                 <ul class="menu-header"> 
                     <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
-                    <li><Link to="/ropa"><a>Ropa</a></Link></li>
+                    <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
                     <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
@@ -51,7 +51,7 @@ console.log(props.usuario)
                 </label>
                 <ul class="menu-header"> 
                     <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
-                    <li><Link to="/ropa"><a>Ropa</a></Link></li>
+                    <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
                     <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,800&display=swap');
+
+.body-zapatillasCard {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+}
+
+.container-zapatillasCard {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 900px;
+    height: 600px;
+    background: #fff;
+    margin: 20px;
+}
+
+.container-zapatillasCard .imgBx-zapatillasCard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #212121;
+    transition: .3s linear;
+}
+
+.container-zapatillasCard .imgBx-zapatillasCard:before {
+    content: 'Adidas';
+    position: absolute;
+    top: 0px;
+    left: 24px;
+    color: #000;
+    opacity: 0.2;
+    font-size: 7em;
+    font-weight: 800;
+}
+
+.container-zapatillasCard .imgBx-zapatillasCard .img-zapatillas {
+    position: relative;
+    width: 750px;
+    transform: translate(-50%, 0px) rotate(-25deg) scaleX(-1);
+    /* transform: rotate(-30deg); */
+    left: 65%;
+    transition: .9s linear;
+}
+
+.container-zapatillasCard .details-zapatillasCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.container-zapatillasCard .details-zapatillasCard h2{
+    margin: 0;
+    padding: 0;
+    font-size: 2.4em;
+    line-height: 1em;
+    color: #444;
+}
+
+.container-zapatillasCard .details-zapatillasCard h2 span {
+    font-size: 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+.container-zapatillasCard .details-zapatillasCard p {
+    max-width: 85%;
+    margin-left: 15%;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 36px;
+}
+
+.container-zapatillasCard .details-zapatillasCard h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em;
+    color: #a2a2a2;
+    float: left;
+}
+.container-zapatillasCard .details-zapatillasCard button {
+    background: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    margin-top: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 40px;
+    float: right;
+}
+
+.product-colors-zapatillasCard input {
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    margin-right: 12px;
+    left: 10px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+
+    text-align: center;
+    line-height: 26px;
+    font-size: 18px;
+    color:  #A3081C;
+    background: white;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    
+}
+
+.favoritos-zapatillasCard {
+    margin-top: 15px;
+}
+
+/* .product-colors-zapatillasCard a:hover{
+    background: #A3081C;
+    color: #fff;
+} */
+
+.product-colors-zapatillasCard input:focus{
+    background: #A3081C;
+    color: #fff;
+}
+
+
+.black {
+    background: #000;
+}
+
+.red {
+    background: #D5212E;
+}
+
+.orange {
+    background: #F18557;
+}
+
+.product-colors-zapatillasCard .active:after{
+    content: "";
+    width: 36px;
+    height: 36px;
+    border: 2px solid #000;
+    position: absolute;
+    border-radius: 50%;
+    box-sizing: border-box;
+    left: -5px;
+    top: -5px;
+}
+
+
+
+/* responsive */
+@media (max-width: 1080px) {
+    .container-zapatillasCard {
+        height: auto;
+    }
+    .container-zapatillasCard .imgBx-zapatillasCard {
+        padding: 40px;
+        box-sizing: border-box;
+        width: 100% !important;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+    }
+    .container-zapatillasCard .imgBx-zapatillasCard .img-zapatillas {
+        left: initial;
+        max-width: 100%;
+        transform: rotate(0deg);
+    }
+    .details-zapatillasCard {
+        width: 100% !important;
+        height: auto;
+        padding: 20px;
+    }
+    .container-zapatillasCard .details-zapatillasCard p {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+footer {
+    position: fixed;
+    right: 16px;
+    bottom: 12px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}

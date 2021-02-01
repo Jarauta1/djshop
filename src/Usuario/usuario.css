@@ -49,7 +49,7 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
-img {
+.img-usuario {
     max-width: 100%;
 }
 .body-dashboard {

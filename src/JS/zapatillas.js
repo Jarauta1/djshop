@@ -2,11 +2,13 @@ import '../CSS/zapatillas.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 
-function Zapatillas() {
+function Zapatillas(props) {
 
   let [data,setData] = useState([])
+  let [usuario,setUsuario] = useState(props.usuario)
+  let [edadUsuario,setEdadUsuario] = useState(props.edad)
 
-  useEffect(function(){
+  useEffect(function(){ 
     
     fetch("http://localhost:3000/productos/zapatillas", {
     method: "POST",
@@ -21,6 +23,20 @@ function Zapatillas() {
     
   },[])
 
+  function visualizado (titulo,cartel,id,edad) {
+    fetch("http://localhost:3000/zapatillas/visualizado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,producto: "zapatillas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+        console.log(edad)
+      })
+
+  }
+
   
   let mostrarProducto = data.map(zapatillas=>{
       return(<div className="card-zapatilla">
@@ -30,7 +46,7 @@ function Zapatillas() {
                 <div className="contentBx">
                     <h4>{zapatillas.titulo}</h4>
                     <div className="size">
-                        <h3>Size :</h3>
+                        <h3>Disponible:</h3>
                         <span>42</span>
                         <span>43</span>
                         <span>44</span>
@@ -39,8 +55,9 @@ function Zapatillas() {
                     </div>
                     <div className="color">
                         <h3>Precio: {zapatillas.precio} €</h3>
-                    </div>
-                    <a href="#">Buy Now</a>
+                        
+                    </div>    
+                    <Link to={`/zapatillas/${zapatillas.id}`}><button onClick={()=>{visualizado(zapatillas.titulo,zapatillas.imagen,zapatillas.id,edadUsuario)}}>Acceder</button></Link>
                 </div>
             </div>)
   })
