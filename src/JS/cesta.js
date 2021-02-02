@@ -14,6 +14,7 @@ function Cesta(props) {
     let [cesta,setCesta] = useState([])
     let [num,setNum] = useState(1)
     let [isLoading,setIsLoading] = useState(false)
+    let [eliminado,setEliminado] = useState(false)
 
     useEffect(function(){
   
@@ -42,13 +43,12 @@ function Cesta(props) {
             "Content-Type": "application/json",
             },
             body: JSON.stringify({usuario: usuario}),
-          }).then((res)=>res.json()).then((res)=>{
+          }).then((res)=>res.json()).then((res)=>{            
             console.log(res)
-            setCesta(res.datos[0].cesta)
             setTotal(parseFloat(res.total))            
           })
           setIsLoading(true)
-          setNum(num+1)
+          
       }
 
       function eliminar(id) {
@@ -63,12 +63,11 @@ function Cesta(props) {
                console.log(res)
                setCesta(res.datos[0].cesta)
                setTotal(parseFloat(res.total))
-               
-                     
                 
             })
-           /*  setIsLoading(true) */
-         /*  setNum(num+1) */
+            setIsLoading(true)
+            setEliminado(true)
+          
       }
 
       let mostrarCesta = cesta.map(producto=>{
@@ -97,7 +96,7 @@ function Cesta(props) {
 
 
       if (isLoading == false) {
-        console.log(isLoading)
+        
         return(<div className="body-cesta">
          <h2 className="h2-cesta">Cesta</h2>
 
@@ -128,7 +127,38 @@ function Cesta(props) {
 
 </div>
         </div>)
-      } else{
+      } else if (isLoading == true && eliminado == true) {
+        return(<div className="body-cesta">
+        <h2 className="h2-cesta">Cesta</h2>
+
+<div class="shopping-cart">
+
+ <div class="column-labels">
+   <label class="product-image">Imagen</label>
+   <label class="product-details">Producto</label>
+   <label class="product-price">Precio</label>
+   <label class="product-quantity">Cantidad</label>
+   <label class="product-removal">Eliminar</label>
+   <label class="product-line-price">Total</label>
+ </div>
+
+ 
+{mostrarCesta}
+
+
+ <div class="totals">
+   <div class="totals-item">
+     <label>Total</label>
+     <div class="totals-value" id="cart-subtotal">0 €</div>
+   </div>
+   
+ </div>
+     
+     {/* <Link to="/cesta_finalizada"> */}<button onClick={comprar} class="checkout">Comprar</button>{/* </Link> */}
+
+</div>
+       </div>)
+      } else {
         return(<div className="body-cesta">
         <h2 className="h2-cesta">Cesta</h2>
 

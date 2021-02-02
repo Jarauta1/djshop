@@ -142,6 +142,7 @@ a.buy-btn{
   border:1px solid #212121;
   transition: all 0.2s ease-in-out;
   margin-left: 10px;
+  cursor: pointer;
 }
 a.buy-btn:hover , a.buy-btn:active, a.buy-btn:focus{
   border-color: #FF9800;
@@ -193,5 +194,6 @@ a.buy-btn{
   border-color: #FF9800;
   background: #FF9800;
   color: #fff;
+  cursor: pointer;
 }
 }

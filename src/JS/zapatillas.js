@@ -47,7 +47,6 @@ function Zapatillas(props) {
                     <h4>{zapatillas.titulo}</h4>
                     <div className="size">
                         <h3>Disponible:</h3>
-                        <span>42</span>
                         <span>43</span>
                         <span>44</span>
                         <span>45</span>

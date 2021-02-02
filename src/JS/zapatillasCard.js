@@ -99,10 +99,9 @@ function ZapatillasCard(props) {
                     <h2>{data.nombre}<br/><span> Adidas</span>
                     </h2>
                     <p>
-                {data.descripcion}
+                      {data.descripcion}
                     </p>
                     <p class="product-colors-zapatillasCard">Número:
-                        <input type="submit" value="42"/>
                         <input type="submit" value="43"/>
                         <input type="submit" value="44"/>
                         <input type="submit" value="45"/>
@@ -110,12 +109,17 @@ function ZapatillasCard(props) {
                         <input type="submit" value="46"/>
                     </p>
                     <h3>{data.precio} €</h3>
-                    
-                    <button onClick={()=>{cesta(data.nombre,data.imagen,id,edadUsuario,data.precio)}}>AÑADIR CESTA</button>
-                
-                    
+                    <button className="boton-zc-ces" onClick={()=>{cesta(data.nombre,data.imagen,id,edadUsuario,data.precio)}}>AÑADIR CESTA</button>
                 </div>
             </div>
+                    <div className="boton-zap">
+                      <label onClick={()=>{favorito(data.nombre,data.imagen,data.id,edadUsuario,data.precio)}} className="label-zap">
+                        <input type="checkbox" name=""/>
+                        <div class="icon-box-zap">
+                          <i class="zap fa fa-heart" aria-hidden="true"></i>
+                        </div>
+                      </label>
+                    </div>
         </div>
     </div>
     </>)

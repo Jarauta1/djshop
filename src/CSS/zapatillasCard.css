@@ -169,7 +169,90 @@
     top: -5px;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+.boton-zap {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin-right: 15px;
+    display: flex;
+    top: -70px;
+    left: 375px;  
+ }
+ .boton-zap .label-zap {
+    position: relative;
+    cursor: pointer;
+    margin-right: 15px ;
+ }
+ .boton-zap .label-zap input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+ }
+ .boton-zap .label-zap :checked ~ .icon-box-zap {
+    box-shadow: inset -2px -2px 5px rgb(43, 41, 41), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+ }
+ .boton-zap .label-zap :checked ~ .icon-box-zap .zap {
+    transform: scale(0.95);
+ }
+ .boton-zap .label-zap .icon-box-zap {
+    width: 60px;
+    height: 60px;
+    background: #353636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -2px 5px rgb(43, 41, 41), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+ }
+ .boton-zap .label-zap .icon-box-zap .zap {
+    font-size: 30px;
+    color: #1a1a1a;
+ }
 
+ @media only screen and (max-width: 700px) {
+    .boton-zap {
+        position: relative;
+        list-style: none;
+        text-align: center;
+        margin-right: 15px;
+        display: flex;
+        top: -10px;
+        left: 10px;  
+     } 
+     
+     .boton-zap .label-zap {
+        position: relative;
+        cursor: pointer;
+        margin-right: 15px ;
+     }
+     .boton-zap .label-zap input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+     }
+     .boton-zap .label-zap :checked ~ .icon-box-zap {
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1), inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+     }
+     .boton-zap .label-zap :checked ~ .icon-box-zap .zap {
+        transform: scale(0.95);
+     }
+     .boton-zap .label-zap .icon-box-zap {
+        width: 60px;
+        height: 60px;
+        background: #ebf5fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1), 3px 3px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+     }
+     .boton-zap .label-zap .icon-box-zap .zap {
+        font-size: 30px;
+        color: #444444;
+     }
+    
+ }
+ 
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 /* responsive */
 @media (max-width: 1080px) {

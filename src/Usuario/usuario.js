@@ -567,8 +567,8 @@ let chart1_2_options = {
                     Totales
                   </a>
                   <a class="header-link" >
-                  <div className="material-icons header-admin">
-                     <a>checkroom</a>
+                  <div className="header-admin">
+                  <i className="fa fa-tshirt camiseta-usuario"></i>
                     </div>
                     Camisetas
                   </a>
@@ -591,8 +591,8 @@ let chart1_2_options = {
                     Peliculas
                   </a>
                   <a class="header-link" href="#">
-                  <div className="material-icons header-admin">
-                     <a>ice_skating</a>
+                  <div className="header-admin">
+                    <i className="fa fa-shoe-prints camiseta-usuario"></i>
                     </div>
                     Zapatillas
                   </a>
