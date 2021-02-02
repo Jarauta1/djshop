@@ -51,6 +51,33 @@ function Usuario(props) {
     let [compras,setCompras] = useState([])
     let [usuarios,setUsuarios] = useState([])
 
+    let [nombrePerfil,setNombrePerfil] = useState(datos.usuario)
+    let [nombrePerfilEditado,setNombrePerfilEditado] = useState("")
+
+    function actualizar() {
+      setNombrePerfil(nombrePerfilEditado)
+      console.log(nombrePerfil)
+      fetch("http://localhost:3000/usuarios/editar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: nombrePerfil}),
+            }).then((res)=>res.json()).then((res)=>{
+               console.log(res)
+               setDatos(res.datos[0])
+               setNombre(res.datos[0].usuario)
+               setApellido(res.datos[0].apellido1)
+                     
+                
+            })
+    }
+
+    function cambiarNombrePerfil(e){
+      setNombrePerfilEditado(e.target.value)
+    }
+
+    
     function cambiarAdmin(e) {
       setMenu(e.target.checked)
       
@@ -1079,11 +1106,67 @@ let chart1_2_options = {
   }  
 
 
-    if (rango == "admin") {
+    if (rango == "usuario") {
         return(<>
-        <p>user</p>
+        
+  <div class="pf-sect-form-tabs">
+    <section id="TabSectionInfoPersonal" class="pf-sect-tab pf-active" data-type="tab-section">
+      <h1 class="pf-title-sect-tab">Información Personal</h1>
+      <div class="pf-cnt-form">     
+        <div class="pf-row">
+          <div class="pf-w-50">
+            <div class="pf-form-group pf-icon">
+              <label for="" class="pf-lbl-title">Email</label>
+              <input type="text"  class="pf-inp-control" value={usuario} disabled/>
+              <i class="fa fa-key"></i>                            
+            </div>                    
+          </div>
+        </div>         
+        <div class="pf-row">        
+          <div class="pf-w-50">          
+            <div class="pf-form-group pf-icon">
+              <label for="" class="pf-lbl-title">Nombre</label>
+              <input type="text"  class="pf-inp-control" value={nombrePerfil} onChange={cambiarNombrePerfil} placeholder={nombrePerfil}/>
+              <i class="fa fa-user"></i>
+            </div>    
+          </div>            
+          <div class="pf-w-50">         
+            <div class="pf-form-group pf-icon">
+            <label for="" class="pf-lbl-title">Fecha Nacimiento</label>
+            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+              <i class="fa fa-user"></i>              
+          </div>        
+          </div>  
+        </div> 
+        <div class="pf-row">
+          <div class="pf-w-50">
+            <div class="pf-form-group pf-icon">
+              <label for="" class="pf-lbl-title">Primer Apellido</label>
+              <input type="text"  class="pf-inp-control" placeholder="Escribe un apellido"/>
+              <i class="fa fa-user-o"></i>              
+            </div>        
+          </div>            
+          <div class="pf-w-50">           
+            <div class="pf-form-group pf-icon">
+              <label for="" class="pf-lbl-title">Segundo apellido</label>
+              <input type="text"  class="pf-inp-control" placeholder="Escribe un apellido"/>
+              <i class="fa fa-user-o"></i>              
+            </div>                            
+          </div>
+          <div className="pf-row">
+            <div className="pf-w-100">
+              <button onClick={actualizar}>Actualizar</button>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+    
+   
+  </div>
+
         </>)
-    } else if (rango == "usuario") {
+    } else if (rango == "admin") {
 
         if (menu == "totales") {
           return(<div className="body-dashboard">

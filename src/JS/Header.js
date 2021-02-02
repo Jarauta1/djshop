@@ -8,11 +8,33 @@ import logo from "../Imagenes/logo_header_blanco.png"
 
 function Header(props) {
 
+    let [usuario, setUsuario] = useState(props.usuario)
+    let [datos,setDatos] = useState([])
+    let [cesta,setCesta] = useState(0)
+
     function cambio() {
         localStorage.setItem("retorno", "")
     }
+    useEffect(function(){
+  
+        if (usuario !== "") {
+        fetch("http://localhost:3000/usuarios/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({usuario: usuario}),
+            }).then((res)=>res.json()).then((res)=>{
+                setDatos(res.datos[0].cesta)
+                console.log(res.datos[0].cesta)
+                setCesta(datos.length)
+                console.log(cesta)
+            })
+          }
+      },[usuario])
+  
+    
 
-console.log(props.usuario)
     if (props.usuario !== "") {
 
         return(<>
@@ -35,9 +57,10 @@ console.log(props.usuario)
                     <li></li>
                     <li></li>
                     <li className="material-icons"><Link to="/favoritos"><a>favorite</a></Link></li>
-                    <li className="material-icons"><Link to="/cesta"><a className="shopping-bag">shopping_bag</a></Link></li>
+                    <li className="material-icons"><Link to="/cesta"><a className="shopping-bag">shopping_bag</a><a className="num-cesta"></a></Link></li>
+                   {/*  <li><div className="user-div"><div className="material-icons"><Link to="/cesta"><a>shopping_bag</a></Link></div>{cesta}</div></li> */}
                     <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/usuario"><a>manage_accounts</a></Link></div></div></li>
-                    <li className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>
+                    <li onClick={()=>props.salir()} className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>
                 </ul>
             </section>
         </>)

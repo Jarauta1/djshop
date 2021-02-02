@@ -147,3 +147,11 @@
 	color: white;
 	padding: 2px;
 }
+
+a {
+	text-decoration: none;;
+}
+
+.num-cesta {
+	color: red;
+}

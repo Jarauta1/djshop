@@ -31,6 +31,8 @@ let [nombre, setNombre] = useState()
 let [edad, setEdad] = useState()
 let [rango,setRango] = useState()
 
+console.log(usuario)
+
 useEffect(function(){
   
   if (usuario !== "") {
@@ -72,6 +74,11 @@ const login = (email, password) => {
   })
 }
 
+function salir() {
+  console.log("has salido")
+        setUsuario("")
+}
+
 const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword) => {
    console.log(nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword)
     
@@ -109,7 +116,7 @@ return
 
 
   return(<BrowserRouter>
-  <Header nombre={nombre} usuario={usuario}/>
+  <Header salir={salir} nombre={nombre} usuario={usuario}/>
   <Route exact path="/">
     <br></br>
       <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
