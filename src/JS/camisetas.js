@@ -38,11 +38,11 @@ function Camisetas(props) {
               <h3>My face not my heart</h3>
             </div>
             <div class="description-prod">
-              <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              <p></p>
             </div>
             <div class="card-footer">
-              <div class="wcf-left"><span class="price">Rp500.000</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+              <div class="wcf-left"><span class="price">{camiseta.precio} €</span></div>
+              <div class="wcf-right"><a href="#" class="buy-btn"><i class="material-icons zmdi zmdi-shopping-basket">shopping_cart</i></a></div>
             </div>
           </div>
         </div>

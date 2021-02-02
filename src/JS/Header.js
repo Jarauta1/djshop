@@ -34,7 +34,7 @@ console.log(props.usuario)
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li className="material-icons"><Link to="/"><a>favorite</a></Link></li>
+                    <li className="material-icons"><Link to="/favoritos"><a>favorite</a></Link></li>
                     <li className="material-icons"><Link to="/cesta"><a className="shopping-bag">shopping_bag</a></Link></li>
                     <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/usuario"><a>manage_accounts</a></Link></div></div></li>
                     <li className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>

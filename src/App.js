@@ -18,6 +18,7 @@ import Usuario from "./Usuario/usuario.js"
 import Cesta from "./JS/cesta.js"
 import ZapatillasCard from "./JS/zapatillasCard.js"
 import Camisetas from "./JS/camisetas.js"
+import Favoritos from "./JS/favoritos.js"
 
 
 function App() {
@@ -155,6 +156,9 @@ return
   </Route>
   <Route exact path="/cesta_finalizada">
     <Cesta rango={rango} edad={edad} usuario={usuario}/>
+  </Route>
+  <Route exact path="/favoritos">
+    <Favoritos rango={rango} edad={edad} usuario={usuario}/>
   </Route>
   <Footer/>
   </BrowserRouter>)

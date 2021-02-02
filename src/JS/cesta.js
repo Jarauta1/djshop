@@ -46,13 +46,13 @@ function Cesta(props) {
             console.log(res)
             setCesta(res.datos[0].cesta)
             setTotal(parseFloat(res.total))            
-            setIsLoading(false)
           })
+          setIsLoading(true)
           setNum(num+1)
       }
 
       function eliminar(id) {
-        window.alert("compra realizada")
+       /*  window.alert("compra realizada") */
         fetch("http://localhost:3000/usuarios/compras/eliminar", {
             method: "POST",
             headers: {
@@ -67,6 +67,8 @@ function Cesta(props) {
                      
                 
             })
+           /*  setIsLoading(true) */
+         /*  setNum(num+1) */
       }
 
       let mostrarCesta = cesta.map(producto=>{
@@ -84,7 +86,7 @@ function Cesta(props) {
       <input type="number" value={producto.cantidad} min="1"/>
     </div>
     <div class="product-removal">
-      <button onClick={()=>{eliminar(producto.id)}} class="remove-product">
+    <button onClick={()=>{eliminar(producto.id)}} class="remove-product">
         Eliminar
       </button>
     </div>
@@ -94,7 +96,8 @@ function Cesta(props) {
       })
 
 
-      if (setIsLoading) {
+      if (isLoading == false) {
+        console.log(isLoading)
         return(<div className="body-cesta">
          <h2 className="h2-cesta">Cesta</h2>
 
@@ -147,7 +150,7 @@ function Cesta(props) {
  <div class="totals">
    <div class="totals-item">
      <label>Total</label>
-     <div class="totals-value" id="cart-subtotal">{total} €</div>
+     <div class="totals-value" id="cart-subtotal">0 €</div>
    </div>
    
  </div>
