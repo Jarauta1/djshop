@@ -30,7 +30,7 @@ function ZapatillasCard(props) {
 
       function favorito (titulo,cartel,id,edad,precio) {
         setCheckFavoritos(!checkFavoritos)
-              
+              console.log(1)
         if (usuario !== "") {
         fetch("http://localhost:3000/zapatillas/favoritas",{
             method: "POST",
@@ -113,13 +113,14 @@ function ZapatillasCard(props) {
                 </div>
             </div>
                     <div className="boton-zap">
-                      <label onClick={()=>{favorito(data.nombre,data.imagen,data.id,edadUsuario,data.precio)}} className="label-zap">
-                        <input type="checkbox" name=""/>
+                      <label className="label-zap">
+                        <input onClick={()=>{favorito(data.nombre,data.imagen,data.id,edadUsuario,data.precio)}} type="checkbox" name=""/>
                         <div class="icon-box-zap">
                           <i class="zap fa fa-heart" aria-hidden="true"></i>
                         </div>
                       </label>
                     </div>
+                    
         </div>
     </div>
     </>)

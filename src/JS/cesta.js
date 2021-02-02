@@ -67,6 +67,7 @@ function Cesta(props) {
             })
             setIsLoading(true)
             setEliminado(true)
+            setNum(num+1)
           
       }
 
