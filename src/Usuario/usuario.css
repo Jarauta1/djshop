@@ -60,7 +60,7 @@ html {
     color: #9b9ca7;
 }
 .wrapper-dashboard {
-    max-width: 1600px;
+   /*  max-width: 1600px; */
     background-color: #0e0e23;
     display: flex;
     height: 100vh;
@@ -153,6 +153,7 @@ html {
     transition: 0.3s;
     border-bottom: 3px solid transparent;
     transition: 0.3s;
+    cursor: pointer;
 }
 .header-link svg {
     width: 20px;
@@ -270,7 +271,7 @@ html {
 .card {
     background: #1a2049;
     background: radial-gradient(circle, rgba(26, 32, 73, 1) 0%, rgba(19, 22, 47, 1) 100%);
-    padding: 40px 30px;
+    padding: 15px 20px;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -291,6 +292,9 @@ html {
 }
 .activity {
     max-width: 60%;
+}
+.activity-user {
+    max-width: 100%;
 }
 .activity .title {
     margin-bottom: 20px;

@@ -37,7 +37,7 @@
   
   .image-card img:hover {
     transform: scale(1.1);
-   transition: transform 5s ease-in-out;
+   transition: transform 1s ease-in-out;
   }
   
   .product-content{
