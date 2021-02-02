@@ -40,7 +40,7 @@ function Favoritos(props) {
                             <div class='star'></div>
                         </div>
                         <section class='product-info'>
-                            <span class='desc'>{favoritos.producto} </span> 
+                            <span class='desc'>{favoritos.producto}</span> 
                             <button>Añadir cesta</button>
                         </section>
                         <section class='product-info'>
