@@ -2,6 +2,10 @@
 .body-camisetas{
   font-family: 'Muli', sans-serif;
   background:#ddd;
+  margin: 25px 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+   
 }
 .shell{
   padding:80px 0;
@@ -86,7 +90,7 @@
   color: black;
 }
 .wsk-cp-text .title-product h3{
-    color: black;
+    color: grey;
   font-size:20px;
   font-weight:bold;
   margin:15px auto;
@@ -95,23 +99,12 @@
     text-overflow: ellipsis;
   width:100%;
 }
-.wsk-cp-text .description-prod p{
-  margin:0;
-}
-/* Truncate */
-.wsk-cp-text .description-prod {
-  text-align:center;
-  width: 100%;
-  height:62px;
-  overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  margin-bottom:15px;
-}
+
 .card-footer{
   padding: 25px 0 5px;
   border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
 }
 .card-footer:after, .card-footer:before{
   content:'';
@@ -128,11 +121,13 @@
 
 .card-footer .wcf-right{
   float:right;
+  display: flex;
 }
 
 .price{
   font-size:18px;
   font-weight:bold;
+  padding: 0;
 }
 
 a.buy-btn{
@@ -146,6 +141,7 @@ a.buy-btn{
   border-radius:50%;
   border:1px solid #212121;
   transition: all 0.2s ease-in-out;
+  margin-left: 10px;
 }
 a.buy-btn:hover , a.buy-btn:active, a.buy-btn:focus{
   border-color: #FF9800;

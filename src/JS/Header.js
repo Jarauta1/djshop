@@ -25,11 +25,11 @@ console.log(props.usuario)
                     <div class='menu-button'></div>
                 </label>
                 <ul class="menu-header"> 
-                    <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
                     <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
-                    <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
+                    <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
+                    <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
                   {/*   <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
                     <li></li>
                     <li></li>
@@ -54,11 +54,11 @@ console.log(props.usuario)
                     <div class='menu-button'></div>
                 </label>
                 <ul class="menu-header"> 
-                    <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
                     <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
-                    <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
+                    <li><Link to="/libros"><a>Libros</a></Link></li>
                     <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
+                    <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
                    {/*  <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
                     <li></li>
                     <li></li>

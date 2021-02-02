@@ -1,10 +1,15 @@
 import '../CSS/camisetas.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
+import logo_bb from "../Imagenes/logo_bb.png"
 
 function Camisetas(props) {
 
   let [data,setData] = useState([])
+  let [checkFavoritos,setCheckFavoritos] = useState(false)
+  let [checkCesta,setCheckCesta] = useState(false)
+  let [usuario,setUsuario] = useState(props.usuario)
+  let [edadUsuario,setEdadUsuario] = useState(props.edad)
 
   localStorage.setItem("retorno", "camisetas")
 
@@ -23,6 +28,82 @@ function Camisetas(props) {
     
   },[])
 
+
+  function favorito (titulo,cartel,id,edad,precio) {
+    setCheckFavoritos(!checkFavoritos)
+    console.log(usuario)
+  
+    if (usuario !== "") {
+    fetch("http://localhost:3000/camisetas/favoritas",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,edad:edad,cartel:cartel,id:parseInt(id),producto: "camisetas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+     
+      fetch("http://localhost:3000/usuarios/favoritos",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "camisetas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+
+      fetch("http://localhost:3000/camisetas/visualizado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,producto: "camisetas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+        console.log(edad)
+      })
+    }
+  }
+
+
+  function cesta (titulo,cartel,id,edad,precio) {
+    
+    setCheckCesta(!checkCesta)
+    if (usuario !== "") {
+    fetch("http://localhost:3000/camisetas/cesta",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad:edad,producto: "camisetas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+        fetch("http://localhost:3000/usuarios/cesta",{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({usuario: usuario,titulo:titulo,cartel:cartel,id:parseInt(id),precio:precio,producto: "camisetas"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
+
+        fetch("http://localhost:3000/camisetas/visualizado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({titulo:titulo,cartel:cartel,id:parseInt(id), edad: edad,producto: "camisetas"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+        console.log(edad)
+      })
+  }
+}
+
   let mostrarCamisetas= data.map(camiseta=>{
     return(<>
     <div class="col-md-3">
@@ -35,14 +116,15 @@ function Camisetas(props) {
               <span>{camiseta.titulo}</span>
             </div>
             <div class="title-product">
-              <h3>My face not my heart</h3>
+              <h3>{camiseta.categoria}</h3>
             </div>
-            <div class="description-prod">
-              <p></p>
-            </div>
+           
             <div class="card-footer">
               <div class="wcf-left"><span class="price">{camiseta.precio} €</span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="material-icons zmdi zmdi-shopping-basket">shopping_cart</i></a></div>
+              <div class="wcf-right">
+                <a onClick={()=>{favorito(camiseta.titulo,camiseta.imagen,camiseta.id,edadUsuario,camiseta.precio)}} class="buy-btn material-icons">favorite</a>
+                <a onClick={()=>{cesta(camiseta.titulo,camiseta.imagen,camiseta.id,edadUsuario,camiseta.precio)}} class="buy-btn material-icons">shopping_cart</a>
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +133,7 @@ function Camisetas(props) {
   })
 
  
-      return(<body className="body-camisetas">
+      return(<body className="body-camisetas" /* style={{backgroundImage:`url("${logo_bb}")`}} */>
 
 
 
