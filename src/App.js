@@ -117,6 +117,7 @@ const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassw
           /*  setUsuario(res.usuario) */
           /*  console.log(res) */
           /*  setVuelta("volver") */
+          document.getElementById("mensajeRegistro").innerHTML = `<span>${res.mensaje}</span>`
           setMensaje(res.mensaje)
           console.log(res.mensaje)
           if (res.registro == "si") {
