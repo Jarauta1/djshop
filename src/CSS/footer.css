@@ -130,3 +130,124 @@
  
 
   */
+
+
+  .li-footer {
+	margin: 0 1.5rem 0 0;
+  }
+
+.social-footer, .copyright-footer {
+  margin: 1rem;
+}
+
+
+.li-footer {
+  display: inline-block;
+}
+.footer-footer {
+	margin-top: 50px;
+  padding: 1rem 0;
+  background: #f7f7f7;
+  text-align: center;
+  padding: 0px 0px 5px 0px;
+}
+@supports (display: grid-footer) {
+  .gallery .grid-footer {
+    grid-gap: 1rem;
+  }
+}
+
+/* Iconos RRSS */
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.eot?3qkin2');
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.eot?#iefix3qkin2') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.woff?3qkin2') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.ttf?3qkin2') format('truetype'), url('fhttps://s3-us-west-2.amazonaws.com/s.cdpn.io/93/icomoon.svg?3qkin2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.a-social {
+	display: block;
+	position: relative;
+	margin: 0 7px;
+	width: 20px;
+	height: 68px;
+	font-size: 0;
+	line-height: 0;
+	text-align: center;
+	text-decoration: none;
+	background-color: #1f2027;
+}
+.a-social:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	margin-top: -50%;
+	margin-left: -50%;
+	border-radius: 100px;
+	background-color: #1f2027;
+	transition: all 400ms;
+}
+.a-social:after {
+	position: relative;
+	display: block;
+	font-family: 'icomoon';
+	/* speak: none; */
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	color: grey;
+	font-size: 26px;
+	line-height: 66px;
+}
+.social-networks .a-social:hover, .social-networks .a-social:focus {
+	text-decoration: none;
+}
+.social-networks.spin-icon .a-social:hover:after, .social-networks.spin-icon .a-social:focus:after {
+	transition: transform 0.4s ease-out;
+	transform: rotateZ(360deg);
+}
+.social-networks.square .a-social:hover:before, .social-networks.square .a-social:focus:before {
+	border-radius: 0;
+}
+.social-networks.bounce .a-social:hover, .social-networks.bounce .a-social:focus {
+	animation: bounce 1s;
+}
+.social-networks .icon-linkedin:after {
+	content: "\eac9";
+}
+.social-networks .icon-linkedin:hover:before, .social-networks .icon-linkedin:focus:before {
+	background: #0077b5;
+}
+
+.social-networks .icon-github:after {
+	content: "\eab1";
+}
+.social-networks .icon-github:hover:before, .social-networks .icon-github:focus:before {
+	background: #4183c4;
+}
+
+@keyframes bounce {
+	0%, 20%, 53%, 80%, 100% {
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		transform: translate3d(0, 0, 0);
+   }
+	40% {
+		transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		transform: translate3d(0, -6px, 0);
+   }
+	70% {
+		transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		transform: translate3d(0, -4px, 0);
+   }
+	90% {
+		transform: translate3d(0, -2px, 0);
+   }
+}
+

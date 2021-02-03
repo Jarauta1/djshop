@@ -132,7 +132,7 @@ function Libros (props){
         			            | by {libro.author}
         		            </div>
                         <div className="options">
-                          <div className="price-book">{parseInt(libro.ID)/100} €</div>
+                          <div className="price-book"><p className="price-book-text">{parseInt(libro.ID)/100}€</p></div>
                           <div className="div-button-book">
                           <button className="button-price-book">
                             <div className="book-surface"></div>

@@ -38,6 +38,7 @@ function Usuario(props) {
     let [edad,setEdad] = useState(props.edad)
     let [usuario,setUsuario] = useState(props.usuario)
     let [rango,setRango] = useState(props.rango)
+    let [nombreUsuario,setNombreUsuario] = useState(props.nombre)
     let [nombre,setNombre] = useState("")
     let [apellido,setApellido] = useState("")
     let [datos,setDatos] = useState({})
@@ -53,16 +54,27 @@ function Usuario(props) {
 
     let [nombrePerfil,setNombrePerfil] = useState(datos.usuario)
     let [nombrePerfilEditado,setNombrePerfilEditado] = useState("")
+    let [nombreServer, setNombreServer] = useState("")
 
     function actualizar() {
-      setNombrePerfil(nombrePerfilEditado)
-      console.log(nombrePerfil)
+    /*  setNombrePerfil(nombrePerfilEditado) */
+     console.log(nombrePerfilEditado)
+      server(nombrePerfilEditado)
+    }
+
+  function server(nombre) {
+    console.log(nombre)
+    if (nombre.length == 0) {
+      setNombreServer(usuario)
+    } else {
+      setNombreServer(nombre)
+    }
       fetch("http://localhost:3000/usuarios/editar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({usuario: nombrePerfil}),
+            body: JSON.stringify({nombre: nombre, mail:usuario}),
             }).then((res)=>res.json()).then((res)=>{
                console.log(res)
                setDatos(res.datos[0])
@@ -75,6 +87,7 @@ function Usuario(props) {
 
     function cambiarNombrePerfil(e){
       setNombrePerfilEditado(e.target.value)
+      console.log(e.target.value)
     }
 
     
@@ -1126,16 +1139,30 @@ let chart1_2_options = {
           <div class="pf-w-50">          
             <div class="pf-form-group pf-icon">
               <label for="" class="pf-lbl-title">Nombre</label>
-              <input type="text"  class="pf-inp-control" value={nombrePerfil} onChange={cambiarNombrePerfil} placeholder={nombrePerfil}/>
+              <input type="text"  class="pf-inp-control" onChange={cambiarNombrePerfil} placeholder={nombreUsuario}/>
               <i class="fa fa-user"></i>
             </div>    
           </div>            
-          <div class="pf-w-50">         
+          <div class="pf-w-10">         
             <div class="pf-form-group pf-icon">
-            <label for="" class="pf-lbl-title">Fecha Nacimiento</label>
+            <label for="" class="pf-lbl-title">Día</label>
             <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
               <i class="fa fa-user"></i>              
-          </div>        
+          </div>       
+          </div>  
+          <div class="pf-w-10">         
+            <div class="pf-form-group pf-icon">
+            <label for="" class="pf-lbl-title">Mes</label>
+            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+              <i class="fa fa-user"></i>              
+          </div>       
+          </div>  
+          <div class="pf-w-10">         
+            <div class="pf-form-group pf-icon">
+            <label for="" class="pf-lbl-title">Año</label>
+            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+              <i class="fa fa-user"></i>              
+          </div>       
           </div>  
         </div> 
         <div class="pf-row">

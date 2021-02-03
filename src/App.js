@@ -79,6 +79,9 @@ function salir() {
         setUsuario("")
 }
 
+let comprobarMail
+let indiceComprobar
+
 const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword) => {
    console.log(nombre,apellido1,apellido2,fecha,mail,password,confirmarPassword)
     
@@ -88,18 +91,33 @@ const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassw
       if (confirmarPassword !== password) {
         document.getElementById("mensajeRegistro").innerHTML = "<span>La contraseña no coincide</span>"
       } else {
-        fetch("http://localhost:3000/usuarios/registro",{
+        indiceComprobar = mail.indexOf("@",0)
+        comprobarMail = mail.substring(indiceComprobar)
+        console.log(comprobarMail)
+        if (comprobarMail !== "@gmail.com") {
+          document.getElementById("mensajeRegistro").innerHTML = "<span>El email no es válido</span>"
+        } else {
+          fetch("http://localhost:3000/usuarios/registro",{
           method: "POST",
           headers: {
               "Content-Type": "application/json",
           },
           body: JSON.stringify({nombre: nombre,apellido1: apellido1, apellido2: apellido2, fecha: fecha, mail: mail, password: password}),
         }).then((res)=>res.json()).then((res)=>{
+          /*  setUsuario(res.usuario) */
+          /*  console.log(res) */
+          /*  setVuelta("volver") */
           setMensaje(res.mensaje)
-          setUsuario(res.usuario)
-          console.log(res)
-         /*  setVuelta(true) */
+          console.log(res.mensaje)
+          if (res.registro == "si") {
+            setVuelta("volver")
+            console.log(res.usuario)
+            setUsuario(res.usuario)
+          }     
         })
+        }
+
+        
       } 
     }
   
@@ -119,7 +137,7 @@ return
   <Header salir={salir} nombre={nombre} usuario={usuario}/>
   <Route exact path="/">
     <br></br>
-      <div className="promociones"><p>PROMOCIONES</p><hr></hr></div>
+      <div className="promociones"><p>SECCIONES</p><hr></hr></div>
       <div><Portada/></div>
   </Route>
   {/* <Route exact path="/buscador">
@@ -153,7 +171,7 @@ return
     <ComicCard edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/usuario">
-    <Usuario rango={rango} edad={edad} usuario={usuario}/>
+    <Usuario rango={rango} edad={edad} nombre={nombre} usuario={usuario}/>
   </Route>
   <Route exact path="/dashboard">
     <Dashboard rango={rango} edad={edad} usuario={usuario}/>

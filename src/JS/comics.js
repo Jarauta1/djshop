@@ -77,7 +77,7 @@ function Comics (props) {
     })
 
     if (isLoading) {
-        return(<>
+        return(<div className="body-comic">
             <header className="intro">
                 <div className="wrapper run-animation" id="animate">
 	                <div className="logo">
@@ -95,26 +95,26 @@ function Comics (props) {
                         </div>
                     </div> */}
                     <div className="col-12">
-                        <div className="loader-comic">
-                            <span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                            <div className="hand">
-                                <span></span>
-                                <div className="face"></div>
-                                <div className="cowl"></div>
-                            </div>
-                        </div>
-                        <div className="speed">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <h1>CARGANDO</h1>
+                    <div class="body-loader-body">
+                    <div class="body-loader-comic">
+  <span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+  <div class="base">
+    <span></span>
+    <div class="face"></div>
+  </div>
+</div>
+<div class="longfazers">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+                   </div>
                     </div>
                     {/* <div className="col-1">
                         <div className="box box1">
@@ -124,7 +124,7 @@ function Comics (props) {
                 </div>
             </div>
         <footer><p>{data.attributionText}</p></footer>
-        </>)
+        </div>)
     } else {
         return(<>
             <header className="intro">

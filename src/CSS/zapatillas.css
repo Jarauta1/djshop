@@ -11,6 +11,12 @@
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 700px) {
+    .fondo-zapatillas {
+        margin-top: 3%;
+    }
+}
+
 .fondo-zapatillas .card-zapatilla{
     position: relative;
     width: 320px;

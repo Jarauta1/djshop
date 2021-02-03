@@ -1,6 +1,13 @@
 
 import '../CSS/portada.css';
 
+import camisetas from "../Imagenes/seccion_camisetas.jpg"
+import libros from "../Imagenes/seccion_libros.jpg"
+import cine from "../Imagenes/seccion_cine.jpg"
+import zapatillas from "../Imagenes/seccion_zapatillas.jpg"
+import comics from "../Imagenes/seccion_comics.jpg"
+
+import {Link} from "react-router-dom"
 
 
 function Portada () {
@@ -8,77 +15,35 @@ function Portada () {
 
 
     return(<>
-{/* <section class="gallery">
-  <div class="container">
-    <div class="grid">
-      <div class="column-xs-12 column-md-4">
-        <figure class="img-container">
-          <img src="https://source.unsplash.com/8b1cWDyvT7Y" />
-          <figcaption class="img-content">
-            <h2 class="title">Smart Watch</h2>
-            <h3 class="category">Showcase</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Smart Watch</h2>
-            <h3 class="category">Showcase</h3>
-          </span>
-        </figure>
+
+    <div className="container-portada">
+      <div className="row-portada">
+      <div className="div-portada starred">
+      <Link to="/camisetas"><h1 className="starred-title">CAMISETAS</h1>
+            <img className="img-portada" src={camisetas} alt=""/></Link>
+        </div>
+        <div className="div-portada starred">
+      <Link to="/comics"><h1 className="starred-title">COMICS</h1>
+            <img className="img-portada" src={comics} alt=""/></Link>
+        </div>
+        <div className="div-portada starred">
+      <Link to="/libros"><h1 className="starred-title">LIBROS</h1>
+            <img className="img-portada" src={libros} alt=""/></Link>
+        </div>
       </div>
-      <div class="column-xs-12 column-md-4">
-        <figure class="img-container">
-          <img src="https://source.unsplash.com/5VXH4RG88gc" />
-          <figcaption class="img-content">
-            <h2 class="title">Camera Film</h2>
-            <h3 class="category">Showcase</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Camera Film</h2>
-            <h3 class="category">Showcase</h3>
-          </span>
-        </figure>
+      <div className="row-portada">
+      <div className="div-portada-50 starred">
+      <Link to="/cine"><h1 className="starred-title">CINE</h1>
+            <img className="img-portada" src={cine} alt=""/></Link>
+        </div>
+        <div className="div-portada-50 starred">
+      <Link to="/zapatillas"><h1 className="starred-title">ZAPATILLAS</h1>
+            <img className="img-portada" src={zapatillas} alt=""/></Link>
+        </div>
       </div>
-      <div class="column-xs-12 column-md-4">
-        <figure class="img-container">
-          <img src="https://source.unsplash.com/XtUd5SiX464">
-          <figcaption class="img-content">
-            <h2 class="title">Coffee</h2>
-            <h3 class="category">Showcase</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Coffee</h2>
-            <h3 class="category">Showcase</h3>
-          </span>
-        </figure>
-      </div>
-      <div class="column-xs-12 column-md-6">
-        <figure class="img-container">
-          <img src="https://source.unsplash.com/JYGnB9gTCls" />
-          <figcaption class="img-content">
-            <h2 class="title">Phone</h2>
-            <h3 class="category">Showcase</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Phone</h2>
-            <h3 class="category">Showcase</h3>
-          </span>
-        </figure>
-      </div>
-      <div class="column-xs-12 column-md-6">
-        <figure class="img-container">
-          <img src="https://source.unsplash.com/-RBuQ2PK_L8" />
-          <figcaption class="img-content">
-            <h2 class="title">Keyboard</h2>
-            <h3 class="category">Showcase</h3>
-          </figcaption>
-          <span class="img-content-hover">
-            <h2 class="title">Keyboard</h2>
-            <h3 class="category">Showcase</h3>
-          </span>
-        </figure>
-      </div>
+
     </div>
-  </div>
-</section> */}
+
 
 
 		</>);

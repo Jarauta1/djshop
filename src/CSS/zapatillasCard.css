@@ -210,6 +210,12 @@
  }
 
  @media only screen and (max-width: 700px) {
+     .body-zapatillasCard {
+         margin-top: 6%;
+
+     }
+
+
     .boton-zap {
         position: relative;
         list-style: none;
@@ -283,7 +289,7 @@
     }
 }
 
-footer {
+/* footer {
     position: fixed;
     right: 16px;
     bottom: 12px;
@@ -293,4 +299,4 @@ footer a {
     color: #fff;
     text-decoration: none;
     font-size: 12px;
-}
+} */

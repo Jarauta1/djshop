@@ -34,6 +34,10 @@ li.cardTvBlock {
   li.cardTvBlock {
     margin-left: 12%;
   }
+  .container-fluid {
+    margin: 5%;
+  }
+  
 }
 
 li.cardTvBlock a:hover > .BlockBar {
@@ -440,7 +444,7 @@ li.cardTvBlock a {
 .botones {
  /*  width: 600px; */
  /*  margin: 0 auto; */
-  padding: 20px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
