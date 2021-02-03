@@ -1796,67 +1796,67 @@ let chart1_2_options = {
                         <tbody>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Sergio</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Gimeno Orizo</td>
                             <th></th>
                             <td>34</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>sergiogo@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>546,15</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Laura</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Valles Borque</td>
                             <th></th>
-                            <td>34</td>
+                            <td>43</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>camgar@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>412,69</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Carlos</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Corredera Algás</td>
                             <th></th>
-                            <td>34</td>
+                            <td>26</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>car18cor@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>364,90</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Ángeles</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Hernandez Malo</td>
                             <th></th>
-                            <td>34</td>
+                            <td>53</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>angelines539@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>213,99</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Víctor</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Campos Gracia</td>
                             <th></th>
-                            <td>34</td>
+                            <td>43</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>camgar@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>115,23</td>
                             
                           </tr>
                          
@@ -1893,17 +1893,17 @@ let chart1_2_options = {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                        <tr>
                             
-                            <td>Diego</td>
+                            <td>José</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Fernandez Lucientes</td>
                             <th></th>
-                            <td>34</td>
+                            <td>53</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>jflucientes@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>16,99</td>
                             
                           </tr>
                           <tr>
