@@ -12,9 +12,9 @@ function Header(props) {
     let [datos,setDatos] = useState([])
     let [cesta,setCesta] = useState(0)
 
-    function cambio() {
+  /*   function cambio() {
         localStorage.setItem("retorno", "")
-    }
+    } */
     useEffect(function(){
   
         if (usuario !== "") {
@@ -88,7 +88,7 @@ function Header(props) {
                     <li></li>
                     <li></li>
                     <li></li>
-                    <li onClick={cambio} className="material-icons heart"><Link to="/login">account_circle</Link></li>
+                    <li /* onClick={cambio} */ className="material-icons heart"><Link to="/login">account_circle</Link></li>
                 </ul>
             </section>
         </>)

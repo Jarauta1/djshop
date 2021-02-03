@@ -9,7 +9,7 @@ function Login (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
   let [mensaje,setMensaje] = useState(props.mensaje)
   let [num,setNum] = useState(0)
-  
+  console.log(localStorage.getItem("retorno"))
   let [emailAcceso, setEmailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
 
