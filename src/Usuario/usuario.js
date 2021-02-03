@@ -2509,7 +2509,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Ant-Man (2003)","Gun Theory (2003)","Everyday Hero","Ultimate War","X-MEN"],
         datasets: [
           {
             label: "Visitadas",
@@ -2994,7 +2994,7 @@ let chart30 = {
       gradientStrokeRed.addColorStop(0, "rgba(169,52,52,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Ant-Man (2003)","Gun Theory (2003)","Everyday Hero","Ultimate War","X-MEN"],
         datasets: [
           {
             label: "Favoritos",
@@ -3712,7 +3712,7 @@ let chart30 = {
       gradientStrokePurple.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Ant-Man 4","Teams","Ant-Man 2","Sentry","Ant-Man 1"],
         datasets: [
           {
             label: "En cesta",
@@ -4114,7 +4114,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Ant-Man 4","Teams","Ant-Man 2","Sentry","Ant-Man 1"],
         datasets: [
           {
             label: "Compradas",
@@ -6079,36 +6079,36 @@ let chart30 = {
                           <tr>
                             <td>My beard, my rules</td>
                             <td>BB0001</td>
-                            <td>1.896</td>
-                            <td>7643,7</td>
+                            <td>513</td>
+                            <td>7.643,7</td>
                             
                           </tr>
                           <tr>
-                            <td>My beard, my rules</td>
-                            <td>BB0001</td>
-                            <td>1.896</td>
-                            <td>7643,7</td>
+                            <td>Mandala</td>
+                            <td>BB0002</td>
+                            <td>237</td>
+                            <td>3.531,3</td>
                             
                           </tr>
                           <tr>
-                            <td>My beard, my rules</td>
-                            <td>BB0001</td>
-                            <td>1.896</td>
-                            <td>7643,7</td>
+                            <td>Elephand</td>
+                            <td>BB0003</td>
+                            <td>196</td>
+                            <td>2.920,4</td>
                             
                           </tr>
                           <tr>
-                            <td>My beard, my rules</td>
-                            <td>BB0001</td>
-                            <td>1.896</td>
-                            <td>7643,7</td>
+                            <td>Panda</td>
+                            <td>BB0007</td>
+                            <td>169</td>
+                            <td>2.518,1</td>
                             
                           </tr>
                           <tr>
-                            <td>My beard, my rules</td>
-                            <td>BB0001</td>
-                            <td>1.896</td>
-                            <td>7643,7</td>
+                            <td>Pandastic</td>
+                            <td>BB0008</td>
+                            <td>116</td>
+                            <td>1.728,4</td>
                             
                           </tr>
                         </tbody>
@@ -6130,133 +6130,49 @@ let chart30 = {
                     <div class="cards card usuarios-admin">
                       <table class="table table-admin">
                         <thead>
-                          <tr>
-                            <th>Admin</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th></th>
-                            <th>Edad</th>
-                            <th>id</th>
-                            <th>Cumpleaños</th>
-                            <th></th>
-                            <th></th>
-                            <th>Estado</th>
+                        <tr>
+                            <th>Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            
+                            <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" /* onChange={cambiarAdmin} */ />
-                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
-                            </td>
-                            <td>Diego</td>
-                            <td>Jarauta</td>
-                            <td>Ibáñez</td>
-                            <td>34</td>
-                            <td>diegojarauta8@gmail.com</td>
-                            <td>23</td>
-                            <td>8</td>
-                            <td>1987</td>
-                            <td>
-                              <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                        <tr>
+                            <td>Deer</td>
+                            <td>BB0009</td>
+                            <td>25</td>
+                            <td>372,5</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row2" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Sergio</td>
-                            <td>Campos</td>
-                            <td>Corredera</td>
-                            <td>35</td>
-                            <td>scampos@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                              <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <input type="checkbox" id="row3" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Jose</td>
-                            <td>Fernandez</td>
-                            <td>Lucientes</td>
+                            <td>FlowerSkull</td>
+                            <td>BB0011</td>
                             <td>46</td>
-                            <td>flucientes@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>685,4</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row4" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Victor</td>
-                            <td>Gimeno</td>
-                            <td>Garcia</td>
-                            <td>22</td>
-                            <td>vgimeno@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>Frida BB</td>
+                            <td>BB0010</td>
+                            <td>68</td>
+                            <td>1.013,2</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row5" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Ángeles</td>
-                            <td>Malo</td>
-                            <td>Vallespín</td>
-                            <td>58</td>
-                            <td>mvangeles@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
+                            <td>Movember</td>
+                            <td>BB0006</td>
+                            <td>72</td>
+                            <td>1.072,8</td>
+                            
+                          </tr>
+                          <tr>
+                            <td>ButerFlower</td>
+                            <td>BB0005</td>
+                            <td>89</td>
+                            <td>1.326,1</td>
+                            
                           </tr>
                         </tbody>
                       </table>
@@ -6379,7 +6295,7 @@ let chart30 = {
                                   </CardHeader>
                                   <CardBody>
                                     {/*   <div className="chart-area"> */}
-                                          <Line data={chartExample30[bigChartData]} options={chartExample30.options} />
+                                          <Line data={chartExample40[bigChartData]} options={chartExample40.options} />
                                      {/*  </div> */}
                                   </CardBody>
                                   <CardBody>
@@ -6414,9 +6330,9 @@ let chart30 = {
                     <div class="discount-wrapper">
                       <div class="discount-info">
                         <div class="subtitle">Mayor beneficio en un día:</div>
-                        <div class="subtitle-count">1000 €</div>
+                        <div class="subtitle-count">469,01 €</div>
                         <div class="subtitle">Venta en promoción:</div>
-                        <div class="subtitle-count dist">300 € (20 ventas)</div>
+                        <div class="subtitle-count dist">250,74 € (126 ventas)</div>
                       </div>
                       <div class="discount-chart">
                         <div class="circle">
@@ -6431,10 +6347,10 @@ let chart30 = {
                     </div>
                     <div class="discount-profile">
                       <span class="by">Articulo:</span>
-                      <img class="discount-img img-usuario" src="https://image.tmdb.org/t/p/w500/oG8rC5WEUFEMsMeBLGJWspJ1Gp5.jpg" alt=""/>
+                      <img class="discount-img img-usuario" src="http://i.annihil.us/u/prod/marvel/i/mg/d/70/4bc69c7e9b9d7.jpg" alt=""/>
                       <div class="discount-detail">
-                        <div class="discount-name">Titulo: Wonder Woman 1984</div>
-                        <div class="discount-type">Sección: Peliculas</div>
+                        <div class="discount-name">Titulo: Ant-Man (2003)</div>
+                        <div class="discount-type">Sección: Comics</div>
                       </div>
                     </div>
                    
@@ -6449,7 +6365,7 @@ let chart30 = {
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Pie data={chartExample31.data} options={chartExample31.options}/>
+                                  <Pie data={chartExample41.data} options={chartExample41.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -6467,7 +6383,7 @@ let chart30 = {
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Bar data={chartExample3.data} options={chartExample3.options}/>
+                                  <Bar data={chartExample42.data} options={chartExample42.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -6483,7 +6399,7 @@ let chart30 = {
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Bar data={chartExample5.data} options={chartExample5.options}/>
+                                  <Bar data={chartExample43.data} options={chartExample43.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -6499,7 +6415,7 @@ let chart30 = {
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Bar data={chartExample6.data} options={chartExample6.options}/>
+                                  <Bar data={chartExample44.data} options={chartExample44.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -6515,7 +6431,7 @@ let chart30 = {
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Bar data={chartExample7.data} options={chartExample7.options}/>
+                                  <Bar data={chartExample45.data} options={chartExample45.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -6563,132 +6479,48 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                           <tr>
-                            <th>Admin</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th></th>
-                            <th>Edad</th>
-                            <th>id</th>
-                            <th>Cumpleaños</th>
-                            <th></th>
-                            <th></th>
-                            <th>Estado</th>
+                            <th>Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            
+                            <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" /* onChange={cambiarAdmin} */ />
-                              {/* <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div> */}
-                            </td>
-                            <td>Diego</td>
-                            <td>Jarauta</td>
-                            <td>Ibáñez</td>
-                            <td>34</td>
-                            <td>diegojarauta8@gmail.com</td>
-                            <td>23</td>
-                            <td>8</td>
-                            <td>1987</td>
-                            <td>
-                              <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>My beard, my rules</td>
+                            <td>BB0001</td>
+                            <td>513</td>
+                            <td>7.643,7</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row2" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Sergio</td>
-                            <td>Campos</td>
-                            <td>Corredera</td>
-                            <td>35</td>
-                            <td>scampos@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                              <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
+                            <td>Mandala</td>
+                            <td>BB0002</td>
+                            <td>237</td>
+                            <td>3.531,3</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row3" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Jose</td>
-                            <td>Fernandez</td>
-                            <td>Lucientes</td>
-                            <td>46</td>
-                            <td>flucientes@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>Elephand</td>
+                            <td>BB0003</td>
+                            <td>196</td>
+                            <td>2.920,4</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row4" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Victor</td>
-                            <td>Gimeno</td>
-                            <td>Garcia</td>
-                            <td>22</td>
-                            <td>vgimeno@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>Panda</td>
+                            <td>BB0007</td>
+                            <td>169</td>
+                            <td>2.518,1</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row5" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Ángeles</td>
-                            <td>Malo</td>
-                            <td>Vallespín</td>
-                            <td>58</td>
-                            <td>mvangeles@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
+                            <td>Pandastic</td>
+                            <td>BB0008</td>
+                            <td>116</td>
+                            <td>1.728,4</td>
+                            
                           </tr>
                         </tbody>
                       </table>
@@ -6709,133 +6541,49 @@ let chart30 = {
                     <div class="cards card usuarios-admin">
                       <table class="table table-admin">
                         <thead>
-                          <tr>
-                            <th>Admin</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th></th>
-                            <th>Edad</th>
-                            <th>id</th>
-                            <th>Cumpleaños</th>
-                            <th></th>
-                            <th></th>
-                            <th>Estado</th>
+                        <tr>
+                            <th>Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            
+                            <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" /* onChange={cambiarAdmin} */ />
-                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
-                            </td>
-                            <td>Diego</td>
-                            <td>Jarauta</td>
-                            <td>Ibáñez</td>
-                            <td>34</td>
-                            <td>diegojarauta8@gmail.com</td>
-                            <td>23</td>
-                            <td>8</td>
-                            <td>1987</td>
-                            <td>
-                              <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                        <tr>
+                            <td>Deer</td>
+                            <td>BB0009</td>
+                            <td>25</td>
+                            <td>372,5</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row2" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Sergio</td>
-                            <td>Campos</td>
-                            <td>Corredera</td>
-                            <td>35</td>
-                            <td>scampos@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                              <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <input type="checkbox" id="row3" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Jose</td>
-                            <td>Fernandez</td>
-                            <td>Lucientes</td>
+                            <td>FlowerSkull</td>
+                            <td>BB0011</td>
                             <td>46</td>
-                            <td>flucientes@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>685,4</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row4" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Victor</td>
-                            <td>Gimeno</td>
-                            <td>Garcia</td>
-                            <td>22</td>
-                            <td>vgimeno@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-green">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M20 6L9 17l-5-5" />
-                                </svg>
-                                Activo
-                              </div>
-                            </td>
+                            <td>Frida BB</td>
+                            <td>BB0010</td>
+                            <td>68</td>
+                            <td>1.013,2</td>
+                            
                           </tr>
                           <tr>
-                            <td>
-                              <input type="checkbox" id="row5" class="table-row"/>
-                              <span class="time is-wait">User</span>
-                            </td>
-                            <td>Ángeles</td>
-                            <td>Malo</td>
-                            <td>Vallespín</td>
-                            <td>58</td>
-                            <td>mvangeles@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
-                            <td>
-                            <div class="status is-red">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 6L6 18M6 6l12 12" />
-                                </svg>
-                                Inactivo
-                              </div>
-                            </td>
+                            <td>Movember</td>
+                            <td>BB0006</td>
+                            <td>72</td>
+                            <td>1.072,8</td>
+                            
+                          </tr>
+                          <tr>
+                            <td>ButerFlower</td>
+                            <td>BB0005</td>
+                            <td>89</td>
+                            <td>1.326,1</td>
+                            
                           </tr>
                         </tbody>
                       </table>
@@ -6854,7 +6602,9 @@ let chart30 = {
       
           </>)
     
-        }
+        } 
+
+
         else if (menu == "usuarios") {
           
           return(<div className="body-dashboard">
