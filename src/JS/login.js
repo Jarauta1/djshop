@@ -5,6 +5,7 @@ import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"
 
 function Login (props) {
+  console.log(props.mensaje)
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
   let [mensaje,setMensaje] = useState(props.mensaje)
   let [num,setNum] = useState(0)

@@ -470,7 +470,7 @@ html {
     fill: transparent;
     stroke: #4356d6;
     stroke-width: 14;
-    stroke-dasharray: 200;/*  */
+    stroke-dasharray: 105;/*  */
     stroke-dashoffset: 235;
     animation: pieChart 3.8s linear forwards;
 }

@@ -588,7 +588,7 @@ let chart1_2_options = {
   // #########################################
   // // // used inside src/views/Dashboard.js
   // #########################################
-  let chartExample3 = {
+  let chartExample20 = {
     data: (canvas) => {
       let ctx = canvas.getContext("2d");
   
@@ -611,7 +611,7 @@ let chart1_2_options = {
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            data: [100+100,200,100,300,400],
+            data: [10,14,8,32,36],
           },
         ],
       };
@@ -641,8 +641,87 @@ let chart1_2_options = {
               zeroLineColor: "transparent",
             },
             ticks: {
-              suggestedMin: 60,
-              suggestedMax: 10,
+              suggestedMin: 0,
+              suggestedMax: 50,
+              padding: 20,
+              fontColor: "#9e9e9e",
+            },
+          },
+        ],
+        xAxes: [
+          {
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(225,78,202,0.1)",
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              padding: 20,
+              fontColor: "#9e9e9e",
+            },
+          },
+        ],
+      },
+    },
+  };
+  // #########################################
+  // // // used inside src/views/Dashboard.js
+  // #########################################
+  let chartExample3 = {
+    data: (canvas) => {
+      let ctx = canvas.getContext("2d");
+  
+      let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStroke.addColorStop(1, "rgba(72,72,176,0.1)");
+      gradientStroke.addColorStop(0.4, "rgba(72,72,176,0.0)");
+      gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
+  
+      return {
+        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        datasets: [
+          {
+            label: "Visitadas",
+            fill: true,
+            backgroundColor: gradientStroke,
+            hoverBackgroundColor: gradientStroke,
+            borderColor: "#d048b6",
+            pointHoverBackgroundColor: "#d048b6",
+            borderWidth: 2,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            data: [523+100,536,634,736,708],
+          },
+        ],
+      };
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: false,
+      },
+      tooltips: {
+        backgroundColor: "#f5f5f5",
+        titleFontColor: "#333",
+        bodyFontColor: "#666",
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest",
+      },
+      responsive: true,
+      scales: {
+        yAxes: [
+          {
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(225,78,202,0.1)",
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 800,
               padding: 20,
               fontColor: "#9e9e9e",
             },
@@ -689,7 +768,7 @@ let chart1_2_options = {
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            data: [500,400,600,700,200],
+            data: [532,403,618,746,612],
           },
         ],
       };
@@ -719,8 +798,8 @@ let chart1_2_options = {
               zeroLineColor: "transparent",
             },
             ticks: {
-              suggestedMin: 60,
-              suggestedMax: 10,
+              suggestedMin: 0,
+              suggestedMax: 800,
               padding: 20,
               fontColor: "#9e9e9e",
             },
@@ -766,7 +845,7 @@ let chart1_2_options = {
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            data: [1,2,3,4,5,6],
+            data: [597,432,369,531,593],
           },
         ],
       };
@@ -796,8 +875,8 @@ let chart1_2_options = {
               zeroLineColor: "transparent",
             },
             ticks: {
-              suggestedMin: 60,
-              suggestedMax: 10,
+              suggestedMin: 0,
+              suggestedMax: 800,
               padding: 20,
               fontColor: "#9e9e9e",
             },
@@ -843,7 +922,7 @@ let chart1_2_options = {
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            data: [1,2,3,4,5,6],
+            data: [493,351,296,501,456],
           },
         ],
       };
@@ -873,8 +952,8 @@ let chart1_2_options = {
               zeroLineColor: "transparent",
             },
             ticks: {
-              suggestedMin: 60,
-              suggestedMax: 10,
+              suggestedMin: 0,
+              suggestedMax: 800,
               padding: 20,
               fontColor: "#9e9e9e",
             },
@@ -1025,7 +1104,111 @@ let chart1_2_options = {
       gradientStrokeYellow.addColorStop(0, "rgba(166, 176, 72,0)"); //green colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["16-30", "31-40", "41-50", "51-65", "+65"],
+        datasets: [
+          {
+            label: "Favoritos",
+            fill: true,
+            backgroundColor: [gradientStrokeRed,gradientStrokePurple,gradientStroke,gradientStrokeGreen, gradientStrokeYellow],
+            hoverBackgroundColor: [gradientStrokeRed,gradientStrokePurple,gradientStroke,gradientStrokeGreen, gradientStrokeYellow],
+            borderColor: ["#d34242","#f5f5f5","#1f8ef1","#00d6b4","#e3f11f"],
+          /*   borderWidth: 2, */
+           /*  borderDash: [], */
+         /*    borderDashOffset: 0.0, */
+            data: [26,19,21,19,15],
+          },
+        ],
+      };
+    },
+    options: {
+      maintainAspectRatio: false,
+      legend: {
+        display: true,
+      },
+      tooltips: {
+        backgroundColor: "#f5f5f5",
+        titleFontColor: "#333",
+        bodyFontColor: "#666",
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest",
+      },
+      responsive: true,
+      scales: {
+       /*  yAxes: [
+          {
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(225,78,202,0.1)",
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              suggestedMin: 60,
+              suggestedMax: 10,
+              padding: 20,
+              fontColor: "#9e9e9e",
+            },
+          },
+        ], */
+       /*  xAxes: [
+          {
+            gridLines: {
+              drawBorder: false,
+              color: "rgba(225,78,202,0.1)",
+              zeroLineColor: "transparent",
+            },
+            ticks: {
+              padding: 20,
+              fontColor: "#9e9e9e",
+            },
+          },
+        ], */
+      },
+    },
+  };// #########################################
+  // // // used inside src/views/Dashboard.js
+  // #########################################
+   // #########################################
+  // // // used inside src/views/Dashboard.js
+  // #########################################
+  let chartExample16 = {
+    data: (canvas) => {
+      let ctx = canvas.getContext("2d");
+  
+      let gradientStrokeRed = ctx.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStrokeRed.addColorStop(1, "rgba(176,72,72,0.1)");
+      gradientStrokeRed.addColorStop(0.4, "rgba(176,72,72,0.0)");
+      gradientStrokeRed.addColorStop(0, "rgba(169,52,52,0)"); //purple colors
+
+      let gradientStrokePurple = ctx.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStrokePurple.addColorStop(1, "rgba(72,72,176,0.1)");
+      gradientStrokePurple.addColorStop(0.4, "rgba(72,72,176,0.0)");
+      gradientStrokePurple.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
+
+      let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+  
+      gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
+      gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
+      gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+
+      let gradientStrokeGreen = ctx.createLinearGradient(0, 230, 0, 50);
+      
+      gradientStrokeGreen.addColorStop(1, "rgba(66,134,121,0.15)");
+      gradientStrokeGreen.addColorStop(0.4, "rgba(66,134,121,0.0)"); //green colors
+      gradientStrokeGreen.addColorStop(0, "rgba(66,134,121,0)"); //green colors
+
+      let gradientStrokeYellow = ctx.createLinearGradient(0, 230, 0, 50);
+      
+      gradientStrokeYellow.addColorStop(1, "rgba(166, 176, 72,0.15)");
+      gradientStrokeYellow.addColorStop(0.4, "rgba(166, 176, 72,0.0)"); //green colors
+      gradientStrokeYellow.addColorStop(0, "rgba(166, 176, 72,0)"); //green colors
+  
+      return {
+        labels: ["16-30", "31-40", "41-50", "51-65","+65"],
         datasets: [
           {
             label: "Favoritos",
@@ -1277,7 +1460,7 @@ let chart1_2_options = {
                                   <CardHeader>
                                       <Row>
                                           <Col className="text-left" sm="6">
-                                              <CardTitle tag="h2">Total</CardTitle>
+                                              <CardTitle tag="h2">{menu.toUpperCase()}</CardTitle>
                                               
                                           </Col>
                                           <Col sm="6">
@@ -1308,7 +1491,7 @@ let chart1_2_options = {
                                                   </Button>
                                                   <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple derecha", { active: bigChartData === "data5", })} onClick={() => setBgChartData("data5")} >
                                                       <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                                                          Compras
+                                                          Todas
                                                       </span>
                                                       
                                                   </Button>
@@ -1353,9 +1536,9 @@ let chart1_2_options = {
                     <div class="discount-wrapper">
                       <div class="discount-info">
                         <div class="subtitle">Mayor beneficio en un día:</div>
-                        <div class="subtitle-count">1000 €</div>
+                        <div class="subtitle-count">4.995 €</div>
                         <div class="subtitle">Venta en promoción:</div>
-                        <div class="subtitle-count dist">300 € (20 ventas)</div>
+                        <div class="subtitle-count dist">628,74 € (126 ventas)</div>
                       </div>
                       <div class="discount-chart">
                         <div class="circle">
@@ -1364,7 +1547,7 @@ let chart1_2_options = {
                               <circle cx="60" cy="60" r="50"></circle>
                             </svg>
                           </div>
-                          <div class="counter">92%</div>
+                          <div class="counter">71 %</div>
                         </div>
                       </div>
                     </div>
@@ -1490,16 +1673,16 @@ let chart1_2_options = {
 
 
                 <div class="user-box second-box">
-                <div class="activity card">
+                  <div class="activity card">
                       <Row>
                         <Col lg="12">
                             <Card className="card-chart">
                               <CardHeader>
-                                <h5 className="card-category">Rango edades</h5>
+                                <h5 className="card-category">% Ventas</h5>
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
-                                  <Bar data={chartExample3.data} options={chartExample3.options}/>
+                                  <Bar data={chartExample20.data} options={chartExample20.options}/>
                                 </div>
                               </CardBody>
                             </Card>
@@ -1511,7 +1694,7 @@ let chart1_2_options = {
                         <Col lg="12">
                             <Card className="card-chart">
                               <CardHeader>
-                                <h5 className="card-category">% Ventas</h5>
+                                <h5 className="card-category">Rango edades</h5>
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
@@ -1581,13 +1764,795 @@ let chart1_2_options = {
                     
                   </div>
                 </div>
+              
+                <div className="user-box fourth-box">
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>euro</a>
+                      </div>
+                      Usuarios más rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                           
+                            <th>Nombre</th>
+                           <th></th>
+                            <th>Apellidos</th>
+                            <th></th>
+                            <th>Edad</th>
+                            <th></th>
+                            <th>id</th>
+                            <th></th>
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>thumb_down_alt</a>
+                      </div>
+                      Usuarios menos rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                           
+                            <th>Nombre</th>
+                           <th></th>
+                            <th>Apellidos</th>
+                            <th></th>
+                            <th>Edad</th>
+                            <th></th>
+                            <th>id</th>
+                            <th></th>
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                          <tr>
+                            
+                            <td>Diego</td>
+                            <th></th>
+                            <td>Jarauta Ibáñez</td>
+                            <th></th>
+                            <td>34</td>
+                            <th></th>
+                            <td>diegojarauta8@gmail.com</td>
+                            <th></th>
+                            <td>1987</td>
+                            
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                
+                </div>
+
               </div>
             </div>
           </div>)
       
-        } else if (menu == "camisetas") {
+        } else if (menu == "camisetas" || menu == "comics" || menu == "libros" || menu == "peliculas" || menu == "zapatillas") {
           return(<>
-          
+           <div className="body-dashboard">
+          <div class="wrapper-dashboard">
+              <div class="left-side">
+              </div>
+              <div class="main-container">
+                <div class="header-dashboard">
+                <div class="logo-dashboard"><span class="logo-det"><img classname="img-usuario" src={logo} height="20" alt=""/></span></div>
+                  <a class="header-link" onClick={totales}>
+                    <div className="material-icons header-admin">
+                     <a>analytics</a>
+                    </div>
+                    Totales
+                  </a>
+                  <a class="header-link" onClick={camisetas}>
+                  <div className="header-admin">
+                  <i className="fa fa-tshirt camiseta-usuario"></i>
+                    </div>
+                    Camisetas
+                  </a>
+                  <a class="header-link" onClick={comics}>
+                  <div className="material-icons header-admin">
+                     <a>view_quilt</a>
+                    </div>
+                    Comics
+                  </a>
+                  <a class="header-link" onClick={libros}>
+                  <div className="material-icons header-admin">
+                     <a>auto_stories</a>
+                    </div>
+                    Libros
+                  </a>
+                  <a class="header-link" onClick={peliculas}>
+                  <div className="material-icons header-admin">
+                     <a>theaters</a>
+                    </div>
+                    Peliculas
+                  </a>
+                  <a class="header-link" onClick={zapatillas}>
+                  <div className="header-admin">
+                    <i className="fa fa-shoe-prints camiseta-usuario"></i>
+                    </div>
+                    Zapatillas
+                  </a>
+                  <a class="header-link" onClick={tabla}>
+                  <div className="material-icons header-admin">
+                     <a>admin_panel_settings</a>
+                    </div>
+                    Usuarios
+                  </a>
+                
+              </div>
+               
+  
+                <div class="user-box first-box">
+                  <div class="activity card">
+                      <Row>
+                          <Col xs="12">
+                              <div /* className="card-chart" */>
+                                  <CardHeader>
+                                      <Row>
+                                          <Col className="text-left" sm="6">
+                                              <CardTitle tag="h2">{menu.toUpperCase()}</CardTitle>
+                                              
+                                          </Col>
+                                          <Col sm="6">
+                                              <ButtonGroup className="btn-group-toggle float-right" data-toggle="buttons">
+                                                  <Button tag="label" className={classNames("btn-simple izquierda", {active: bigChartData === "data1",})} color="info" id="0" size="sm" onClick={() => setBgChartData("data1")}>
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Vistas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data4", })} onClick={() => setBgChartData("data4")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Favoritas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data2", })} onClick={() => setBgChartData("data2")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Cesta
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data3", })} onClick={() => setBgChartData("data3")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Compras
+                                                      </span>
+                                                      
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple derecha", { active: bigChartData === "data5", })} onClick={() => setBgChartData("data5")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Todas
+                                                      </span>
+                                                      
+                                                  </Button>
+                                              </ButtonGroup>
+                                          </Col>
+                                      </Row>
+                                  </CardHeader>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                          <Line data={chartExample1[bigChartData]} options={chartExample1.options} />
+                                     {/*  </div> */}
+                                  </CardBody>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                         {/*  <Line data={chartExample5[bigChartData]} options={chartExample5.options} /> */}
+                                     {/*  </div> */}
+                                  </CardBody>
+                              </div>
+                          </Col>
+                      </Row>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  </div>
+                  <div class="discount card">
+                    <div class="title">Mejor producto</div>
+                    <div class="discount-wrapper">
+                      <div class="discount-info">
+                        <div class="subtitle">Mayor beneficio en un día:</div>
+                        <div class="subtitle-count">1000 €</div>
+                        <div class="subtitle">Venta en promoción:</div>
+                        <div class="subtitle-count dist">300 € (20 ventas)</div>
+                      </div>
+                      <div class="discount-chart">
+                        <div class="circle">
+                          <div class="pie">
+                            <svg>
+                              <circle cx="60" cy="60" r="50"></circle>
+                            </svg>
+                          </div>
+                          <div class="counter">92%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discount-profile">
+                      <span class="by">Articulo:</span>
+                      <img class="discount-img img-usuario" src="https://image.tmdb.org/t/p/w500/oG8rC5WEUFEMsMeBLGJWspJ1Gp5.jpg" alt=""/>
+                      <div class="discount-detail">
+                        <div class="discount-name">Titulo: Wonder Woman 1984</div>
+                        <div class="discount-type">Sección: Peliculas</div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">% Ventas por edades</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Pie data={chartExample16.data} options={chartExample16.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                </div>
+                <div class="user-box third-box">
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample3.data} options={chartExample3.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top favoritos</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample5.data} options={chartExample5.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menos compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample6.data} options={chartExample6.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menos % visitadas/compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample7.data} options={chartExample7.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  
+                 
+
+
+                 
+                </div>
+                
+
+
+
+
+
+
+                <div class="user-box second-box">
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>done</a>
+                      </div>
+                      Más rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                            <th>Admin</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th></th>
+                            <th>Edad</th>
+                            <th>id</th>
+                            <th>Cumpleaños</th>
+                            <th></th>
+                            <th></th>
+                            <th>Estado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" onChange={cambiarAdmin} />
+                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
+                            </td>
+                            <td>Diego</td>
+                            <td>Jarauta</td>
+                            <td>Ibáñez</td>
+                            <td>34</td>
+                            <td>diegojarauta8@gmail.com</td>
+                            <td>23</td>
+                            <td>8</td>
+                            <td>1987</td>
+                            <td>
+                              <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row2" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Sergio</td>
+                            <td>Campos</td>
+                            <td>Corredera</td>
+                            <td>35</td>
+                            <td>scampos@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                              <div class="status is-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                                Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row3" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Jose</td>
+                            <td>Fernandez</td>
+                            <td>Lucientes</td>
+                            <td>46</td>
+                            <td>flucientes@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row4" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Victor</td>
+                            <td>Gimeno</td>
+                            <td>Garcia</td>
+                            <td>22</td>
+                            <td>vgimeno@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Ángeles</td>
+                            <td>Malo</td>
+                            <td>Vallespín</td>
+                            <td>58</td>
+                            <td>mvangeles@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                                Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>highlight_off</a>
+                      </div>
+                      Menos rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                            <th>Admin</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th></th>
+                            <th>Edad</th>
+                            <th>id</th>
+                            <th>Cumpleaños</th>
+                            <th></th>
+                            <th></th>
+                            <th>Estado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" onChange={cambiarAdmin} />
+                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
+                            </td>
+                            <td>Diego</td>
+                            <td>Jarauta</td>
+                            <td>Ibáñez</td>
+                            <td>34</td>
+                            <td>diegojarauta8@gmail.com</td>
+                            <td>23</td>
+                            <td>8</td>
+                            <td>1987</td>
+                            <td>
+                              <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row2" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Sergio</td>
+                            <td>Campos</td>
+                            <td>Corredera</td>
+                            <td>35</td>
+                            <td>scampos@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                              <div class="status is-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                                Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row3" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Jose</td>
+                            <td>Fernandez</td>
+                            <td>Lucientes</td>
+                            <td>46</td>
+                            <td>flucientes@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row4" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Victor</td>
+                            <td>Gimeno</td>
+                            <td>Garcia</td>
+                            <td>22</td>
+                            <td>vgimeno@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Ángeles</td>
+                            <td>Malo</td>
+                            <td>Vallespín</td>
+                            <td>58</td>
+                            <td>mvangeles@gmail.com</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                            </td>
+                            <td>
+                            <div class="status is-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                                Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                                
+               
+                
+            
+                 
+                </div>
+               
+              </div>
+            </div>
+          </div>)
+      
           </>)
     
         } else if (menu == "usuarios") {
