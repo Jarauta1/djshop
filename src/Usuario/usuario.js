@@ -38,6 +38,7 @@ function Usuario(props) {
     let [edad,setEdad] = useState(props.edad)
     let [usuario,setUsuario] = useState(props.usuario)
     let [rango,setRango] = useState(props.rango)
+    let [menu,setMenu] = useState("totales")
     let [nombreUsuario,setNombreUsuario] = useState(props.nombre)
     let [diaUsuario,setDiaUsuario] = useState(props.dia)
     let [mesUsuario,setMesUsuario] = useState(props.mes)
@@ -48,9 +49,6 @@ function Usuario(props) {
     let [apellido,setApellido] = useState("")
     let [datos,setDatos] = useState({})
     let rangoWeb = rango.toUpperCase()
-    let [menu,setMenu] = useState("totales")
-    let [color,setColor] = useState("#9e5924")
-    let [texto,setTexto] = useState("Admin")
 
     let [vistas,setVistas] = useState([])
     let [cesta,setCesta] =useState([])
@@ -80,8 +78,38 @@ function Usuario(props) {
     let [apellido2Perfil,setApellido2Perfil] = useState(datos.apellido2)
     let [apellido2PerfilEditado,setApellido2PerfilEditado] = useState("")
     let [apellido2Server, setApellido2Server] = useState("")
-
-
+    
+    /* --------------------------------------------------------------------------------------------------------- */
+/*       let [opcion,setOpcion] = useState(false)
+    let [color,setColor] = useState("#4255d3")
+    let [texto,setTexto] = useState("User")
+    let [num,setNum] = useState(1)
+    
+    useEffect(function(){
+      if (opcion) {
+        setColor("#4255d3")
+        setTexto("admin")
+        
+      } else {
+        
+        setColor("#9e5924")
+        setTexto("user")
+      }
+      
+      
+    },[num])
+    
+    
+      function cambiarAdmin(e) {
+        setMenu(e.target.checked)
+        console.log(e.target.checked)
+        setNum(num+1)
+      }  */
+      let color = "#4255d3"
+      let texto = "User"
+     /*  document.getElementById("spanAdmin").style.backgroundColor = color
+      document.getElementById("spanAdmin").innerHTML = texto */
+/* --------------------------------------------------------------------------------------------------------- */
     function actualizar() {
     /*  setNombrePerfil(nombrePerfilEditado) */
      console.log(nombrePerfilEditado)
@@ -166,18 +194,6 @@ function Usuario(props) {
     }
 
     
-    function cambiarAdmin(e) {
-      setMenu(e.target.checked)
-      
-      if (menu) {
-        setColor("#9e5924")
-        setTexto("Admin")
-      } else {
-        setColor("#4255d3")
-        setTexto("User")
-      }
-      
-    }
 
     useEffect(function(){
   
@@ -2349,8 +2365,8 @@ let chart1_2_options = {
                         <tbody>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" onChange={cambiarAdmin} />
-                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
+                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" /* onChange={cambiarAdmin} */ />
+                              {/* <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div> */}
                             </td>
                             <td>Diego</td>
                             <td>Jarauta</td>
@@ -2496,7 +2512,7 @@ let chart1_2_options = {
                         <tbody>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" onChange={cambiarAdmin} />
+                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" /* onChange={cambiarAdmin} */ />
                               <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
                             </td>
                             <td>Diego</td>
@@ -2703,25 +2719,23 @@ let chart1_2_options = {
                             <th>Edad</th>
                             <th>id</th>
                             <th>Cumpleaños</th>
-                            <th></th>
-                            <th></th>
+                           
                             <th>Estado</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" onChange={cambiarAdmin} />
-                              <div id="spanAdmin" style={{backgroundColor: {color}}}>{texto}</div>
+                              <input type="checkbox" id="row1" class="table-row" name="inputAdmin" checked/>
+                              <span id="spanAdmin" style={{backgroundColor: "#9e5924"}}>{texto}</span>
                             </td>
                             <td>Diego</td>
                             <td>Jarauta</td>
                             <td>Ibáñez</td>
                             <td>34</td>
                             <td>diegojarauta8@gmail.com</td>
-                            <td>23</td>
-                            <td>8</td>
-                            <td>1987</td>
+                            <td>23/08/1987</td>
+                            
                             <td>
                               <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2733,17 +2747,16 @@ let chart1_2_options = {
                           </tr>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row2" class="table-row"/>
-                              <span class="time is-wait">User</span>
+                              <input type="checkbox" id="row2" class="table-row" /* onChange={cambiarAdmin} *//>
+                              <span id="spanAdmin" style={{backgroundColor: {color}}} class="time is-wait">User</span> {/* aqui */}
                             </td>
                             <td>Sergio</td>
                             <td>Gimeno</td>
                             <td>Orizo</td>
                             <td>35</td>
                             <td>sergiogo@gmail.com</td>
-                            <td>24</td>
-                            <td>5</td>
-                            <td>1986</td>
+                            <td>24/05/1986</td>
+                            
                             
                             <td>
                               <div class="status is-red">
@@ -2765,9 +2778,8 @@ let chart1_2_options = {
                             <td>Lucientes</td>
                             <td>46</td>
                             <td>flucientes@gmail.com</td>
-                            <td>25</td>
-                            <td>12</td>
-                            <td>1975</td>
+                            <td>25/12/1975</td>
+                           
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2787,9 +2799,8 @@ let chart1_2_options = {
                             <td>Gracia</td>
                             <td>43</td>
                             <td>camgar@gmail.com</td>
-                            <td>10</td>
-                            <td>8</td>
-                            <td>1978</td>
+                            <td>10/08/1978</td>
+                           
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2809,9 +2820,8 @@ let chart1_2_options = {
                             <td>Malo</td>
                             <td>53</td>
                             <td>angelines539@gmail.com</td>
-                            <td>12</td>
-                            <td>2</td>
-                            <td>1968</td>
+                            <td>12/02/1968</td>
+                           
                             <td>
                             <div class="status is-red">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2831,9 +2841,8 @@ let chart1_2_options = {
                             <td>Borque</td>
                             <td>43</td>
                             <td>lvalles@gmail.com</td>
-                            <td>3</td>
-                            <td>8</td>
-                            <td>1978</td>
+                            <td>3/08/1978</td>
+                          
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2853,9 +2862,8 @@ let chart1_2_options = {
                             <td>Ullate</td>
                             <td>18</td>
                             <td>mariaru@gmail.com</td>
-                            <td>18</td>
-                            <td>6</td>
-                            <td>2003</td>
+                            <td>18/06/2003</td>
+                           
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2875,9 +2883,8 @@ let chart1_2_options = {
                             <td>Moreno</td>
                             <td>43</td>
                             <td>ibmojesus@gmail.com</td>
-                            <td>9</td>
-                            <td>5</td>
-                            <td>1978</td>
+                            <td>9/05/1978</td>
+                            
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2887,7 +2894,7 @@ let chart1_2_options = {
                               </div>
                             </td>
                           </tr>
-                          <tr>
+                          {/* <tr>
                             <td>
                               <input type="checkbox" id="row5" class="table-row"/>
                               <span class="time is-wait">User</span>
@@ -2897,9 +2904,8 @@ let chart1_2_options = {
                             <td>Lalzarra</td>
                             <td>57</td>
                             <td>echicon8@gmail.com</td>
-                            <td>8</td>
-                            <td>6</td>
-                            <td>1964</td>
+                            <td>8/06/1964</td>
+                           
                             <td>
                             <div class="status is-red">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2919,9 +2925,8 @@ let chart1_2_options = {
                             <td>Bronchales</td>
                             <td>38</td>
                             <td>epeinado@gmail.com</td>
-                            <td>11</td>
-                            <td>11</td>
-                            <td>1983</td>
+                            <td>11/11/1983</td>
+                            
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2930,7 +2935,7 @@ let chart1_2_options = {
                                 Activo
                               </div>
                             </td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                     </div>

@@ -50,6 +50,7 @@ useEffect(function(){
       }).then((res)=>res.json()).then((res)=>{
           setDatos(res.datos[0])
           setNombre(res.datos[0].usuario)
+          localStorage.setItem("mail",res.datos[0].mail)
 
           let anyo = res.datos[0].anyo
           let edad = 2021 - parseInt(anyo)
@@ -80,6 +81,7 @@ const login = (email, password) => {
       setAnyo(res.anyo)
       setApellido1(res.apellido1)
       setApellido2(res.apellido2)
+      localStorage.setItem("mail",res.usuario)
     }     
   })
 }
@@ -87,6 +89,7 @@ const login = (email, password) => {
 function salir() {
   console.log("has salido")
         setUsuario("")
+        localStorage.setItem("mail","")
 }
 
 let comprobarMail
@@ -124,6 +127,7 @@ const registrar = (nombre,apellido1,apellido2,fecha,mail,password,confirmarPassw
             setVuelta("volver")
             console.log(res.usuario)
             setUsuario(res.usuario)
+            localStorage.setItem("mail",res.usuario)
           }     
         })
         }
