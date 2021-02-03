@@ -1113,6 +1113,7 @@ html {
   
   .pf-w-100{
     width: 100%;
+    margin-top: 20px;
   }
   
   .pf-sect-coverpage{
@@ -1413,13 +1414,45 @@ html {
   
   .pf-sect-form-tabs{
     position: relative;
-    width: 80%;  
+    width: 60%;  
     margin: 60px auto;  
     box-sizing: border-box;
+    height: 64vh;
+  }
+
+  .pf-w-100 button{
+    outline:none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: #2646fc;
+    font-size: 16px;
+    font-weight: 300px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 6px #3224ef;
+    
+  }
+  .pf-w-100 button:hover{
+    box-shadow: 0 4px #2427ef;
+    top: 2px;
+  }
+  .pf-w-100 button:active{
+    box-shadow: none;
+    top: 6px;
+  }
+
+  .pf-lbl-title {
+      color: rgb(40, 23, 138);
   }
   
   .pf-sect-form-tabs .pf-sect-tab{
-    position: absolute;
+   /*  position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
@@ -1436,7 +1469,7 @@ html {
   }
   
   .pf-sect-form-tabs .pf-sect-tab.pf-active{
-    position: absolute;
+    /* position: absolute; */
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0px);
@@ -1450,10 +1483,10 @@ html {
       position: absolute;
       top: 25%;
       left: 0;
-      width: 2px;
+      width: 4px;
       height: 50%;
       border-radius: 25px;
-      background: #2a6ffe;  
+      background: #072869;  
   }
   
   .pf-sect-form-tabs .pf-sect-tab .pf-title-sect-tab{
@@ -1507,7 +1540,7 @@ html {
   }
   
   .pf-sect-tab .pf-cnt-form .pf-form-group.pf-icon .pf-inp-control{
-    padding-left: 33px; 
+    padding-left: 40px; 
   }
   
   .pf-sect-tab .pf-cnt-form .pf-form-group.pf-icon  i{

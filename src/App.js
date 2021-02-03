@@ -24,6 +24,11 @@ import Favoritos from "./JS/favoritos.js"
 function App() {
 
 let [usuario, setUsuario] = useState("")
+let [dia,setDia] = useState("")
+let [mes,setMes] = useState("")
+let [anyo,setAnyo] = useState("")
+let [apellido1,setApellido1] = useState("")
+let [apellido2,setApellido2] = useState("")
 let [mensaje,setMensaje] = useState("")
 let [vuelta,setVuelta] = useState("")
 let [datos, setDatos] = useState([])
@@ -68,8 +73,13 @@ const login = (email, password) => {
     setMensaje(res.mensaje)
     if (res.entrar == "si") {
       setVuelta("volver")
-      console.log(res.usuario)
+      console.log(res.usuario,res.dia,res.mes,res.anyo,res.apellido1,res.apellido2)
       setUsuario(res.usuario)
+      setDia(res.dia)
+      setMes(res.mes)
+      setAnyo(res.anyo)
+      setApellido1(res.apellido1)
+      setApellido2(res.apellido2)
     }     
   })
 }
@@ -171,7 +181,7 @@ return
     <ComicCard edad={edad} usuario={usuario}/>
   </Route>
   <Route exact path="/usuario">
-    <Usuario rango={rango} edad={edad} nombre={nombre} usuario={usuario}/>
+    <Usuario rango={rango} edad={edad} nombre={nombre} usuario={usuario} dia={dia} mes={mes} anyo={anyo} apellido1={apellido1} apellido2={apellido2}/>
   </Route>
   <Route exact path="/dashboard">
     <Dashboard rango={rango} edad={edad} usuario={usuario}/>

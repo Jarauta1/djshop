@@ -39,6 +39,11 @@ function Usuario(props) {
     let [usuario,setUsuario] = useState(props.usuario)
     let [rango,setRango] = useState(props.rango)
     let [nombreUsuario,setNombreUsuario] = useState(props.nombre)
+    let [diaUsuario,setDiaUsuario] = useState(props.dia)
+    let [mesUsuario,setMesUsuario] = useState(props.mes)
+    let [anyoUsuario,setAnyoUsuario] = useState(props.anyo)
+    let [apellido1Usuario,setApellido1Usuario] = useState(props.apellido1)
+    let [apellido2Usuario,setApellido2Usuario] = useState(props.apellido2)
     let [nombre,setNombre] = useState("")
     let [apellido,setApellido] = useState("")
     let [datos,setDatos] = useState({})
@@ -56,19 +61,69 @@ function Usuario(props) {
     let [nombrePerfilEditado,setNombrePerfilEditado] = useState("")
     let [nombreServer, setNombreServer] = useState("")
 
+    let [diaPerfil,setDiaPerfil] = useState(datos.dia)
+    let [diaPerfilEditado,setDiaPerfilEditado] = useState("")
+    let [diaServer, setDiaServer] = useState("")
+
+    let [mesPerfil,setMesPerfil] = useState(datos.mes)
+    let [mesPerfilEditado,setMesPerfilEditado] = useState("")
+    let [mesServer, setMesServer] = useState("")
+
+    let [anyoPerfil,setAnyoPerfil] = useState(datos.anyo)
+    let [anyoPerfilEditado,setAnyoPerfilEditado] = useState("")
+    let [anyoServer, setAnyoServer] = useState("")
+
+    let [apellido1Perfil,setApellido1Perfil] = useState(datos.apellido1)
+    let [apellido1PerfilEditado,setApellido1PerfilEditado] = useState("")
+    let [apellido1Server, setApellido1Server] = useState("")
+
+    let [apellido2Perfil,setApellido2Perfil] = useState(datos.apellido2)
+    let [apellido2PerfilEditado,setApellido2PerfilEditado] = useState("")
+    let [apellido2Server, setApellido2Server] = useState("")
+
+
     function actualizar() {
     /*  setNombrePerfil(nombrePerfilEditado) */
      console.log(nombrePerfilEditado)
-      server(nombrePerfilEditado)
+      server(nombrePerfilEditado,diaPerfilEditado,mesPerfilEditado,anyoPerfilEditado,apellido1PerfilEditado,apellido2PerfilEditado)
     }
 
-  function server(nombre) {
+  function server(nombre,dia,mes,anyo,apellido1,apellido2) {
     console.log(nombre)
     if (nombre.length == 0) {
       setNombreServer(usuario)
     } else {
       setNombreServer(nombre)
     }
+    if (dia.length == 0) {
+      setDiaServer(datos.dia)
+    } else {
+      setDiaServer(dia)
+    }
+    if (mes.length == 0) {
+      setMesServer(datos.mes)
+    } else {
+      setMesServer(mes)
+    }
+    if (anyo.length == 0) {
+      setAnyoServer(datos.anyo)
+    } else {
+      setAnyoServer(anyo)
+    }
+    if (apellido1.length == 0) {
+      setApellido1Server(datos.apellido1)
+    } else {
+      setApellido1Server(apellido1)
+    }
+    if (apellido2.length == 0) {
+      setApellido2Server(datos.apellido2)
+    } else {
+      setApellido2Server(apellido2)
+    }
+
+
+
+
       fetch("http://localhost:3000/usuarios/editar", {
             method: "POST",
             headers: {
@@ -87,6 +142,26 @@ function Usuario(props) {
 
     function cambiarNombrePerfil(e){
       setNombrePerfilEditado(e.target.value)
+      console.log(e.target.value)
+    }
+    function cambiarDiaPerfil(e){
+      setDiaPerfilEditado(e.target.value)
+      console.log(e.target.value)
+    }
+    function cambiarMesPerfil(e){
+      setMesPerfilEditado(e.target.value)
+      console.log(e.target.value)
+    }
+    function cambiarAnyoPerfil(e){
+      setAnyoPerfilEditado(e.target.value)
+      console.log(e.target.value)
+    }
+    function cambiarApellido1Perfil(e){
+      setApellido1PerfilEditado(e.target.value)
+      console.log(e.target.value)
+    }
+    function cambiarApellido2Perfil(e){
+      setApellido2PerfilEditado(e.target.value)
       console.log(e.target.value)
     }
 
@@ -1329,21 +1404,21 @@ let chart1_2_options = {
           <div class="pf-w-10">         
             <div class="pf-form-group pf-icon">
             <label for="" class="pf-lbl-title">Día</label>
-            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+            <input type="text"  class="pf-inp-control" onChange={cambiarDiaPerfil} placeholder={diaUsuario}/>
               <i class="fa fa-user"></i>              
           </div>       
           </div>  
           <div class="pf-w-10">         
             <div class="pf-form-group pf-icon">
             <label for="" class="pf-lbl-title">Mes</label>
-            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+            <input type="text"  class="pf-inp-control" onChange={cambiarMesPerfil} placeholder={mesUsuario}/>
               <i class="fa fa-user"></i>              
           </div>       
           </div>  
           <div class="pf-w-10">         
             <div class="pf-form-group pf-icon">
             <label for="" class="pf-lbl-title">Año</label>
-            <input type="date"  class="pf-inp-control" placeholder={datos.usuario}/>
+            <input type="text"  class="pf-inp-control" onChange={cambiarAnyoPerfil} placeholder={anyoUsuario}/>
               <i class="fa fa-user"></i>              
           </div>       
           </div>  
@@ -1352,15 +1427,15 @@ let chart1_2_options = {
           <div class="pf-w-50">
             <div class="pf-form-group pf-icon">
               <label for="" class="pf-lbl-title">Primer Apellido</label>
-              <input type="text"  class="pf-inp-control" placeholder="Escribe un apellido"/>
-              <i class="fa fa-user-o"></i>              
+              <input type="text"  class="pf-inp-control" onChange={cambiarApellido1Perfil} placeholder={apellido1Usuario}/>
+              <i class="fa fa-user"></i>              
             </div>        
           </div>            
           <div class="pf-w-50">           
             <div class="pf-form-group pf-icon">
               <label for="" class="pf-lbl-title">Segundo apellido</label>
-              <input type="text"  class="pf-inp-control" placeholder="Escribe un apellido"/>
-              <i class="fa fa-user-o"></i>              
+              <input type="text"  class="pf-inp-control" onChange={cambiarApellido2Perfil} placeholder={apellido2Usuario}/>
+              <i class="fa fa-user"></i>              
             </div>                            
           </div>
           <div className="pf-row">
@@ -1815,20 +1890,20 @@ let chart1_2_options = {
                             <th></th>
                             <td>43</td>
                             <th></th>
-                            <td>camgar@gmail.com</td>
+                            <td>lvalles@gmail.com</td>
                             <th></th>
                             <td>412,69</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Carlos</td>
+                            <td>Diego</td>
                             <th></th>
-                            <td>Corredera Algás</td>
+                            <td>Jarauta Ibáñez</td>
                             <th></th>
-                            <td>26</td>
+                            <td>34</td>
                             <th></th>
-                            <td>car18cor@gmail.com</td>
+                            <td>diegojarauta8@gmail.com</td>
                             <th></th>
                             <td>364,90</td>
                             
@@ -1908,54 +1983,55 @@ let chart1_2_options = {
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>María</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Rojo Ullate</td>
                             <th></th>
-                            <td>34</td>
+                            <td>18</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>mariaru@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>23,98</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Jesús</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Ibáñez Moreno</td>
                             <th></th>
-                            <td>34</td>
+                            <td>43</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>ibmojesus@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>36,86</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Elena</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Chicón Lalzarra</td>
                             <th></th>
-                            <td>34</td>
+                            <td>57</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>echicon8@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>62,61</td>
                             
                           </tr>
                           <tr>
                             
-                            <td>Diego</td>
+                            <td>Eduardo</td>
                             <th></th>
-                            <td>Jarauta Ibáñez</td>
+                            <td>Peinado Bronchales
+                            </td>
                             <th></th>
-                            <td>34</td>
+                            <td>38</td>
                             <th></th>
-                            <td>diegojarauta8@gmail.com</td>
+                            <td>epeinado@gmail.com</td>
                             <th></th>
-                            <td>1987</td>
+                            <td>93,46</td>
                             
                           </tr>
                          
@@ -2241,13 +2317,7 @@ let chart1_2_options = {
 
                  
                 </div>
-                
-
-
-
-
-
-
+ 
                 <div class="user-box second-box">
                 <div class="activity-user card">
                     <div class="cards-header">
@@ -2667,14 +2737,14 @@ let chart1_2_options = {
                               <span class="time is-wait">User</span>
                             </td>
                             <td>Sergio</td>
-                            <td>Campos</td>
-                            <td>Corredera</td>
+                            <td>Gimeno</td>
+                            <td>Orizo</td>
                             <td>35</td>
-                            <td>scampos@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
+                            <td>sergiogo@gmail.com</td>
+                            <td>24</td>
+                            <td>5</td>
+                            <td>1986</td>
+                            
                             <td>
                               <div class="status is-red">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2684,6 +2754,7 @@ let chart1_2_options = {
                               </div>
                             </td>
                           </tr>
+
                           <tr>
                             <td>
                               <input type="checkbox" id="row3" class="table-row"/>
@@ -2694,10 +2765,9 @@ let chart1_2_options = {
                             <td>Lucientes</td>
                             <td>46</td>
                             <td>flucientes@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
+                            <td>25</td>
+                            <td>12</td>
+                            <td>1975</td>
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2713,14 +2783,13 @@ let chart1_2_options = {
                               <span class="time is-wait">User</span>
                             </td>
                             <td>Victor</td>
-                            <td>Gimeno</td>
-                            <td>Garcia</td>
-                            <td>22</td>
-                            <td>vgimeno@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
+                            <td>Campos</td>
+                            <td>Gracia</td>
+                            <td>43</td>
+                            <td>camgar@gmail.com</td>
+                            <td>10</td>
+                            <td>8</td>
+                            <td>1978</td>
                             <td>
                             <div class="status is-green">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2736,20 +2805,129 @@ let chart1_2_options = {
                               <span class="time is-wait">User</span>
                             </td>
                             <td>Ángeles</td>
+                            <td>Hernandez</td>
                             <td>Malo</td>
-                            <td>Vallespín</td>
-                            <td>58</td>
-                            <td>mvangeles@gmail.com</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                            </td>
+                            <td>53</td>
+                            <td>angelines539@gmail.com</td>
+                            <td>12</td>
+                            <td>2</td>
+                            <td>1968</td>
                             <td>
                             <div class="status is-red">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M18 6L6 18M6 6l12 12" />
                                 </svg>
                                 Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Laura</td>
+                            <td>Valles</td>
+                            <td>Borque</td>
+                            <td>43</td>
+                            <td>lvalles@gmail.com</td>
+                            <td>3</td>
+                            <td>8</td>
+                            <td>1978</td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>María</td>
+                            <td>Rojo</td>
+                            <td>Ullate</td>
+                            <td>18</td>
+                            <td>mariaru@gmail.com</td>
+                            <td>18</td>
+                            <td>6</td>
+                            <td>2003</td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Jesús</td>
+                            <td>Ibáñez</td>
+                            <td>Moreno</td>
+                            <td>43</td>
+                            <td>ibmojesus@gmail.com</td>
+                            <td>9</td>
+                            <td>5</td>
+                            <td>1978</td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Elena</td>
+                            <td>Chicón</td>
+                            <td>Lalzarra</td>
+                            <td>57</td>
+                            <td>echicon8@gmail.com</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>1964</td>
+                            <td>
+                            <div class="status is-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                                Inactivo
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox" id="row5" class="table-row"/>
+                              <span class="time is-wait">User</span>
+                            </td>
+                            <td>Eduardo</td>
+                            <td>Peinado</td>
+                            <td>Bronchales</td>
+                            <td>38</td>
+                            <td>epeinado@gmail.com</td>
+                            <td>11</td>
+                            <td>11</td>
+                            <td>1983</td>
+                            <td>
+                            <div class="status is-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Activo
                               </div>
                             </td>
                           </tr>
