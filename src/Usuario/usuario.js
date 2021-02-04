@@ -139,7 +139,7 @@ function Usuario(props) {
           headers: {
             "Content-Type": "application/json",
           },
-        body: JSON.stringify({mail:"diegojarauta9@gmail.com",rango:"admin"}),
+        body: JSON.stringify({mail:"diegojarautaibanez@gmail.com",rango:"admin"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
@@ -153,7 +153,7 @@ function Usuario(props) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({mail:"diegojarauta9@gmail.com",rango:"usuario"}),
+        body: JSON.stringify({mail:"diegojarautaibanez@gmail.com",rango:"usuario"}),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)
       })
@@ -5703,7 +5703,7 @@ let chart30 = {
                             <th></th>
                             <td>Jarauta Ibáñez</td>
                             <th></th>
-                            <td>34</td>
+                            <td>33</td>
                             <th></th>
                             <td>diegojarauta8@gmail.com</td>
                             <th></th>
@@ -8483,10 +8483,10 @@ let chart30 = {
                               <input type="checkbox" id="row5" onChange={cambiarAdmin1} class="table-row"/>
                               <span className={isBackground1 ? `background-user` : `background-admin`}>{texto1}</span>
                             </td>
-                            <td>Diego</td>
+                            <td>Diego J.</td>
                             <td>Jarauta Ibáñez</td>
                             <td>33</td>
-                            <td>diegojarauta9@gmail.com</td>
+                            <td>diegojarautaibanez@gmail.com</td>
                             <td>23/08/1987</td>
                             <td>5</td>
                             
