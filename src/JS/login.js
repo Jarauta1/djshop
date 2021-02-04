@@ -1,5 +1,6 @@
 import '../CSS/login.css';
 import accederFoto from "../Imagenes/acceder.jpg"
+import registarFoto from "../Imagenes/registro.jpg"
 
 import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"
@@ -169,7 +170,7 @@ if (props.mensaje === "Logueado correctamente") {
             </p>
           </div>
         </div>
-        <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
+        <div className="imgBx"><img src={registarFoto} alt="" /></div>
       </div>
     </div>
   </section>
