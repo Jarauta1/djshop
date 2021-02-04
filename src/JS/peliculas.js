@@ -10,7 +10,7 @@ function Peliculas(props) {
   let [numPag,setNumPag] = useState(1)
   let [totalPag,setTotalPag] = useState(0)
   let [data,setData] = useState([])
-  let [precio,setPrecio] = useState(9.99)
+  let [precio,setPrecio] = useState(9.9)
 
   localStorage.setItem("retorno", "peliculas")
 

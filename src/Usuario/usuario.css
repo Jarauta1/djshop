@@ -467,14 +467,103 @@ html {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
 }
+.pie-camisetas {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
 .pie svg circle {
     fill: transparent;
     stroke: #4356d6;
     stroke-width: 14;
-    stroke-dasharray: 105;/*  */
-    stroke-dashoffset: 235;
-    animation: pieChart 3.8s linear forwards;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 279;
+    animation: barChart 3.8s linear forwards;
 }
+
+.pie-camisetas svg circle {
+    fill: transparent;
+    stroke: #4356d6;
+    stroke-width: 14;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 270;
+    animation: barChart 3.8s linear forwards;
+}
+
+.pie-comics {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.pie-comics svg circle {
+    fill: transparent;
+    stroke: #4356d6;
+    stroke-width: 14;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 260;
+    animation: barChart 3.8s linear forwards;
+}
+.pie-libros {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.pie-libros svg circle {
+    fill: transparent;
+    stroke: #4356d6;
+    stroke-width: 14;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 275;
+    animation: barChart 3.8s linear forwards;
+}
+.pie-peliculas {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.pie-peliculas svg circle {
+    fill: transparent;
+    stroke: #4356d6;
+    stroke-width: 14;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 279;
+    animation: barChart 3.8s linear forwards;
+}
+.pie-zapatillas {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.pie-zapatillas svg circle {
+    fill: transparent;
+    stroke: #4356d6;
+    stroke-width: 14;
+    stroke-dasharray: 259;/*  */
+    stroke-dashoffset: 276;
+    animation: barChart 3.8s linear forwards;
+}
+
+@media only screen and (min-width: 576px) {
+    .col-sm-6 {
+        width: 38%;
+    }
+}
+
 @keyframes pieChart {
     100% {
         stroke-dashoffset: 0;
@@ -696,9 +785,51 @@ html {
     justify-content: center;
     color: #fff;
 }
+.time2 {
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+   /*  background-color: #9e5924; */
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
 .time.is-wait {
     background: #4255d3;
+
 }
+/* .time.admin-check {
+    
+} */
+
+.background-admin {
+    background-color: #9e5924;
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+   /*  background-color: #9e5924; */
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.background-user {
+    background-color: #4255d3;
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+   /*  background-color: #9e5924; */
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
 .table .status {
     color: #1aa385;
     display: inline-flex;
@@ -763,7 +894,21 @@ html {
     font-size: 15px;
     vertical-align: middle;
     padding: 8px 0;
+    text-align: center;
 }
+.table th {
+    font-size: 15px;
+    vertical-align: middle;
+    padding: 8px 0;
+    text-align: center;
+}
+.table .td-titulo {
+    font-size: 15px;
+    vertical-align: middle;
+    padding: 8px 0;
+    text-align: left;
+}
+
 .table td:last-of-type {
     width: 100px;
 }

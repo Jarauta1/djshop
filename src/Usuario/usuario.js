@@ -2,7 +2,8 @@ import './usuario.css';
 import {useState, useEffect} from "react"
 import {BrowswerRouter, Route, Link,Redirect} from "react-router-dom"
 import logo from "../Imagenes/logo.png"
-import foto from "../Imagenes/foto.png"
+import foto1 from "../Imagenes/foto.png"
+import foto2 from "../Imagenes/logo.png"
 
 
 
@@ -79,21 +80,83 @@ function Usuario(props) {
     let [apellido2PerfilEditado,setApellido2PerfilEditado] = useState("")
     let [apellido2Server, setApellido2Server] = useState("")
     
-    /* --------------------------------------------------------------------------------------------------------- */
-/*       let [opcion,setOpcion] = useState(false)
-    let [color,setColor] = useState("#4255d3")
+    /* --------------------------------------------------------------------------------------------------------- */ /* indicador */
+    let [foto,setFoto] = useState(foto1)
+    useEffect(function(){
+
+    if (usuario !== "diegojarauta8@gmail.com") {
+      setFoto(foto2)
+    } 
+    },[usuario])
+    /* --------------------------------------------------------------------------------------------------------- */ /* indicador */
+    /* --------------------------------------------------------------------------------------------------------- */ /* indicador */
+       let [opcion,setOpcion] = useState(false)
+       let [opcion1,setOpcion1] = useState(false)
+    let [color,setColor] = useState("red")
     let [texto,setTexto] = useState("User")
+    let [texto1,setTexto1] = useState("User")
     let [num,setNum] = useState(1)
+    let [isBackground, setIsBackground] = useState(true)
+    let [isBackground1, setIsBackground1] = useState(true)
     
     useEffect(function(){
       if (opcion) {
         setColor("#4255d3")
-        setTexto("admin")
-        
+        setTexto("Adm")
+        setIsBackground(false)
+        console.log("sergio")
+        fetch("http://localhost:3000/usuarios/adminchange",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({mail:"scampos@gmail.com",rango:"admin"}),
+        }).then((res)=>res.json()).then((res)=>{
+          console.log(res)
+        })
       } else {
-        
+        console.log("sergio")
+        setIsBackground(true)
         setColor("#9e5924")
-        setTexto("user")
+        setTexto("User")
+        fetch("http://localhost:3000/usuarios/adminchange",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({mail:"scampos@gmail.com",rango:"usuario"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+      }
+      if (opcion1) {
+        setColor("#4255d3")
+        setTexto1("Adm")
+        setIsBackground1(false)
+        console.log("diego")
+        fetch("http://localhost:3000/usuarios/adminchange",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        body: JSON.stringify({mail:"diegojarauta9@gmail.com",rango:"admin"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
+    } else {
+        console.log("diego")
+        setIsBackground1(true)
+        setColor("#9e5924")
+        setTexto1("User")
+        fetch("http://localhost:3000/usuarios/adminchange",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({mail:"diegojarauta9@gmail.com",rango:"usuario"}),
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      })
       }
       
       
@@ -101,12 +164,17 @@ function Usuario(props) {
     
     
       function cambiarAdmin(e) {
-        setMenu(e.target.checked)
+        setOpcion(e.target.checked)
         console.log(e.target.checked)
         setNum(num+1)
-      }  */
-      let color = "#4255d3"
-      let texto = "User"
+      }  
+      function cambiarAdmin1(e) {
+        setOpcion1(e.target.checked)
+        console.log(e.target.checked)
+        setNum(num+1)
+      }  
+      /* let color = "#4255d3" */
+    /*   let texto = "User" */
      /*  document.getElementById("spanAdmin").style.backgroundColor = color
       document.getElementById("spanAdmin").innerHTML = texto */
 /* --------------------------------------------------------------------------------------------------------- */
@@ -2591,7 +2659,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["jQuery", "Arduino", "Dispositivos Electronicos", "El lado oscuro de Google", "La profesión del Diseño"],
         datasets: [
           {
             label: "Visitadas",
@@ -2673,7 +2741,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Wonder Woman 1984", "A descubierto", "Soul", "Breach", "Godzilla"],
         datasets: [
           {
             label: "Visitadas",
@@ -2755,7 +2823,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Adizero", "Swift", "Supernova", "Nmd R2", "ULTRABOOST 21"],
         datasets: [
           {
             label: "Visitadas",
@@ -3074,7 +3142,7 @@ let chart30 = {
       gradientStrokeRed.addColorStop(0, "rgba(169,52,52,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["jQuery", "Arduino", "Dispositivos Electronicos", "El lado oscuro de Google", "La profesión del Diseño"],
         datasets: [
           {
             label: "Favoritos",
@@ -3154,7 +3222,7 @@ let chart30 = {
       gradientStrokeRed.addColorStop(0, "rgba(169,52,52,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Wonder Woman 1984", "A descubierto", "Soul", "Breach", "Godzilla"],
         datasets: [
           {
             label: "Favoritos",
@@ -3234,7 +3302,7 @@ let chart30 = {
       gradientStrokeRed.addColorStop(0, "rgba(169,52,52,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Adizero", "Swift", "Supernova", "Nmd R2", "ULTRABOOST 21"],
         datasets: [
           {
             label: "Favoritos",
@@ -3472,7 +3540,7 @@ let chart30 = {
       gradientStrokePurple.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["El hombre que calculaba", "Fractales", "JAVA", "DeSEO Aprender", "Inkscape"],
         datasets: [
           {
             label: "En cesta",
@@ -3552,7 +3620,7 @@ let chart30 = {
       gradientStrokePurple.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Samba Adv", "RapidaRun", "Tour Boost 2,0", "Ultra Boost X", "ULTRABOOST 21"],
         datasets: [
           {
             label: "En cesta",
@@ -3632,7 +3700,7 @@ let chart30 = {
       gradientStrokePurple.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Codigo 8", "Bob Esponja", "Los nuevos Mutantes", "Tiempo de caza", "Tóxico"],
         datasets: [
           {
             label: "En cesta",
@@ -3952,7 +4020,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["El hombre que calculaba", "Fractales", "JAVA", "DeSEO Aprender", "Inkscape"],
         datasets: [
           {
             label: "Compradas",
@@ -4033,7 +4101,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Samba Adv", "RapidaRun", "Tour Boost 2,0", "Ultra Boost X", "ULTRABOOST 21"],
         datasets: [
           {
             label: "Compradas",
@@ -4195,7 +4263,7 @@ let chart30 = {
       gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
   
       return {
-        labels: ["Camisetas", "Comics", "Libros", "Peliculas", "Zapatillas"],
+        labels: ["Codigo 8", "Bob Esponja", "Los nuevos Mutantes", "Tiempo de caza", "Tóxico"],
         datasets: [
           {
             label: "Compradas",
@@ -5356,7 +5424,7 @@ let chart30 = {
                               <circle cx="60" cy="60" r="50"></circle>
                             </svg>
                           </div>
-                          <div class="counter">71 %</div>
+                          <div class="counter">23 %</div>
                         </div>
                       </div>
                     </div>
@@ -5925,12 +5993,12 @@ let chart30 = {
                       </div>
                       <div class="discount-chart">
                         <div class="circle">
-                          <div class="pie">
+                          <div class="pie-camisetas">
                             <svg>
                               <circle cx="60" cy="60" r="50"></circle>
                             </svg>
                           </div>
-                          <div class="counter">92%</div>
+                          <div class="counter">20 %</div>
                         </div>
                       </div>
                     </div>
@@ -6016,7 +6084,7 @@ let chart30 = {
                         <Col lg="12">
                             <Card className="card-chart">
                               <CardHeader>
-                                <h5 className="card-category">Menos % visitadas/compradas</h5>
+                                <h5 className="card-category">Menor % visitadas/compradas</h5>
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
@@ -6068,46 +6136,52 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                           <tr>
-                            <th>Producto</th>
+                            <th className="td-titulo">Producto</th>
                             <th>ID</th>
                             <th>Comprado</th>
+                            <th>Edad media</th>
                             
                             <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>My beard, my rules</td>
+                            <td className="td-titulo">My beard, my rules</td>
                             <td>BB0001</td>
                             <td>513</td>
+                            <td>32,6</td>
                             <td>7.643,7</td>
                             
                           </tr>
                           <tr>
-                            <td>Mandala</td>
+                            <td className="td-titulo">Mandala</td>
                             <td>BB0002</td>
                             <td>237</td>
+                            <td>33,9</td>
                             <td>3.531,3</td>
                             
                           </tr>
                           <tr>
-                            <td>Elephand</td>
+                            <td className="td-titulo">Elephand</td>
                             <td>BB0003</td>
                             <td>196</td>
+                            <td>31,23</td>
                             <td>2.920,4</td>
                             
                           </tr>
                           <tr>
-                            <td>Panda</td>
+                            <td className="td-titulo">Panda</td>
                             <td>BB0007</td>
                             <td>169</td>
+                            <td>28,6</td>
                             <td>2.518,1</td>
                             
                           </tr>
                           <tr>
-                            <td>Pandastic</td>
+                            <td className="td-titulo">Pandastic</td>
                             <td>BB0008</td>
                             <td>116</td>
+                            <td>39,3</td>
                             <td>1.728,4</td>
                             
                           </tr>
@@ -6131,46 +6205,51 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                         <tr>
-                            <th>Producto</th>
+                            <th className="td-titulo">Producto</th>
                             <th>ID</th>
                             <th>Comprado</th>
-                            
+                            <th>Edad media</th>
                             <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Deer</td>
+                            <td className="td-titulo">Deer</td>
                             <td>BB0009</td>
                             <td>25</td>
+                            <td>27,3</td>
                             <td>372,5</td>
                             
                           </tr>
                           <tr>
-                            <td>FlowerSkull</td>
+                            <td className="td-titulo">FlowerSkull</td>
                             <td>BB0011</td>
                             <td>46</td>
+                            <td>25,9</td>
                             <td>685,4</td>
                             
                           </tr>
                           <tr>
-                            <td>Frida BB</td>
+                            <td className="td-titulo">Frida BB</td>
                             <td>BB0010</td>
                             <td>68</td>
+                            <td>38,6</td>
                             <td>1.013,2</td>
                             
                           </tr>
                           <tr>
-                            <td>Movember</td>
+                            <td className="td-titulo">Movember</td>
                             <td>BB0006</td>
                             <td>72</td>
+                            <td>34,8</td>
                             <td>1.072,8</td>
                             
                           </tr>
                           <tr>
-                            <td>ButerFlower</td>
+                            <td className="td-titulo">ButerFlower</td>
                             <td>BB0005</td>
                             <td>89</td>
+                            <td>43,6</td>
                             <td>1.326,1</td>
                             
                           </tr>
@@ -6330,26 +6409,26 @@ let chart30 = {
                     <div class="discount-wrapper">
                       <div class="discount-info">
                         <div class="subtitle">Mayor beneficio en un día:</div>
-                        <div class="subtitle-count">469,01 €</div>
+                        <div class="subtitle-count">760,91 €</div>
                         <div class="subtitle">Venta en promoción:</div>
-                        <div class="subtitle-count dist">250,74 € (126 ventas)</div>
+                        <div class="subtitle-count dist">324,37 € (163 ventas)</div>
                       </div>
                       <div class="discount-chart">
                         <div class="circle">
-                          <div class="pie">
+                          <div class="pie-comics">
                             <svg>
                               <circle cx="60" cy="60" r="50"></circle>
                             </svg>
                           </div>
-                          <div class="counter">92%</div>
+                          <div class="counter">16 %</div>
                         </div>
                       </div>
                     </div>
                     <div class="discount-profile">
                       <span class="by">Articulo:</span>
-                      <img class="discount-img img-usuario" src="http://i.annihil.us/u/prod/marvel/i/mg/d/70/4bc69c7e9b9d7.jpg" alt=""/>
+                      <img class="discount-img img-usuario" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/4bc6a2497684e.jpg" alt=""/>
                       <div class="discount-detail">
-                        <div class="discount-name">Titulo: Ant-Man (2003)</div>
+                        <div class="discount-name">Titulo: Ant-Man (2003) #3</div>
                         <div class="discount-type">Sección: Comics</div>
                       </div>
                     </div>
@@ -6427,7 +6506,7 @@ let chart30 = {
                         <Col lg="12">
                             <Card className="card-chart">
                               <CardHeader>
-                                <h5 className="card-category">Menos % visitadas/compradas</h5>
+                                <h5 className="card-category">Menor % visitadas/compradas</h5>
                               </CardHeader>
                               <CardBody>
                                 <div className="chart-area">
@@ -6479,47 +6558,73 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                           <tr>
-                            <th>Producto</th>
+                            <th className="td-titulo">Producto</th>
                             <th>ID</th>
                             <th>Comprado</th>
+                            <th>Edad media</th>
                             
                             <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>My beard, my rules</td>
-                            <td>BB0001</td>
-                            <td>513</td>
-                            <td>7.643,7</td>
+                            <td className="td-titulo">Ant-Man 1</td>
+                            <td>291</td>
+                            <td>316</td>
+                            <td>19,2</td>
+                            <td>944,84</td>
                             
                           </tr>
                           <tr>
-                            <td>Mandala</td>
-                            <td>BB0002</td>
-                            <td>237</td>
-                            <td>3.531,3</td>
+                            <td className="td-titulo">Everyday Hero
+</td>
+                            <td>1308
+</td>
+                            <td>294
+</td>
+                            <td>25,9
+</td>
+                            <td>1.761,06
+</td>
                             
                           </tr>
                           <tr>
-                            <td>Elephand</td>
-                            <td>BB0003</td>
-                            <td>196</td>
-                            <td>2.920,4</td>
+                            <td className="td-titulo">Days of Future Past
+</td>
+                            <td>1332
+</td>
+                            <td>239
+</td>
+                            <td>22,6
+</td>
+                            <td>2.387,61
+</td>
                             
                           </tr>
                           <tr>
-                            <td>Panda</td>
-                            <td>BB0007</td>
-                            <td>169</td>
-                            <td>2.518,1</td>
+                            <td className="td-titulo">Ant-Man 4
+</td>
+                            <td>428
+</td>
+                            <td>243
+</td>
+                            <td>27,3
+</td>
+                            <td>726,57
+</td>
                             
                           </tr>
                           <tr>
-                            <td>Pandastic</td>
-                            <td>BB0008</td>
-                            <td>116</td>
-                            <td>1.728,4</td>
+                            <td className="td-titulo">Sentry
+</td>
+                            <td>1003
+</td>
+                            <td>164
+</td>
+                            <td>17,6
+</td>
+                            <td>1.638,36
+</td>
                             
                           </tr>
                         </tbody>
@@ -6542,47 +6647,1583 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                         <tr>
-                            <th>Producto</th>
+                            <th className="td-titulo">Producto</th>
                             <th>ID</th>
                             <th>Comprado</th>
-                            
+                            <th>Edad media</th>
                             <th>€</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Deer</td>
-                            <td>BB0009</td>
-                            <td>25</td>
-                            <td>372,5</td>
+                            <td className="td-titulo">Gun Theory
+</td>
+                            <td>331
+</td>
+                            <td>44
+</td>
+                            <td>32,4
+</td>
+                            <td>110
+,0</td>
                             
                           </tr>
                           <tr>
-                            <td>FlowerSkull</td>
-                            <td>BB0011</td>
+                            <td className="td-titulo">Ant-Man 3
+</td>
+                            <td>376
+</td>
+                            <td>65
+</td>
+                            <td>18,9
+</td>
+                            <td>194,35
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Ultimate War
+</td>
+                            <td>1158
+</td>
+                            <td>78
+</td>
+                            <td>26,8
+</td>
+                            <td>779,22
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Ant-Man 2
+</td>
+                            <td>323
+</td>
+                            <td>83
+</td>
+                            <td>24,9
+</td>
+                            <td>248,17
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Hulk
+</td>
+                            <td>183
+</td>
+                            <td>103
+</td>
+                            <td>26,7
+</td>
+                            <td>410,97
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                                
+               
+                
+            
+                 
+                </div>
+               
+              </div>
+            </div>
+          </div>)
+      
+          </>)
+    
+        } else if (menu == "libros") {
+          return(<>
+           <div className="body-dashboard">
+          <div class="wrapper-dashboard">
+              <div class="left-side">
+              </div>
+              <div class="main-container">
+                <div class="header-dashboard">
+                <div class="logo-dashboard"><span class="logo-det"><img classname="img-usuario" src={logo} height="20" alt=""/></span></div>
+                  <a class="header-link" onClick={totales}>
+                    <div className="material-icons header-admin">
+                     <a>analytics</a>
+                    </div>
+                    Totales
+                  </a>
+                  <a class="header-link" onClick={camisetas}>
+                  <div className="header-admin">
+                  <i className="fa fa-tshirt camiseta-usuario"></i>
+                    </div>
+                    Camisetas
+                  </a>
+                  <a class="header-link" onClick={comics}>
+                  <div className="material-icons header-admin">
+                     <a>view_quilt</a>
+                    </div>
+                    Comics
+                  </a>
+                  <a class="header-link" onClick={libros}>
+                  <div className="material-icons header-admin">
+                     <a>auto_stories</a>
+                    </div>
+                    Libros
+                  </a>
+                  <a class="header-link" onClick={peliculas}>
+                  <div className="material-icons header-admin">
+                     <a>theaters</a>
+                    </div>
+                    Peliculas
+                  </a>
+                  <a class="header-link" onClick={zapatillas}>
+                  <div className="header-admin">
+                    <i className="fa fa-shoe-prints camiseta-usuario"></i>
+                    </div>
+                    Zapatillas
+                  </a>
+                  <a class="header-link" onClick={tabla}>
+                  <div className="material-icons header-admin">
+                     <a>admin_panel_settings</a>
+                    </div>
+                    Usuarios
+                  </a>
+                
+              </div>
+               
+  
+                <div class="user-box first-box">
+                  <div class="activity card">
+                      <Row>
+                          <Col xs="12">
+                              <div /* className="card-chart" */>
+                                  <CardHeader>
+                                      <Row>
+                                          <Col className="text-left" sm="6">
+                                              <CardTitle tag="h2">{menu.toUpperCase()}</CardTitle>
+                                              
+                                          </Col>
+                                          <Col sm="6">
+                                              <ButtonGroup className="btn-group-toggle float-right" data-toggle="buttons">
+                                                  <Button tag="label" className={classNames("btn-simple izquierda", {active: bigChartData === "data1",})} color="info" id="0" size="sm" onClick={() => setBgChartData("data1")}>
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Vistas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data4", })} onClick={() => setBgChartData("data4")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Favoritas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data2", })} onClick={() => setBgChartData("data2")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Cesta
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data3", })} onClick={() => setBgChartData("data3")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Compras
+                                                      </span>
+                                                      
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple derecha", { active: bigChartData === "data5", })} onClick={() => setBgChartData("data5")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Todas
+                                                      </span>
+                                                      
+                                                  </Button>
+                                              </ButtonGroup>
+                                          </Col>
+                                      </Row>
+                                  </CardHeader>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                          <Line data={chartExample50[bigChartData]} options={chartExample50.options} />
+                                     {/*  </div> */}
+                                  </CardBody>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                         {/*  <Line data={chartExample5[bigChartData]} options={chartExample5.options} /> */}
+                                     {/*  </div> */}
+                                  </CardBody>
+                              </div>
+                          </Col>
+                      </Row>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  </div>
+                  <div class="discount card">
+                    <div class="title">Mejor producto</div>
+                    <div class="discount-wrapper">
+                      <div class="discount-info">
+                        <div class="subtitle">Mayor beneficio en un día:</div>
+                        <div class="subtitle-count">2816,1 €</div>
+                        <div class="subtitle">Venta en promoción:</div>
+                        <div class="subtitle-count dist">1319,1 € (139 ventas)</div>
+                      </div>
+                      <div class="discount-chart">
+                        <div class="circle">
+                          <div class="pie-libros">
+                            <svg>
+                              <circle cx="60" cy="60" r="50"></circle>
+                            </svg>
+                          </div>
+                          <div class="counter">21 %</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discount-profile">
+                      <span class="by">Articulo:</span>
+                      <img class="discount-img img-usuario" src="http://collection.openlibra.com.s3.amazonaws.com/covers/2016/05/dispositivos-electronicos-OpenLibra-110x153.png" alt=""/>
+                      <div class="discount-detail">
+                        <div class="discount-name">Titulo: Dispositivos Electronicos</div>
+                        <div class="discount-type">Sección: Libros</div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">% Ventas por edades</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Pie data={chartExample51.data} options={chartExample51.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                </div>
+                <div class="user-box third-box">
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample52.data} options={chartExample52.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top favoritos</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample53.data} options={chartExample53.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menos compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample54.data} options={chartExample54.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menor % visitadas/compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample55.data} options={chartExample55.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  
+                 
+
+
+                 
+                </div>
+ 
+                <div class="user-box second-box">
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>done</a>
+                      </div>
+                      Más rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="td-titulo">jQuery
+</td>
+                            <td>853
+</td>
+                            <td>316</td>
+                            <td>19,2</td>
+                            <td>2.695,48
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Arduino
+
+</td>
+                            <td>11151
+
+</td>
+                            <td>294
+</td>
+                            <td>25,9
+</td>
+                            <td>3.383,94
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Dispositivos Electronicos
+
+</td>
+                            <td>14974
+
+</td>
+                            <td>239
+</td>
+                            <td>22,6
+</td>
+                            <td>3.577,83
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">El lado oscuro de Google
+
+</td>
+                            <td>2278
+
+</td>
+                            <td>243
+</td>
+                            <td>27,3
+</td>
+                            <td>675,54
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">La profesión del Diseño
+
+</td>
+                            <td>1626
+
+</td>
+                            <td>164
+</td>
+                            <td>17,6
+</td>
+                            <td>2.666,64
+
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>highlight_off</a>
+                      </div>
+                      Menos rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                        <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td className="td-titulo">El hombre que calculaba
+
+</td>
+                            <td>717
+
+</td>
+                            <td>44
+</td>
+                            <td>32,4
+</td>
+                            <td>315,48
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Fractales
+
+</td>
+                            <td>1234
+
+</td>
+                            <td>65
+</td>
+                            <td>18,9
+</td>
+                            <td>802,1
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">JAVA
+
+</td>
+                            <td>160
+
+</td>
+                            <td>78
+</td>
+                            <td>26,8
+</td>
+                            <td>1.248,0
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">DeSEO Aprender
+</td>
+                            <td>1178
+
+</td>
+                            <td>83
+</td>
+                            <td>24,9
+</td>
+                            <td>977,74
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Inkscape
+
+</td>
+                            <td>865
+
+</td>
+                            <td>103
+</td>
+                            <td>26,7
+</td>
+                            <td>890,95
+
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                                
+               
+                
+            
+                 
+                </div>
+               
+              </div>
+            </div>
+          </div>)
+      
+          </>)
+    
+        } else if (menu == "peliculas") {
+          return(<>
+           <div className="body-dashboard">
+          <div class="wrapper-dashboard">
+              <div class="left-side">
+              </div>
+              <div class="main-container">
+                <div class="header-dashboard">
+                <div class="logo-dashboard"><span class="logo-det"><img classname="img-usuario" src={logo} height="20" alt=""/></span></div>
+                  <a class="header-link" onClick={totales}>
+                    <div className="material-icons header-admin">
+                     <a>analytics</a>
+                    </div>
+                    Totales
+                  </a>
+                  <a class="header-link" onClick={camisetas}>
+                  <div className="header-admin">
+                  <i className="fa fa-tshirt camiseta-usuario"></i>
+                    </div>
+                    Camisetas
+                  </a>
+                  <a class="header-link" onClick={comics}>
+                  <div className="material-icons header-admin">
+                     <a>view_quilt</a>
+                    </div>
+                    Comics
+                  </a>
+                  <a class="header-link" onClick={libros}>
+                  <div className="material-icons header-admin">
+                     <a>auto_stories</a>
+                    </div>
+                    Libros
+                  </a>
+                  <a class="header-link" onClick={peliculas}>
+                  <div className="material-icons header-admin">
+                     <a>theaters</a>
+                    </div>
+                    Peliculas
+                  </a>
+                  <a class="header-link" onClick={zapatillas}>
+                  <div className="header-admin">
+                    <i className="fa fa-shoe-prints camiseta-usuario"></i>
+                    </div>
+                    Zapatillas
+                  </a>
+                  <a class="header-link" onClick={tabla}>
+                  <div className="material-icons header-admin">
+                     <a>admin_panel_settings</a>
+                    </div>
+                    Usuarios
+                  </a>
+                
+              </div>
+               
+  
+                <div class="user-box first-box">
+                  <div class="activity card">
+                      <Row>
+                          <Col xs="12">
+                              <div /* className="card-chart" */>
+                                  <CardHeader>
+                                      <Row>
+                                          <Col className="text-left" sm="6">
+                                              <CardTitle tag="h2">{menu.toUpperCase()}</CardTitle>
+                                              
+                                          </Col>
+                                          <Col sm="6">
+                                              <ButtonGroup className="btn-group-toggle float-right" data-toggle="buttons">
+                                                  <Button tag="label" className={classNames("btn-simple izquierda", {active: bigChartData === "data1",})} color="info" id="0" size="sm" onClick={() => setBgChartData("data1")}>
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Vistas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data4", })} onClick={() => setBgChartData("data4")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Favoritas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data2", })} onClick={() => setBgChartData("data2")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Cesta
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data3", })} onClick={() => setBgChartData("data3")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Compras
+                                                      </span>
+                                                      
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple derecha", { active: bigChartData === "data5", })} onClick={() => setBgChartData("data5")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Todas
+                                                      </span>
+                                                      
+                                                  </Button>
+                                              </ButtonGroup>
+                                          </Col>
+                                      </Row>
+                                  </CardHeader>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                          <Line data={chartExample60[bigChartData]} options={chartExample60.options} />
+                                     {/*  </div> */}
+                                  </CardBody>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                         {/*  <Line data={chartExample5[bigChartData]} options={chartExample5.options} /> */}
+                                     {/*  </div> */}
+                                  </CardBody>
+                              </div>
+                          </Col>
+                      </Row>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  </div>
+                  <div class="discount card">
+                    <div class="title">Mejor producto</div>
+                    <div class="discount-wrapper">
+                      <div class="discount-info">
+                        <div class="subtitle">Mayor beneficio en un día:</div>
+                        <div class="subtitle-count">4994,4 €</div>
+                        <div class="subtitle">Venta en promoción:</div>
+                        <div class="subtitle-count dist">628,7 € (126 ventas)</div>
+                      </div>
+                      <div class="discount-chart">
+                        <div class="circle">
+                          <div class="pie-peliculas">
+                            <svg>
+                              <circle cx="60" cy="60" r="50"></circle>
+                            </svg>
+                          </div>
+                          <div class="counter">23 %</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discount-profile">
+                      <span class="by">Articulo:</span>
+                      <img class="discount-img img-usuario" src="https://image.tmdb.org/t/p/w500/oG8rC5WEUFEMsMeBLGJWspJ1Gp5.jpg" alt=""/>
+                      <div class="discount-detail">
+                        <div class="discount-name">Titulo: Wonder Woman 1984</div>
+                        <div class="discount-type">Sección: Peliculas</div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">% Ventas por edades</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Pie data={chartExample61.data} options={chartExample61.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                </div>
+                <div class="user-box third-box">
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample62.data} options={chartExample62.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top favoritos</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample63.data} options={chartExample63.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menos compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample64.data} options={chartExample64.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menor % visitadas/compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample65.data} options={chartExample65.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  
+                 
+
+
+                 
+                </div>
+ 
+                <div class="user-box second-box">
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>done</a>
+                      </div>
+                      Más rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="td-titulo">Wonder Woman 1984
+</td>
+                            <td>464052
+</td>
+                            <td>316</td>
+                            <td>19,2</td>
+                            <td>3.156,84
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">A descubierto
+
+</td>
+                            <td>775996
+
+</td>
+                            <td>294
+</td>
+                            <td>25,9
+</td>
+                            <td>2.937,06
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Soul
+
+</td>
+                            <td>508442
+
+</td>
+                            <td>239
+</td>
+                            <td>22,6
+</td>
+                            <td>2.387,61
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Breach
+
+</td>
+                            <td>651571
+
+</td>
+                            <td>243
+</td>
+                            <td>27,3
+</td>
+                            <td>2.427,57
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Godzilla
+
+</td>
+                            <td>373571
+
+</td>
+                            <td>164
+</td>
+                            <td>17,6
+</td>
+                            <td>1.638,36
+
+
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>highlight_off</a>
+                      </div>
+                      Menos rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                        <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td className="td-titulo">Codigo 8
+
+</td>
+                            <td>461130
+
+</td>
+                            <td>44
+</td>
+                            <td>32,4
+</td>
+                            <td>439,56
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Bob Esponja
+
+</td>
+                            <td>400160
+
+</td>
+                            <td>65
+</td>
+                            <td>18,9
+</td>
+                            <td>649,35
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Los nuevos Mutantes
+
+</td>
+                            <td>340102
+
+</td>
+                            <td>78
+</td>
+                            <td>26,8
+</td>
+                            <td>779,22
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Tiempo de caza
+</td>
+                            <td>571785
+
+</td>
+                            <td>83
+</td>
+                            <td>24,9
+</td>
+                            <td>829,17
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Tóxico
+
+</td>
+                            <td>687149
+
+</td>
+                            <td>103
+</td>
+                            <td>26,7
+</td>
+                            <td>1.028,97
+
+
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                                
+               
+                
+            
+                 
+                </div>
+               
+              </div>
+            </div>
+          </div>)
+      
+          </>)
+    
+        } else if (menu == "zapatillas") {
+          return(<>
+           <div className="body-dashboard">
+          <div class="wrapper-dashboard">
+              <div class="left-side">
+              </div>
+              <div class="main-container">
+                <div class="header-dashboard">
+                <div class="logo-dashboard"><span class="logo-det"><img classname="img-usuario" src={logo} height="20" alt=""/></span></div>
+                  <a class="header-link" onClick={totales}>
+                    <div className="material-icons header-admin">
+                     <a>analytics</a>
+                    </div>
+                    Totales
+                  </a>
+                  <a class="header-link" onClick={camisetas}>
+                  <div className="header-admin">
+                  <i className="fa fa-tshirt camiseta-usuario"></i>
+                    </div>
+                    Camisetas
+                  </a>
+                  <a class="header-link" onClick={comics}>
+                  <div className="material-icons header-admin">
+                     <a>view_quilt</a>
+                    </div>
+                    Comics
+                  </a>
+                  <a class="header-link" onClick={libros}>
+                  <div className="material-icons header-admin">
+                     <a>auto_stories</a>
+                    </div>
+                    Libros
+                  </a>
+                  <a class="header-link" onClick={peliculas}>
+                  <div className="material-icons header-admin">
+                     <a>theaters</a>
+                    </div>
+                    Peliculas
+                  </a>
+                  <a class="header-link" onClick={zapatillas}>
+                  <div className="header-admin">
+                    <i className="fa fa-shoe-prints camiseta-usuario"></i>
+                    </div>
+                    Zapatillas
+                  </a>
+                  <a class="header-link" onClick={tabla}>
+                  <div className="material-icons header-admin">
+                     <a>admin_panel_settings</a>
+                    </div>
+                    Usuarios
+                  </a>
+                
+              </div>
+               
+  
+                <div class="user-box first-box">
+                  <div class="activity card">
+                      <Row>
+                          <Col xs="12">
+                              <div /* className="card-chart" */>
+                                  <CardHeader>
+                                      <Row>
+                                          <Col className="text-left" sm="6">
+                                              <CardTitle tag="h2">{menu.toUpperCase()}</CardTitle>
+                                              
+                                          </Col>
+                                          <Col sm="6">
+                                              <ButtonGroup className="btn-group-toggle float-right" data-toggle="buttons">
+                                                  <Button tag="label" className={classNames("btn-simple izquierda", {active: bigChartData === "data1",})} color="info" id="0" size="sm" onClick={() => setBgChartData("data1")}>
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Vistas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data4", })} onClick={() => setBgChartData("data4")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Favoritas
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="1" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data2", })} onClick={() => setBgChartData("data2")}>
+                                                  <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Cesta
+                                                      </span>
+                                                     
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple", { active: bigChartData === "data3", })} onClick={() => setBgChartData("data3")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Compras
+                                                      </span>
+                                                      
+                                                  </Button>
+                                                  <Button color="info" id="2" size="sm" tag="label" className={classNames("btn-simple derecha", { active: bigChartData === "data5", })} onClick={() => setBgChartData("data5")} >
+                                                      <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                                          Todas
+                                                      </span>
+                                                      
+                                                  </Button>
+                                              </ButtonGroup>
+                                          </Col>
+                                      </Row>
+                                  </CardHeader>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                          <Line data={chartExample70[bigChartData]} options={chartExample70.options} />
+                                     {/*  </div> */}
+                                  </CardBody>
+                                  <CardBody>
+                                    {/*   <div className="chart-area"> */}
+                                         {/*  <Line data={chartExample5[bigChartData]} options={chartExample5.options} /> */}
+                                     {/*  </div> */}
+                                  </CardBody>
+                              </div>
+                          </Col>
+                      </Row>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  </div>
+                  <div class="discount card">
+                    <div class="title">Mejor producto</div>
+                    <div class="discount-wrapper">
+                      <div class="discount-info">
+                        <div class="subtitle">Mayor beneficio en un día:</div>
+                        <div class="subtitle-count">4.858,2 €</div>
+                        <div class="subtitle">Venta en promoción:</div>
+                        <div class="subtitle-count dist">2.878,2 € (18 ventas)</div>
+                      </div>
+                      <div class="discount-chart">
+                        <div class="circle">
+                          <div class="pie-zapatillas">
+                            <svg>
+                              <circle cx="60" cy="60" r="50"></circle>
+                            </svg>
+                          </div>
+                          <div class="counter">22 %</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discount-profile">
+                      <span class="by">Articulo:</span>
+                      <img class="discount-img img-usuario" src="https://www.pngkit.com/png/full/957-9576260_black-adidas-running-shoes.png" alt=""/>
+                      <div class="discount-detail">
+                        <div class="discount-name">Titulo: ULTRABOOST 21</div>
+                        <div class="discount-type">Sección: Zapatillas</div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">% Ventas por edades</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Pie data={chartExample71.data} options={chartExample71.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                </div>
+                <div class="user-box third-box">
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample72.data} options={chartExample72.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Top favoritos</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample73.data} options={chartExample73.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menos compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample74.data} options={chartExample74.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                  <div class="activity card">
+                      <Row>
+                        <Col lg="12">
+                            <Card className="card-chart">
+                              <CardHeader>
+                                <h5 className="card-category">Menor % visitadas/compradas</h5>
+                              </CardHeader>
+                              <CardBody>
+                                <div className="chart-area">
+                                  <Bar data={chartExample75.data} options={chartExample75.options}/>
+                                </div>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                      </Row>
+                  </div>
+                 
+                      {/* <div class="destination-card">
+                        <div class="destination-profile">
+                          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+                          <div class="destination-length">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                              <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            42.8m
+                          </div>
+                        </div>
+                        <div class="destination-points">
+                          <div class="point">Pickup Point</div>
+                          <div class="sub-point">Maryland 17, NY</div>
+                        </div>
+                      </div>
+                    </div> */}
+                  
+                 
+
+
+                 
+                </div>
+ 
+                <div class="user-box second-box">
+                <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>done</a>
+                      </div>
+                      Más rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                          <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="td-titulo">ULTRABOOST 21
+</td>
+                            <td>ad15275
+</td>
                             <td>46</td>
-                            <td>685,4</td>
+                            <td>32,4</td>
+                            <td>8.280,00
+
+
+</td>
                             
                           </tr>
                           <tr>
-                            <td>Frida BB</td>
-                            <td>BB0010</td>
-                            <td>68</td>
-                            <td>1.013,2</td>
+                            <td className="td-titulo">Supernova
+
+</td>
+                            <td>ad15273
+
+</td>
+                            <td>64
+</td>
+                            <td>26,8
+</td>
+                            <td>7.677,44
+
+
+
+</td>
                             
                           </tr>
                           <tr>
-                            <td>Movember</td>
-                            <td>BB0006</td>
-                            <td>72</td>
-                            <td>1.072,8</td>
+                            <td className="td-titulo">Adizero
+
+</td>
+                            <td>ad15271
+
+</td>
+                            <td>51
+</td>
+                            <td>26,7
+</td>
+                            <td>7.140,00
+
+
+
+</td>
                             
                           </tr>
                           <tr>
-                            <td>ButerFlower</td>
-                            <td>BB0005</td>
-                            <td>89</td>
-                            <td>1.326,1</td>
+                            <td className="td-titulo">Swift
+
+</td>
+                            <td>ad15272
+
+</td>
+                            <td>73
+</td>
+                            <td>24,9
+</td>
+                            <td>4.596,81
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Nmd R2
+
+</td>
+                            <td>ad15274
+
+</td>
+                            <td>23
+</td>
+                            <td>18,9
+</td>
+                            <td>4.140,00
+
+
+</td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="activity-user card">
+                    <div class="cards-header">
+                      <div class="cards-view">
+                        
+                      <div className="material-icons header-admin">
+                       <a>highlight_off</a>
+                      </div>
+                      Menos rentables
+                      </div>
+                      
+                    </div>
+                    <div class="cards card usuarios-admin">
+                      <table class="table table-admin">
+                        <thead>
+                        <tr>
+                            <th className="td-titulo">Producto</th>
+                            <th>ID</th>
+                            <th>Comprado</th>
+                            <th>Edad media</th>
+                            <th>€</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        
+                            <td className="td-titulo">Nmd R2
+
+</td>
+                            <td>ad15274
+
+</td>
+                            <td>23
+</td>
+                            <td>18,9
+</td>
+                            <td>4.140,00
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Ultra Boost X
+
+</td>
+                            <td>ad15279
+
+</td>
+                            <td>26
+</td>
+                            <td>25,9
+</td>
+                            <td>3.067,74
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">RapidaRun
+
+</td>
+                            <td>ad15277
+
+</td>
+                            <td>65
+</td>
+                            <td>27,3
+</td>
+                            <td>2.597,40
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Samba Adv
+</td>
+                            <td>ad15276
+
+</td>
+                            <td>44
+</td>
+                            <td>17,6
+</td>
+                            <td>2.374,68
+
+
+</td>
+                            
+                          </tr>
+                          <tr>
+                            <td className="td-titulo">Tour Boost 2,0
+
+</td>
+                            <td>ad15278
+
+</td>
+                            <td>12
+</td>
+                            <td>22,6
+</td>
+                            <td>2.160,00
+
+
+</td>
                             
                           </tr>
                         </tbody>
@@ -6676,7 +8317,7 @@ let chart30 = {
                       <table class="table table-admin">
                         <thead>
                           <tr>
-                            <th>Admin</th>
+                            <th>Rango</th>
                             <th>Nombre</th>
                             <th>Apellidos</th>
                             
@@ -6691,12 +8332,12 @@ let chart30 = {
                           <tr>
                             <td>
                               <input type="checkbox" id="row1" class="table-row" name="inputAdmin" checked/>
-                              <span id="spanAdmin" style={{backgroundColor: "#9e5924"}}>{texto}</span>
+                              <span className="time">Adm</span>
                             </td>
                             <td>Diego</td>
                             <td>Jarauta Ibáñez</td>
                            
-                            <td>34</td>
+                            <td>33</td>
                             <td>diegojarauta8@gmail.com</td>
                             <td>23/08/1987</td>
                             <td>215</td>
@@ -6711,8 +8352,8 @@ let chart30 = {
                           </tr>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row2" class="table-row" /* onChange={cambiarAdmin} *//>
-                              <span id="spanAdmin" style={{backgroundColor: {color}}} class="time is-wait">User</span> {/* aqui */}
+                              <input type="checkbox" id="row2" class="table-row" onChange={cambiarAdmin}/>  {/* indicador */}
+                              <span id="spanAdmin" className={isBackground ? `background-user` : `background-admin`}>{texto}</span> 
                             </td>
                             <td>Sergio</td>
                             <td>Gimeno Orizo</td>
@@ -6839,15 +8480,15 @@ let chart30 = {
                           </tr>
                           <tr>
                             <td>
-                              <input type="checkbox" id="row5" class="table-row"/>
-                              <span class="time is-wait">User</span>
+                              <input type="checkbox" id="row5" onChange={cambiarAdmin1} class="table-row"/>
+                              <span className={isBackground1 ? `background-user` : `background-admin`}>{texto1}</span>
                             </td>
-                            <td>Jesús</td>
-                            <td>Ibáñez Moreno</td>
-                            <td>43</td>
-                            <td>ibmojesus@gmail.com</td>
-                            <td>9/05/1978</td>
-                            <td>46</td>
+                            <td>Diego</td>
+                            <td>Jarauta Ibáñez</td>
+                            <td>33</td>
+                            <td>diegojarauta9@gmail.com</td>
+                            <td>23/08/1987</td>
+                            <td>5</td>
                             
                             <td>
                             <div class="status is-green">
