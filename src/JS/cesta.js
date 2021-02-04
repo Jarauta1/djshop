@@ -10,7 +10,7 @@ function Cesta(props) {
 
 
     let [usuario,setUsuario] = useState(props.usuario)
-    let [total,setTotal] = useState("")
+    let [total,setTotal] = useState(0)
     let [cesta,setCesta] = useState([])
     let [num,setNum] = useState(1)
     let [isLoading,setIsLoading] = useState(false)
