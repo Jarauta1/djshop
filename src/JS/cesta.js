@@ -119,7 +119,7 @@ function Cesta(props) {
   <div class="totals">
     <div class="totals-item">
       <label>Total</label>
-      <div class="totals-value" id="cart-subtotal">{total} €</div>
+      <div class="totals-value" id="cart-subtotal">{total.toFixed(2)} €</div>
     </div>
     
   </div>
