@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/djshop/static/css/main.aa119412.chunk.css",
-    "main.js": "/djshop/static/js/main.e61bb338.chunk.js",
-    "main.js.map": "/djshop/static/js/main.e61bb338.chunk.js.map",
+    "main.js": "/djshop/static/js/main.dab7d5da.chunk.js",
+    "main.js.map": "/djshop/static/js/main.dab7d5da.chunk.js.map",
     "runtime-main.js": "/djshop/static/js/runtime-main.4bdedc5a.js",
     "runtime-main.js.map": "/djshop/static/js/runtime-main.4bdedc5a.js.map",
     "static/js/2.f8677ebd.chunk.js": "/djshop/static/js/2.f8677ebd.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.4bdedc5a.js",
     "static/js/2.f8677ebd.chunk.js",
     "static/css/main.aa119412.chunk.css",
-    "static/js/main.e61bb338.chunk.js"
+    "static/js/main.dab7d5da.chunk.js"
   ]
 }
