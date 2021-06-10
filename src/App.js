@@ -155,9 +155,11 @@ return
       <div className="promociones"><p>SECCIONES</p><hr></hr></div>
       <div><Portada/></div>
   </Route>
-  {/* <Route exact path="/buscador">
-    <Buscador/>
-  </Route> */}
+  <Route exact path="/djshop">
+    <br></br>
+      <div className="promociones"><p>SECCIONES</p><hr></hr></div>
+      <div><Portada/></div>
+  </Route>
   <Route exact path="/login">
     <Login vuelta={vuelta} mensaje={mensaje} login={login} registrar={registrar}/>
   </Route>
