@@ -36,10 +36,7 @@ let [nombre, setNombre] = useState()
 let [edad, setEdad] = useState()
 let [rango,setRango] = useState()
 
-console.log(usuario)
-
 useEffect(function(){
-  
   if (usuario !== "") {
   fetch("http://localhost:3000/usuarios/", {
       method: "POST",
