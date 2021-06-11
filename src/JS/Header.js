@@ -1,6 +1,6 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import '../CSS/header.css';
+import '../CSS/header.css'
 import logo from "../Imagenes/logo_header_blanco.png"
 
 
@@ -25,27 +25,22 @@ function Header(props) {
             body: JSON.stringify({usuario: usuario}),
             }).then((res)=>res.json()).then((res)=>{
                 setDatos(res.datos[0].cesta)
-                console.log(res.datos[0].cesta)
                 setCesta(datos.length)
-                console.log(cesta)
             })
           }
       },[usuario])
   
-    
-
     if (props.usuario !== "") {
-
         return(<>
-         <section class="top-nav">
+         <section className="header-section"> {/* header */}
                 <div>
                     <Link to="/"><img src={logo} height="30" alt=""/></Link>
                 </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
-                    <div class='menu-button'></div>
+                <input className="menu-header-btn" type="checkbox" id="menu-header-btn" />
+                <label className="menu-header-icon" htmlFor="menu-header-btn">
+                    <span className="navicon"></span>
                 </label>
-                <ul class="menu-header"> 
+                <ul className="menu-header"> {/* menu */}
                     <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
                     <li><Link to="/comics"><a>Comics</a></Link></li>
                     <li><Link to="/libros"><a>Libros</a></Link></li>
@@ -67,27 +62,42 @@ function Header(props) {
        /*  localStorage.setItem("retorno", "/") */
         return(<>
           
-            <section class="top-nav">
+          <section className="header-section"> {/* header */}
                 <div>
                     <Link to="/"><img src={logo} height="30" alt=""/></Link>
                 </div>
-                <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
-                    <div class='menu-button'></div>
+                <input className="menu-header-btn" type="checkbox" id="menu-header-btn" />
+                <label className="menu-header-icon" htmlFor="menu-header-btn">
+                    <span className="navicon"></span>
                 </label>
-                <ul class="menu-header"> 
-                    <li><Link to="/camisetas"><a>Camisetas</a></Link></li>
-                    <li><Link to="/comics"><a>Comics</a></Link></li>
-                    <li><Link to="/libros"><a>Libros</a></Link></li>
-                    <li><Link to="/peliculas"><a>Peliculas</a></Link></li>
-                    <li><Link to="/zapatillas"><a>Zapatillas</a></Link></li> 
+                <ul className="menu-header"> {/* menu */}
+                    <li>
+                        <Link className="header-camisetas" to="/camisetas">
+                            <a>Camisetas</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="header-comics" to="/comics">
+                            <a>Comics</a>
+                        </Link></li>
+                    <li>
+                        <Link className="header-libros" to="/libros">
+                            <a>Libros</a>
+                        </Link></li>
+                    <li>
+                        <Link className="header-peliculas" to="/peliculas">
+                            <a>Peliculas</a>
+                        </Link></li>
+                    <li>
+                        <Link className="header-zapatillas" to="/zapatillas">
+                            <a>Zapatillas</a></Link></li> 
                    {/*  <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li /* onClick={cambio} */ className="material-icons heart"><Link to="/login">account_circle</Link></li>
+                </ul>
+                <ul>   
+                    <li /* onClick={cambio} */ className="material-icons heart">
+                        <Link className="header-login" to="/login">
+                           account_circle
+                        </Link></li>
                 </ul>
             </section>
         </>)
