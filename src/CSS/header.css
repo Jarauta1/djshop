@@ -1,143 +1,137 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
-
 /* header */
 
 .header-section {
-    box-sizing: border-box;
+	box-sizing: border-box;
 	background-color: #00baf0;
 	background: linear-gradient(to left, #4582f4, #49bfee);
 	color: #fff;
 	display: block;
 	max-width: 100vw;
-	height: 50px;
-	padding: 1em;
-	list-style-type: none;
+	padding: 20px 10px 2.5px 10px;
+	margin: -10px auto;
   }
   
-  .header-section ul {
+.header-section ul {
 	margin: 0;
-	padding: 10px;
+	padding: 0px;
 	list-style: none;
 	overflow: hidden;
 	font-size: 16px;
-  }
+ }
   
-  .grey-color {
-	color: #868e96;
-  }
-  
-  .header-section li a {
-	/* display: block; */
-	padding: 10px 20px;
+.header-section li a {
+	display: block;
+	padding: 5px 20px;
 	color: white;
 	text-decoration: none;
-  }
+}
   
-  .header-section .logo {
+.header-section .logo {
 	display: block;
 	float: left;
 	font-size: 1.5em;
 	text-decoration: none;
 	margin-top: -12px;
 	line-height: normal;
-  }
+}
   
-  .header-section .logo-name {
+.header-section .logo-name {
 	font-family: "Google Sans Regular";
 	font-weight: bold;
 	padding: 0 10px;
 	letter-spacing: 3px;
 	color: #4471d3;
-  }
+}
   
-  /* menu */
+/* menu */
   
-  /* .menu-header {
+.menu-header {
 	font-family: "Google Sans Regular";
-  } */
+}
   
-  .header-section .menu-header {
+.header-section .menu-header {
 	/* margin-top: 10px; */
 	clear: both;
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
 	list-style-type: none;
-  }
+}
   
-  /* menu icon */
+/* menu icon */
   
-  .header-section .menu-header-icon {
+.header-section .menu-header-icon {
 	cursor: pointer;
 	display: inline-block;
 	float: right;
 	padding: 28px 20px;
 	position: relative;
 	user-select: none;
-  }
+}
   
-  .header-section .menu-header-icon .navicon {
-	background: #4471d3;
+.header-section .menu-header-icon .navicon {
+	background: white;
 	display: block;
 	height: 2px;
 	position: relative;
 	transition: background 0.2s ease-out;
 	width: 18px;
-  }
+}
   
-  .header-section .menu-header-icon .navicon:before,
-  .header-section .menu-header-icon .navicon:after {
-	background: #4471d3;
+.header-section .menu-header-icon .navicon:before,
+.header-section .menu-header-icon .navicon:after {
+	background: white;
 	content: "";
 	display: block;
 	height: 100%;
 	position: absolute;
 	transition: all 0.2s ease-out;
 	width: 100%;
-  }
+}
   
-  .header-section .menu-header-icon .navicon:before {
+.header-section .menu-header-icon .navicon:before {
 	top: 5px;
-  }
+}
   
-  .header-section .menu-header-icon .navicon:after {
+.header-section .menu-header-icon .navicon:after {
 	top: -5px;
-  }
+}
   
-  /* menu btn */
+/* menu btn */
   
-  .header-section .menu-header-btn {
+.header-section .menu-header-btn {
 	display: none;
-  }
+}
   
-  .header-section .menu-header-btn:checked ~ .menu-header-header {
+.header-section .menu-header-btn:checked ~ .menu-header {
 	max-height: 370px;
-  }
+}
   
-  .header-section .menu-header-btn:checked ~ .menu-header-icon .navicon {
+.header-section .menu-header-btn:checked ~ .menu-header-icon .navicon {
 	background: transparent;
-  }
+}
   
-  .header-section .menu-header-btn:checked ~ .menu-header-icon .navicon:before {
+.header-section .menu-header-btn:checked ~ .menu-header-icon .navicon:before {
 	transform: rotate(-45deg);
-  }
+}
   
-  .header-section .menu-header-btn:checked ~ .menu-header-icon .navicon:after {
+.header-section .menu-header-btn:checked ~ .menu-header-icon .navicon:after {
 	transform: rotate(45deg);
-  }
+}
   
-  .header-section .menu-header-btn:checked ~ .menu-header-icon:not(.steps) .navicon:before,
-  .header-section .menu-header-btn:checked ~ .menu-header-icon:not(.steps) .navicon:after {
+.header-section .menu-header-btn:checked ~ .menu-header-icon:not(.steps) .navicon:before,
+.header-section .menu-header-btn:checked ~ .menu-header-icon:not(.steps) .navicon:after {
 	top: 0;
-  }
+}
   
-    /* 48em = 768px */
+/* 48em = 768px */
   
-  @media (min-width: 932px) {
+@media (min-width: 932px) {
 	.header-section li {
 	  float: left;
 	}
+
 	.header-section .material-icons {
-	  float: none;
+		float: none;
 	}
 	.header-section {
 	  display: flex;
@@ -147,7 +141,7 @@
 	.header-section .menu-header {
 	  max-height: none;
 	}
-	.header-section .menu-header-icon {
+	.header .menu-header-icon {
 	  display: none;
 	}
   }
