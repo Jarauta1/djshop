@@ -30,7 +30,7 @@ function Header(props) {
       },[usuario])
 
 
-    if (props.usuario != "") {
+    if (props.usuario == "") {
         return(<>
              <section className="header-section">
                 <div>
@@ -59,14 +59,27 @@ function Header(props) {
                         <Link className="header-zapatillas" to="/zapatillas"><a>Zapatillas</a></Link>
                     </li>
                      {/*   <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
-                       <li></li>
-                       <li></li>
-                       <li></li>
-                       <li className="material-icons"><Link to="/favoritos"><a>favorite</a></Link></li>
-                       <li className="material-icons"><Link to="/cesta"><a className="shopping-bag">shopping_bag</a><a className="num-cesta"></a></Link></li>
-                      {/*  <li><div className="user-div"><div className="material-icons"><Link to="/cesta"><a>shopping_bag</a></Link></div>{cesta}</div></li> */}
-                       <li><div className="user-div">{props.nombre}<div className="material-icons"><Link to="/usuario"><a>manage_accounts</a></Link></div></div></li>
-                       <li onClick={()=>props.salir()} className="material-icons"><Link to="/"><a>exit_to_app</a></Link></li>
+                    <li className="material-icons">
+                        <Link to="/favoritos"><a>favorite</a></Link>
+                    </li>
+                    <li className="material-icons">
+                        <Link to="/cesta">
+                            <a className="shopping-bag">shopping_bag</a>
+                            <a className="num-cesta"></a>
+                        </Link>
+                    </li>
+                    {/*  <li><div className="user-div"><div className="material-icons"><Link to="/cesta"><a>shopping_bag</a></Link></div>{cesta}</div></li> */}
+                    <li className="material-icons">
+                       
+                            {/* {props.nombre} */}
+                            
+                                <Link to="/usuario"><a>Diego</a><a>manage_accounts</a></Link>
+                            
+                       
+                    </li>
+                    <li onClick={()=>props.salir()} className="material-icons">
+                        <Link to="/"><a>exit_to_app</a></Link>
+                    </li>
                    </ul>
                </section>
            </>)
