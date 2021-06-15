@@ -30,7 +30,7 @@ function Header(props) {
       },[usuario])
 
 
-    if (props.usuario == "") {
+    if (props.usuario != "") {
         return(<>
              <section className="header-section">
                 <div>
@@ -69,12 +69,12 @@ function Header(props) {
                         </Link>
                     </li>
                     {/*  <li><div className="user-div"><div className="material-icons"><Link to="/cesta"><a>shopping_bag</a></Link></div>{cesta}</div></li> */}
-                    <li className="material-icons">
+                    <li>
                        
                             {/* {props.nombre} */}
                             
-                                <Link to="/usuario"><a>Diego</a><a>manage_accounts</a></Link>
-                            
+                                <Link className="header-user" to="/usuario"><a>Diego</a><a className="material-icons">manage_accounts</a></Link>
+                               
                        
                     </li>
                     <li onClick={()=>props.salir()} className="material-icons">
