@@ -70,12 +70,7 @@ function Header(props) {
                     </li>
                     {/*  <li><div className="user-div"><div className="material-icons"><Link to="/cesta"><a>shopping_bag</a></Link></div>{cesta}</div></li> */}
                     <li>
-                       
-                            {/* {props.nombre} */}
-                            
-                                <Link className="header-user" to="/usuario"><a>Diego</a><a className="material-icons">manage_accounts</a></Link>
-                               
-                       
+                       <Link className="header-user" to="/usuario"><a>{props.nombre}</a><a className="material-icons">manage_accounts</a></Link>
                     </li>
                     <li onClick={()=>props.salir()} className="material-icons">
                         <Link to="/"><a>exit_to_app</a></Link>

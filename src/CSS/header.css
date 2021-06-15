@@ -45,12 +45,13 @@
   
 /* menu */
   
-.menu-header {
+/* .menu-header {
 	font-family: "Google Sans Regular";
-}
+} */
   
 .header-section .menu-header {
 	/* margin-top: 10px; */
+	justify-items: space-around;
 	clear: both;
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
@@ -61,7 +62,7 @@
 	display: flex;
 	justify-content: center;
 }
-  
+
 /* menu icon */
   
 .header-section .menu-header-icon {
@@ -144,7 +145,7 @@
 	  justify-content: space-between;
 	}
 	.header-section .menu-header {
-	  max-height: none;
+	  	max-height: none;
 	}
 	.header-section .menu-header-icon {
 	  display: none;
