@@ -11,7 +11,6 @@ import Footer from "./JS/Footer.js"
 import PeliculaCard from "./JS/peliculaCard.js"
 import Comics from "./JS/comics.js"
 import ComicCard from "./JS/comicCard.js"
-import Buscador from "./JS/buscador.js"
 import Zapatillas from "./JS/zapatillas.js"
 import Dashboard from "./Dashboard/dashboard.js"
 import Usuario from "./Usuario/usuario.js"
@@ -36,10 +35,7 @@ let [nombre, setNombre] = useState()
 let [edad, setEdad] = useState()
 let [rango,setRango] = useState()
 
-console.log(usuario)
-
 useEffect(function(){
-  
   if (usuario !== "") {
   fetch("http://localhost:3000/usuarios/", {
       method: "POST",

@@ -12,10 +12,7 @@ import {Link} from "react-router-dom"
 
 function Portada () {
   localStorage.setItem("retorno", "")
-
-
     return(<>
-
     <div className="container-portada">
       <div className="row-portada">
       <div className="div-portada starred">
@@ -41,13 +38,8 @@ function Portada () {
             <img className="img-portada" src={zapatillas} alt=""/></Link>
         </div>
       </div>
-
     </div>
-
-
-
 		</>);
 }
 
   export default Portada;
-  
