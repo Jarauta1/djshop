@@ -17,7 +17,7 @@
 	list-style: none;
 	overflow: hidden;
 	font-size: 16px;
- }
+}
   
 .header-section li a {
 	display: block;
@@ -139,14 +139,17 @@
 	/* .header-section .material-icons {
 		float: none;
 	} */
+
 	.header-section {
 	  display: flex;
 	  align-items: center;
 	  justify-content: space-between;
 	}
+
 	.header-section .menu-header {
 	  	max-height: none;
 	}
+
 	.header-section .menu-header-icon {
 	  display: none;
 	}
@@ -167,6 +170,7 @@
 	  text-align: center;
 	}
   }
+  
   @media (max-width: 960px) and (min-width: 768px) {
 	.header-section {
 	  font-size: 12px;

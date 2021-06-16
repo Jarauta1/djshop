@@ -32,7 +32,7 @@ function Header(props) {
 
     if (props.usuario != "") {
         return(<>
-             <section className="header-section">
+            <section className="header-section">
                 <div>
                     <Link to="/" className="logo">
                         <img src={logo} height="30" alt="djshop"/>
@@ -58,7 +58,7 @@ function Header(props) {
                     <li>
                         <Link className="header-zapatillas" to="/zapatillas"><a>Zapatillas</a></Link>
                     </li>
-                     {/*   <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
+                    {/*   <li><Link to="/buscador"><a>Buscador</a></Link></li> */}
                     <li className="material-icons">
                         <Link to="/favoritos"><a>favorite</a></Link>
                     </li>
@@ -75,9 +75,9 @@ function Header(props) {
                     <li onClick={()=>props.salir()} className="material-icons">
                         <Link to="/"><a>exit_to_app</a></Link>
                     </li>
-                   </ul>
-               </section>
-           </>)
+                </ul>
+            </section>
+        </>)
     } else {
         return (<>
             <section className="header-section">
@@ -106,8 +106,6 @@ function Header(props) {
                     <li>
                         <Link className="header-zapatillas" to="/zapatillas"><a>Zapatillas</a></Link>
                     </li>
-                {/* </ul>
-                <ul> */}
                     <li className="material-icons heart">
                         <Link className="header-login" to="/login">account_circle</Link>
                     </li>           
