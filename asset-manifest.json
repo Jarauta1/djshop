@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/djshop/static/css/main.bc2df369.chunk.css",
-    "main.js": "/djshop/static/js/main.dab7d5da.chunk.js",
-    "main.js.map": "/djshop/static/js/main.dab7d5da.chunk.js.map",
-    "runtime-main.js": "/djshop/static/js/runtime-main.4bdedc5a.js",
-    "runtime-main.js.map": "/djshop/static/js/runtime-main.4bdedc5a.js.map",
-    "static/js/2.f8677ebd.chunk.js": "/djshop/static/js/2.f8677ebd.chunk.js",
-    "static/js/2.f8677ebd.chunk.js.map": "/djshop/static/js/2.f8677ebd.chunk.js.map",
-    "static/js/3.e2549b86.chunk.js": "/djshop/static/js/3.e2549b86.chunk.js",
-    "static/js/3.e2549b86.chunk.js.map": "/djshop/static/js/3.e2549b86.chunk.js.map",
+    "main.css": "/djshop/static/css/main.dd3f9f52.chunk.css",
+    "main.js": "/djshop/static/js/main.bade273b.chunk.js",
+    "main.js.map": "/djshop/static/js/main.bade273b.chunk.js.map",
+    "runtime-main.js": "/djshop/static/js/runtime-main.6905c300.js",
+    "runtime-main.js.map": "/djshop/static/js/runtime-main.6905c300.js.map",
+    "static/js/2.8d91b547.chunk.js": "/djshop/static/js/2.8d91b547.chunk.js",
+    "static/js/2.8d91b547.chunk.js.map": "/djshop/static/js/2.8d91b547.chunk.js.map",
+    "static/js/3.25783f0d.chunk.js": "/djshop/static/js/3.25783f0d.chunk.js",
+    "static/js/3.25783f0d.chunk.js.map": "/djshop/static/js/3.25783f0d.chunk.js.map",
     "index.html": "/djshop/index.html",
-    "static/css/main.bc2df369.chunk.css.map": "/djshop/static/css/main.bc2df369.chunk.css.map",
-    "static/js/2.f8677ebd.chunk.js.LICENSE.txt": "/djshop/static/js/2.f8677ebd.chunk.js.LICENSE.txt",
+    "static/css/main.dd3f9f52.chunk.css.map": "/djshop/static/css/main.dd3f9f52.chunk.css.map",
+    "static/js/2.8d91b547.chunk.js.LICENSE.txt": "/djshop/static/js/2.8d91b547.chunk.js.LICENSE.txt",
     "static/media/acceder.dd7881d7.jpg": "/djshop/static/media/acceder.dd7881d7.jpg",
     "static/media/foto.06c8918a.png": "/djshop/static/media/foto.06c8918a.png",
     "static/media/logo.06836149.png": "/djshop/static/media/logo.06836149.png",
@@ -25,9 +25,9 @@
     "static/media/seccion_zapatillas.1b2832da.jpg": "/djshop/static/media/seccion_zapatillas.1b2832da.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4bdedc5a.js",
-    "static/js/2.f8677ebd.chunk.js",
-    "static/css/main.bc2df369.chunk.css",
-    "static/js/main.dab7d5da.chunk.js"
+    "static/js/runtime-main.6905c300.js",
+    "static/js/2.8d91b547.chunk.js",
+    "static/css/main.dd3f9f52.chunk.css",
+    "static/js/main.bade273b.chunk.js"
   ]
 }
