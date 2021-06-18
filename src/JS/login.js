@@ -6,11 +6,9 @@ import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"
 
 function Login (props) {
-  console.log(props.mensaje)
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
   let [mensaje,setMensaje] = useState(props.mensaje)
   let [num,setNum] = useState(0)
-  console.log(localStorage.getItem("retorno"))
   let [emailAcceso, setEmailAcceso] = useState("")
   let [contrasenaAcceso, setContrasenaAcceso] = useState("")
 
@@ -129,7 +127,7 @@ if (props.mensaje === "Logueado correctamente") {
   return(<Redirect to={`/${retorno}`}/>)
 } else {
   return(<>
-  <section className="login">
+  <section className="login-page">
     <div className="container-login">
       <div className="user signinBx">
         <div className="imgBx"><img src={accederFoto} alt="" /></div>
