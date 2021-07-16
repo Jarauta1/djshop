@@ -6,7 +6,7 @@ import Header from "./components/header/header"
 
 import Home from "./pages/home/home"
 import LogIn_setUp from './pages/logIn_setUp/logIn_setUp';
-import Books from "./pages/sections/books"
+import Books from "./pages/sections/books/books"
 import Comics from "./pages/sections/comics/comics"
 import Films from "./pages/sections/films/films"
 import Sneakers from "./pages/sections/sneakers/sneakers"

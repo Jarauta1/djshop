@@ -1,11 +1,11 @@
 
 import './home.css';
 
-import camisetas from "../Imagenes/seccion_camisetas.jpg"
-import libros from "../Imagenes/seccion_libros.jpg"
-import cine from "../Imagenes/seccion_cine.jpg"
-import zapatillas from "../Imagenes/seccion_zapatillas.jpg"
-import comics from "../Imagenes/seccion_comics.jpg"
+import camisetas from "./assets/seccion_camisetas.jpg"
+import libros from "./assets/seccion_libros.jpg"
+import cine from "./assets/seccion_cine.jpg"
+import zapatillas from "./assets/seccion_zapatillas.jpg"
+import comics from "./assets/seccion_comics.jpg"
 
 import {Link} from "react-router-dom"
 

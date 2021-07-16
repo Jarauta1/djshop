@@ -1,4 +1,4 @@
-import './SneakerDetail.css';
+import './sneakerDetail.css';
 import {useParams} from "react-router-dom"
 import {useState,useEffect} from "react"
 import {Redirect,Link} from "react-router-dom"

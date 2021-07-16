@@ -1,6 +1,6 @@
 import './logIn_setUp.css';
-import accederFoto from "../Imagenes/acceder.jpg"
-import registarFoto from "../Imagenes/registro.jpg"
+import accederFoto from "./assets/acceder.jpg"
+import registarFoto from "./assets/registro.jpg"
 
 import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"

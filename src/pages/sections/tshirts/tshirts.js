@@ -1,7 +1,7 @@
 import './tshirts.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import logo_bb from "../Imagenes/logo_bb.png"
+import logo_bb from "./assets/logo_bb.png"
 
 function Tshirts(props) {
 
