@@ -1,5 +1,5 @@
 
-import '../CSS/portada.css';
+import './home.css';
 
 import camisetas from "../Imagenes/seccion_camisetas.jpg"
 import libros from "../Imagenes/seccion_libros.jpg"
@@ -10,7 +10,7 @@ import comics from "../Imagenes/seccion_comics.jpg"
 import {Link} from "react-router-dom"
 
 
-function Portada () {
+function Home () {
   localStorage.setItem("retorno", "")
     return(<>
       <div className="container-portada">
@@ -52,4 +52,4 @@ function Portada () {
 		</>);
 }
 
-  export default Portada;
+  export default Home;

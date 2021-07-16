@@ -1,4 +1,4 @@
-import './usuario.css';
+import './user.css';
 import {useState, useEffect} from "react"
 import {BrowswerRouter, Route, Link,Redirect} from "react-router-dom"
 import logo from "../Imagenes/logo.png"
@@ -33,7 +33,7 @@ import {
   } from "reactstrap";
 
 
-function Usuario(props) {
+function User(props) {
   
     console.log(props)
     let [edad,setEdad] = useState(props.edad)
@@ -8562,4 +8562,4 @@ let chart30 = {
     
 }
 
-export default Usuario;
+export default User;

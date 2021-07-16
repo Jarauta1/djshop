@@ -1,9 +1,9 @@
-import '../CSS/camisetas.css';
+import './tshirts.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import logo_bb from "../Imagenes/logo_bb.png"
 
-function Camisetas(props) {
+function Tshirts(props) {
 
   let [data,setData] = useState([])
   let [checkFavoritos,setCheckFavoritos] = useState(false)
@@ -155,4 +155,4 @@ function Camisetas(props) {
       
 }
 
-export default Camisetas;
+export default Tshirts;

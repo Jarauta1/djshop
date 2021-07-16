@@ -1,4 +1,4 @@
-import footer from "../CSS/footer.css"
+import footer from "./footer.css"
 
 
 

@@ -1,8 +1,8 @@
-import '../CSS/zapatillas.css';
+import './sneakers.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 
-function Zapatillas(props) {
+function Sneakers(props) {
   localStorage.setItem("retorno", "zapatillas")
   let [data,setData] = useState([])
   let [usuario,setUsuario] = useState(props.usuario)
@@ -71,4 +71,4 @@ function Zapatillas(props) {
       
 }
 
-export default Zapatillas;
+export default Sneakers;

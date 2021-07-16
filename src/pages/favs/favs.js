@@ -1,8 +1,8 @@
-import '../CSS/favoritos.css';
+import './favs.css';
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 
-function Favoritos(props) {
+function Favs(props) {
 
   let [data,setData] = useState([])
   let [usuario,setUsuario] = useState(props.usuario)
@@ -110,4 +110,4 @@ function Favoritos(props) {
       
 }
 
-export default Favoritos;
+export default Favs;

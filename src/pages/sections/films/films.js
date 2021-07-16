@@ -1,8 +1,8 @@
-import '../CSS/Peliculas.css';
+import './films.css';
 import {useState, useEffect} from "react"
 import {Link,Redirect} from "react-router-dom"
 
-function Peliculas(props) {
+function Films(props) {
   let [usuario,setUsuario] = useState(props.usuario)
   let [edadUsuario,setEdadUsuario] = useState(props.edad)
   let [checkFavoritos,setCheckFavoritos] = useState(false)
@@ -245,4 +245,4 @@ function Peliculas(props) {
     }    
 }
 
-export default Peliculas;
+export default Films;

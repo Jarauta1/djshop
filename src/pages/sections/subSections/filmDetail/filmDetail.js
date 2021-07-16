@@ -1,9 +1,9 @@
 import {useParams} from "react-router-dom"
 import {useState,useEffect} from "react"
 import {Link, Redirect} from "react-router-dom"
-import '../CSS/peliculaCard.css';
+import './filmDetail.css';
 
-function PeliculaCard(props) {
+function FilmDetail(props) {
 
   let {id} =useParams()
   let {titulo} = useParams()
@@ -141,4 +141,4 @@ function PeliculaCard(props) {
 }
 }
 
-export default PeliculaCard;
+export default FilmDetail;

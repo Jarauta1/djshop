@@ -1,11 +1,11 @@
-import '../CSS/login.css';
+import './logIn_setUp.css';
 import accederFoto from "../Imagenes/acceder.jpg"
 import registarFoto from "../Imagenes/registro.jpg"
 
 import {useState,useEffect} from "react"
 import {Redirect} from "react-router-dom"
 
-function Login (props) {
+function LogIn_setUp (props) {
   let [retorno,setRetorno] = useState(localStorage.getItem("retorno"))
   let [mensaje,setMensaje] = useState(props.mensaje)
   let [num,setNum] = useState(0)
@@ -176,4 +176,4 @@ if (props.mensaje === "Logueado correctamente") {
 }
 }
 
-export default Login;
+export default LogIn_setUp;

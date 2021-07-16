@@ -1,12 +1,12 @@
 import { useState, useEffect} from "react";
 import {Link} from "react-router-dom"
 /* import '../App.css'; */
-import '../CSS/cesta.css';
+import './cart.css';
 import logo from "../Imagenes/logo_header_blanco.png"
 
 
 
-function Cesta(props) {
+function Cart(props) {
 
 
     let [usuario,setUsuario] = useState(props.usuario)
@@ -196,4 +196,4 @@ function Cesta(props) {
     
     }
 
-export default Cesta;
+export default Cart;

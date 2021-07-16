@@ -1,9 +1,9 @@
-import '../CSS/zapatillasCard.css';
+import './SneakerDetail.css';
 import {useParams} from "react-router-dom"
 import {useState,useEffect} from "react"
 import {Redirect,Link} from "react-router-dom"
 
-function ZapatillasCard(props) {
+function SneakerDetail(props) {
 
     let {id} =useParams()
     let [data,setData] = useState({})
@@ -127,4 +127,4 @@ function ZapatillasCard(props) {
       }
 } 
 
-export default ZapatillasCard;
+export default SneakerDetail;

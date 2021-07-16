@@ -1,9 +1,9 @@
 import {useParams} from "react-router-dom"
 import {useState,useEffect} from "react"
 import {Link,Redirect} from "react-router-dom"
-import '../CSS/comicCard.css';
+import './comicDetail.css';
 
-function ComicCard(props) {
+function ComicDetail(props) {
 
   let {id} =useParams()
   let [data, setData] = useState([])
@@ -159,4 +159,4 @@ function ComicCard(props) {
       }
 }
 
-export default ComicCard;
+export default ComicDetail;

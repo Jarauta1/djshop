@@ -1,9 +1,9 @@
-import "../CSS/libros.css"
+import "./books.css"
 import {useState, useEffect} from "react"
 import {Redirect, Link} from "react-router-dom"
 
 
-function Libros (props){
+function Books (props){
 
   localStorage.setItem("retorno", "libros")
     
@@ -242,4 +242,4 @@ function Libros (props){
     }
 }
 
-export default Libros;
+export default Books;

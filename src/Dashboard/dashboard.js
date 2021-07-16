@@ -244,7 +244,7 @@ function Dashboard(props) {
                       <div class="item disable">1</div>
                       <div class="item disable">2</div>
                       <div class="item disable">3</div>
-                    /div>
+                    {/* /div> */}
                 </div>
                   </div>
                 </div>
